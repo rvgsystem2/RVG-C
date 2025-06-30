@@ -16,7 +16,7 @@
     <div class="container-flued position-relative p-0">
 
 
-        <div class="container-flued bg-primary hero-header pb-5 pt-5 " >
+        <div class="container-flued pb-5 pt-5 custom-color" id="" >
             <div class="container px-lg-5 pt-5">
                 <div class="row g-5 align-items-end">
                     <div class="col-lg-6 text-center text-lg-start">

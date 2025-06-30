@@ -4,9 +4,13 @@
     --secondary: #FBA504;
     --light: #F6F4F9;
     --dark: #04000B;
+    /* --custm: linear-gradient(45deg, #6222CC, #0cfb04); */
+    
 }
 
-
+.custom-color {
+    background: linear-gradient(135deg, #ab0303, #0a0101);
+}
 /*** Spinner ***/
 #spinner {
     opacity: 0;
