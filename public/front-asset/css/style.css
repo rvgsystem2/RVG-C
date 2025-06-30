@@ -4,13 +4,25 @@
     --secondary: #FBA504;
     --light: #F6F4F9;
     --dark: #04000B;
-    /* --custm: linear-gradient(45deg, #6222CC, #0cfb04); */
+    --custom: linear-gradient(135deg, #ab0303, #0a0101);
     
 }
 
 .custom-color {
     background: linear-gradient(135deg, #ab0303, #0a0101);
 }
+
+.btn-custom {
+    background: var(--custom);
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+    color: white;
+}
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -353,7 +365,7 @@ h6,
 .service-item:hover {
     margin-top: -15px;
     padding-bottom: 60px;
-    background: var(--primary);
+    background: var(--custom);
 }
 
 .service-item .service-icon {
@@ -363,8 +375,10 @@ h6,
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 20px;
     color: var(--light);
-    background: url(../img/blob-primary.png) center center no-repeat;
+    /* background: url(../img/blob-primary.png) center center no-repeat; */
+    background: var(--custom);
     background-size: contain;
     transition: .5s;
 }
@@ -554,6 +568,9 @@ h6,
     transition: .3s;
 }
 
+a{
+    color: var(--light) !important;
+}
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
