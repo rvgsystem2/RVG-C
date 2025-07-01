@@ -35,41 +35,15 @@
     <!-- Navbar & Hero End -->
 
 
-    <!-- Feature Start -->
-    <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5">
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                        <h5 class="mb-3">Digital Marketing</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                        <h5 class="mb-3">SEO & Backlinks</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                        <h5 class="mb-3">Design & Development</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
 
 
     <!-- About Start -->
     <div class="container-flued py-5">
         <div class="container py-5 px-lg-5">
             <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('front-asset/img/about.png')}}">
+                </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-secondary">About Us<span></span></p>
                     <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
@@ -80,7 +54,7 @@
                             <p class="mb-2">85%</p>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -103,9 +77,7 @@
                     </div>
                     <a href="" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
                 </div>
-                <div class="col-lg-6">
-                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('front-asset/img/about.png')}}">
-                </div>
+
             </div>
         </div>
     </div>
@@ -113,106 +85,165 @@
 
 
     <!-- Facts Start -->
-    <div class="container-flued custom-color py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid custom-color py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 px-lg-5">
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Years Experience</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Team Members</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Satisfied Clients</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-check fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                    <p class="text-white mb-0">Compleate Projects</p>
+                    <p class="text-white mb-0">Complete Projects</p>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Facts End -->
 
 
+ <!-- Feature Start -->
+ <div class="container-xxl py-5">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item bg-custom rounded text-center p-4">
+                    <i class="fa fa-3x fa-mail-bulk text-danger mb-4"></i>
+                    <h5 class="mb-3">Digital Marketing</h5>
+                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item bg-custom rounded text-center p-4">
+                    <i class="fa fa-3x fa-search text-danger mb-4"></i>
+                    <h5 class="mb-3">SEO & Backlinks</h5>
+                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-custom rounded text-center p-4">
+                    <i class="fa fa-3x fa-laptop-code text-danger mb-4"></i>
+                    <h5 class="mb-3">Design & Development</h5>
+                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
     <!-- Service Start -->
-    <div class="container-flued py-5">
+    <div class="container-fluid py-5">
         <div class="container py-5 px-lg-5">
-            <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <div class="wow fadeInUp text-center mb-5" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
-                <h1 class="text-center mb-5">What Solutions We Provide</h1>
+                <h1 class="text-center">What Solutions We Provide</h1>
             </div>
             <div class="row g-4">
+                <!-- Service Item Start -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon  flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fa fa-search fa-2x"></i>
                         </div>
                         <h5 class="mb-3">SEO Optimization</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+                <!-- Service Item End -->
+
+                <!-- Repeat for each service -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fa fa-laptop-code fa-2x"></i>
                         </div>
                         <h5 class="mb-3">Web Design</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fab fa-facebook-f fa-2x"></i>
                         </div>
                         <h5 class="mb-3">Social Media Marketing</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fa fa-mail-bulk fa-2x"></i>
                         </div>
                         <h5 class="mb-3">Email Marketing</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fa fa-thumbs-up fa-2x"></i>
                         </div>
                         <h5 class="mb-3">PPC Advertising</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex flex-column text-center rounded">
-                        <div class="service-icon flex-shrink-0">
+                    <div class="service-item d-flex flex-column text-center rounded p-4 h-100 shadow">
+                        <div class="service-icon mb-3">
                             <i class="fab fa-android fa-2x"></i>
                         </div>
                         <h5 class="mb-3">App Development</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="#">Read More</a>
+                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Service End -->
 
 
@@ -245,8 +276,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -260,8 +291,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -275,8 +306,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -290,8 +321,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -305,8 +336,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -320,8 +351,8 @@
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="bg-light p-4">
-                            <p class="text-primary fw-medium mb-2">UI / UX Design</p>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
                             <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                         </div>
                     </div>
@@ -332,14 +363,134 @@
     <!-- Projects End -->
 
 
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-dark">Our Blog</h5>
+                    <h1>Latest Blog & News</h1>
+                </div>
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="" class="btn text-white">Read More</a>
+                                </div>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                                    <!-- Arrow Icon -->
+                                    {{-- <div class="blog-icon-1">
+                                        <i class="fa fa-arrow-right text-white"></i>
+                                    </div> --}}
+
+                                    <!-- Social Icons -->
+                                    <div class="blog-icon-2 d-flex gap-2">
+                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="{{asset('front-asset/img/team-1.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">By Daniel Martin</h5>
+                                <span class="text-secondary">24 March 2023</span>
+                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
+                            </div>
+                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Development</span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="" class="btn text-white ">Read More</a>
+                                </div>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                                    <!-- Arrow Icon -->
+                                    {{-- <div class="blog-icon-1">
+                                        <i class="fa fa-arrow-right text-white"></i>
+                                    </div> --}}
+
+                                    <!-- Social Icons -->
+                                    <div class="blog-icon-2 d-flex gap-2">
+                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="{{asset('front-asset/img/team-2.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">By Daniel Martin</h5>
+                                <span class="text-secondary">23 April 2023</span>
+                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
+                            </div>
+                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Mobile App</span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="" class="btn text-white ">Read More</a>
+                                </div>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                                    <!-- Arrow Icon -->
+                                    {{-- <div class="blog-icon-1">
+                                        <i class="fa fa-arrow-right text-white"></i>
+                                    </div> --}}
+
+                                    <!-- Social Icons -->
+                                    <div class="blog-icon-2 d-flex gap-2">
+                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="{{asset('front-asset/img/team-3.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">By Daniel Martin</h5>
+                                <span class="text-secondary">30 jan 2023</span>
+                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
+                            </div>
+                            <div class="blog-coments d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
     <!-- Testimonial Start -->
-    <div class="container-flued py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 px-lg-5">
-            <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
-            <h1 class="text-center mb-5">What Say Our Clients!</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item bg-light rounded my-4">
-                    <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+
+                <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item bg-custom rounded p-4">
                     <div class="d-flex align-items-center">
                         <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-1.jpg')}}" style="width: 65px; height: 65px;">
                         <div class="ps-4">
@@ -347,9 +498,9 @@
                             <span>Profession</span>
                         </div>
                     </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 </div>
-                <div class="testimonial-item bg-light rounded my-4">
-                    <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <div class="testimonial-item bg-custom rounded p-4">
                     <div class="d-flex align-items-center">
                         <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-2.jpg')}}" style="width: 65px; height: 65px;">
                         <div class="ps-4">
@@ -357,9 +508,9 @@
                             <span>Profession</span>
                         </div>
                     </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 </div>
-                <div class="testimonial-item bg-light rounded my-4">
-                    <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <div class="testimonial-item bg-custom rounded p-4">
                     <div class="d-flex align-items-center">
                         <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-3.jpg')}}" style="width: 65px; height: 65px;">
                         <div class="ps-4">
@@ -367,6 +518,17 @@
                             <span>Profession</span>
                         </div>
                     </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-custom rounded p-4">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-4.jpg')}}" style="width: 65px; height: 65px;">
+                        <div class="ps-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 </div>
             </div>
         </div>
@@ -375,7 +537,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-flued py-5">
+    {{-- <div class="container-flued py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
@@ -383,7 +545,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light rounded">
+                    <div class="team-item bg-custom rounded">
                         <div class="text-center border-bottom p-4">
                             <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-1.jpg')}}" alt="">
                             <h5>John Doe</h5>
@@ -398,7 +560,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light rounded">
+                    <div class="team-item bg-custom rounded">
                         <div class="text-center border-bottom p-4">
                             <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-2.jpg')}}" alt="">
                             <h5>Jessica Brown</h5>
@@ -413,7 +575,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light rounded">
+                    <div class="team-item bg-custom rounded">
                         <div class="text-center border-bottom p-4">
                             <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-3.jpg')}}" alt="">
                             <h5>Tony Johnson</h5>
@@ -429,7 +591,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Team End -->
 
 
