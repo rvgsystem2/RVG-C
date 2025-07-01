@@ -18,7 +18,7 @@
 
 
 <!-- Contact Start -->
-<div class="container-fluid py-5 mt-5 position-relative overflow-hidden">
+<div class="container-fluid py-5 mt-0 position-relative overflow-hidden">
     <!-- Background Image -->
     <img src="{{ asset('asset/img/image1.jpg') }}" alt="Contact Background"
         class="position-absolute w-100 h-100 object-fit-cover top-0 start-0 z-n1" style="opacity: 0.8;">
