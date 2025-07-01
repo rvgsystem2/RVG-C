@@ -45,4 +45,8 @@ class HomeController extends Controller
         return view('front.blogdetail');
     }
 
+
+    public function servicedetail(){
+        return view('front.servicedeatail');
+    }
 }

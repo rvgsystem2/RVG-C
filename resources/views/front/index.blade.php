@@ -22,7 +22,7 @@
                     <div class="col-lg-6 text-center text-lg-start">
                         <h1 class="text-white mb-4 animated slideInDown">A Digital Agency Of Inteligents & Creative People</h1>
                         <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-                        <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
+                        <a href="" class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
                         <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">Contact Us</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-start pt-5">
@@ -38,49 +38,59 @@
 
 
     <!-- About Start -->
-    <div class="container-flued py-5">
+    <div class="container-fluid py-5">
         <div class="container py-5 px-lg-5">
+            <p class="section-title ">About Us<span></span></p>
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('front-asset/img/about.png')}}">
+
+                <!-- Image Column: Order-1 on mobile, Order-2 on large screens -->
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ asset('front-asset/img/about.png') }}" alt="About Image">
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary">About Us<span></span></p>
+
+                <!-- Content Column: Order-2 on mobile, Order-1 on large screens -->
+                <div class="col-lg-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.1s">
+
                     <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
                     <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat amet</p>
+
                     <div class="skill mb-4">
                         <div class="d-flex justify-content-between">
                             <p class="mb-2">Digital Marketing</p>
                             <p class="mb-2">85%</p>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-custom" style="width: 85%;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
+
                     <div class="skill mb-4">
                         <div class="d-flex justify-content-between">
                             <p class="mb-2">SEO & Backlinks</p>
                             <p class="mb-2">90%</p>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-secondary" style="width: 90%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
+
                     <div class="skill mb-4">
                         <div class="d-flex justify-content-between">
                             <p class="mb-2">Design & Development</p>
                             <p class="mb-2">95%</p>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-dark" style="width: 95%;" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
-                    <a href="" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
+
+                    <a href="#" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
                 </div>
 
             </div>
         </div>
     </div>
+
     <!-- About End -->
 
 
@@ -89,22 +99,22 @@
         <div class="container py-5 px-lg-5">
             <div class="row g-4">
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
+                    <i class="fa fa-certificate fa-3x mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Years Experience</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
+                    <i class="fa fa-users-cog fa-3x  mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Team Members</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-users fa-3x text-secondary mb-3"></i>
+                    <i class="fa fa-users fa-3x  mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Satisfied Clients</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <i class="fa fa-check fa-3x text-secondary mb-3"></i>
+                    <i class="fa fa-check fa-3x  mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                     <p class="text-white mb-0">Complete Projects</p>
                 </div>
@@ -150,7 +160,7 @@
     <div class="container-fluid py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp text-center mb-5" data-wow-delay="0.1s">
-                <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
+                <p class="section-title  justify-content-center"><span></span>Our Services<span></span></p>
                 <h1 class="text-center">What Solutions We Provide</h1>
             </div>
             <div class="row g-4">
@@ -246,15 +256,11 @@
 
     <!-- Service End -->
 
-
-
-
-
     <!-- Projects Start -->
     <div class="container-flued py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span></p>
+                <p class="section-title  justify-content-center"><span></span>Our Projects<span></span></p>
                 <h1 class="text-center mb-5">Recently Completed Projects</h1>
             </div>
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
@@ -272,8 +278,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-1.jpg')}}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="bg-custom p-4">
@@ -287,8 +293,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-2.jpg')}}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-2.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-2.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="bg-custom p-4">
@@ -302,8 +308,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-3.jpg')}}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-3.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-3.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="bg-custom p-4">
@@ -332,8 +338,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-5.jpg')}}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-5.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-5.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="bg-custom p-4">
@@ -347,8 +353,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-6.jpg')}}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-6.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-6.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="bg-custom p-4">
@@ -361,126 +367,6 @@
         </div>
     </div>
     <!-- Projects End -->
-
-
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-dark">Our Blog</h5>
-                    <h1>Latest Blog & News</h1>
-                </div>
-                <div class="row g-5 justify-content-center">
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
-                                    <!-- Arrow Icon -->
-                                    {{-- <div class="blog-icon-1">
-                                        <i class="fa fa-arrow-right text-white"></i>
-                                    </div> --}}
-
-                                    <!-- Social Icons -->
-                                    <div class="blog-icon-2 d-flex gap-2">
-                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="{{asset('front-asset/img/team-1.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">24 March 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Development</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white ">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
-                                    <!-- Arrow Icon -->
-                                    {{-- <div class="blog-icon-1">
-                                        <i class="fa fa-arrow-right text-white"></i>
-                                    </div> --}}
-
-                                    <!-- Social Icons -->
-                                    <div class="blog-icon-2 d-flex gap-2">
-                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="{{asset('front-asset/img/team-2.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">23 April 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="blog-item position-relative bg-light rounded">
-                            <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
-                            <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Mobile App</span>
-                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                                    <a href="" class="btn text-white ">Read More</a>
-                                </div>
-                                <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
-                                    <!-- Arrow Icon -->
-                                    {{-- <div class="blog-icon-1">
-                                        <i class="fa fa-arrow-right text-white"></i>
-                                    </div> --}}
-
-                                    <!-- Social Icons -->
-                                    <div class="blog-icon-2 d-flex gap-2">
-                                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="{{asset('front-asset/img/team-3.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
-                                <h5 class="">By Daniel Martin</h5>
-                                <span class="text-secondary">30 jan 2023</span>
-                                <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
-                            </div>
-                            <div class="blog-coments d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
-                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Share</small></a>
-                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comments</small></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">

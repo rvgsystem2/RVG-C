@@ -12,6 +12,7 @@
         <div class="navbar-nav mx-auto py-0">
             <a href="/" class="nav-item nav-link active">Home</a>
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
+            <a href="{{route('blog')}}" class="nav-item nav-link">Blog</a>
             <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
             <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
             {{-- <div class="nav-item dropdown">
@@ -24,6 +25,6 @@
             </div> --}}
             <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="#" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block text-danger">Get Started</a>
+        <a href="#" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block ">Get Started</a>
     </div>
 </nav>
