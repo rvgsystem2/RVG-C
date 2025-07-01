@@ -190,8 +190,8 @@
                         <h5 class="mb-3">Web Design</h5>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary w-50" href="#">Read More</a>
-                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                            <button class="btn btn-danger w-50"> <a  href="#">Read More</a></button>
+                            <button class="btn btn-danger w-50"> <a  href="#">Contact Us</a></button>
                         </div>
                     </div>
                 </div>
@@ -204,8 +204,8 @@
                         <h5 class="mb-3">Social Media Marketing</h5>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary w-50" href="#">Read More</a>
-                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                            <button class="btn btn-danger w-50"> <a  href="#">Read More</a></button>
+                            <button class="btn btn-danger w-50"> <a  href="#">Contact Us</a></button>
                         </div>
                     </div>
                 </div>
@@ -218,8 +218,8 @@
                         <h5 class="mb-3">Email Marketing</h5>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary w-50" href="#">Read More</a>
-                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                            <button class="btn btn-danger w-50"> <a  href="#">Read More</a></button>
+                            <button class="btn btn-danger w-50"> <a  href="#">Contact Us</a></button>
                         </div>
                     </div>
                 </div>
@@ -232,8 +232,8 @@
                         <h5 class="mb-3">PPC Advertising</h5>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary w-50" href="#">Read More</a>
-                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                            <button class="btn btn-danger w-50"> <a  href="#">Read More</a></button>
+                            <button class="btn btn-danger w-50"> <a  href="#">Contact Us</a></button>
                         </div>
                     </div>
                 </div>
@@ -246,8 +246,8 @@
                         <h5 class="mb-3">App Development</h5>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary w-50" href="#">Read More</a>
-                            <a class="btn btn-outline-primary w-50" href="#">Contact Us</a>
+                            <button class="btn btn-danger w-50"> <a  href="#">Read More</a></button>
+                            <button class="btn btn-danger w-50"> <a  href="#">Contact Us</a></button>
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,6 @@
     </div>
 </div>
 <!-- Projects End -->
-
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">

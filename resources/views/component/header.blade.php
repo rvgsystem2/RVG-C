@@ -25,6 +25,6 @@
             </div> --}}
             <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="#" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block ">Get Started</a>
+        <button href="#" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block ">Get Started</button>
     </div>
 </nav>
