@@ -37,5 +37,12 @@ class HomeController extends Controller
         return view('front.project');
     }
 
-    
+    public function blog(){
+        return view('front.blog');
+    }
+
+    public function blogdetail(){
+        return view('front.blogdetail');
+    }
+
 }
