@@ -36,6 +36,7 @@ Route::get('/404', [HomeController::class, 'notFound'])->name('404');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blogdetail', [HomeController::class, 'blogdetail'])->name('blogdetail');
+Route::get('/servicedetail', [HomeController::class, 'servicedetail'])->name('servicedetail');
 
 
 

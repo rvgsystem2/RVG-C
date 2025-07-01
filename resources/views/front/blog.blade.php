@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+
                 <li class="breadcrumb-item" aria-current="page">Blog</li>
             </ol>
         </nav>
@@ -18,7 +18,7 @@
 
 
 <!-- Fact Start -->
-<div class="container-fluid bg-secondary py-5">
+<div class="container-fluid bg-dark py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
@@ -63,10 +63,10 @@
                     <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
                     <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
                     <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                        <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                        <div class="blog-icon btn btn-dark px-3 rounded-pill my-auto">
                             <a href="" class="btn text-white">Read More</a>
                         </div>
-                        <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                        <div class="blog-btn-icon btn btn-dark px-4 py-2 rounded-pill d-flex align-items-center gap-3">
                             <!-- Arrow Icon -->
                             {{-- <div class="blog-icon-1">
                                 <i class="fa fa-arrow-right text-white"></i>
@@ -84,7 +84,7 @@
                     <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
                         <img src="{{asset('front-asset/img/team-1.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
                         <h5 class="">By Daniel Martin</h5>
-                        <span class="text-secondary">24 March 2023</span>
+                        <span class="text-dark">24 March 2023</span>
                         <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
                     </div>
                     <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
@@ -98,10 +98,10 @@
                     <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
                     <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Development</span>
                     <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                        <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                        <div class="blog-icon btn btn-dark px-3 rounded-pill my-auto">
                             <a href="" class="btn text-white ">Read More</a>
                         </div>
-                        <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                        <div class="blog-btn-icon btn btn-dark px-4 py-2 rounded-pill d-flex align-items-center gap-3">
                             <!-- Arrow Icon -->
                             {{-- <div class="blog-icon-1">
                                 <i class="fa fa-arrow-right text-white"></i>
@@ -119,7 +119,7 @@
                     <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
                         <img src="{{asset('front-asset/img/team-2.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
                         <h5 class="">By Daniel Martin</h5>
-                        <span class="text-secondary">23 April 2023</span>
+                        <span class="text-dark">23 April 2023</span>
                         <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
                     </div>
                     <div class="blog-coment d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">
@@ -133,10 +133,10 @@
                     <img src="{{asset('asset/img/image1.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
                     <span class="position-absolute px-4 py-3 custom-color text-white rounded" style="top: -28px; right: 20px;">Mobile App</span>
                     <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
-                        <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                        <div class="blog-icon btn btn-dark px-3 rounded-pill my-auto">
                             <a href="" class="btn text-white ">Read More</a>
                         </div>
-                        <div class="blog-btn-icon btn btn-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-3">
+                        <div class="blog-btn-icon btn btn-dark px-4 py-2 rounded-pill d-flex align-items-center gap-3">
                             <!-- Arrow Icon -->
                             {{-- <div class="blog-icon-1">
                                 <i class="fa fa-arrow-right text-white"></i>
@@ -154,7 +154,7 @@
                     <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
                         <img src="{{asset('front-asset/img/team-3.jpg')}}" class="img-fluid-team rounded-circle border border-4 border-white mb-3" alt="">
                         <h5 class="">By Daniel Martin</h5>
-                        <span class="text-secondary">30 jan 2023</span>
+                        <span class="text-dark">30 jan 2023</span>
                         <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
                     </div>
                     <div class="blog-coments d-flex justify-content-between px-4 py-2 border custom-color rounded-bottom">

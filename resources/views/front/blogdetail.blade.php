@@ -1,7 +1,23 @@
 @extends('component.main')
 @section('content')
 
-<section class="py-5 bg-white">
+ <!-- Page Header Start -->
+ <div class="container-fluid custom-color py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Blog-detail</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                <li class="breadcrumb-item" aria-current="page">Blog-detail</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<section class=" py-5 bg-white">
     <div class="container mt-5">
         <div class="row gy-5">
             <!-- Left: Main Blog Content (70%) -->
@@ -27,7 +43,7 @@
                 <p class="mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur sem sed dui cursus, non luctus dolor pharetra.
                 </p>
-                <blockquote class="blockquote border-start border-4 border-primary ps-3 py-2 mb-4">
+                <blockquote class="blockquote border-start border-4 border-dark ps-3 py-2 mb-4">
                     <p class="mb-0 fst-italic">"Design is not just what it looks like and feels like. Design is how it works." – Steve Jobs</p>
                 </blockquote>
                 <p class="mb-4">
@@ -90,9 +106,9 @@
                 <div class="p-4 bg-white rounded shadow-sm">
                     <h5 class="fw-bold mb-3">Important Links</h5>
                     <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-outline-primary ">Join Our Newsletter</a>
-                        <a href="#" class="btn btn-outline-success">Submit Your Blog</a>
-                        <a href="#" class="btn btn-outline-dark">Contact Support</a>
+                        <p href="#" class="btn btn-imp">Join Our Newsletter</p>
+                        <p href="#" class="btn btn-imp">Submit Your Blog</p>
+                        <p href="#" class="btn btn-imp">Contact Support</p>
                     </div>
                 </div>
             </div>

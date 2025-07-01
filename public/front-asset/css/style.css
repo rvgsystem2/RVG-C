@@ -37,6 +37,9 @@
     opacity: 1;
 }
 
+.btn-imp{
+    color: black;
+}
 .back-to-top {
     position: fixed;
     display: none;
@@ -216,7 +219,7 @@ h6,
 
     .navbar-light .btn {
         color: var(--light);
-        background: #FFFFFF;
+        background: #000000;
     }
 
     .sticky-top.navbar-light .btn {
@@ -464,7 +467,7 @@ h6,
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(204, 34, 34, 0.9);
+    background: rgba(71, 69, 69, 0.9);
     transition: .5s;
     opacity: 0;
 }
