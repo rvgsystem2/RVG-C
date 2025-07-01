@@ -5,7 +5,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceDetailsController;
@@ -115,6 +115,15 @@ Route::prefix('service-detail')->group(function () {
     Route::post('/update/{id}', [ServiceDetailsController::class, 'update'])->name('service-detail.update');
     Route::get('/delete/{id}', [ServiceDetailsController::class, 'destroy'])->name('service-detail.delete');
 });
+
+
+
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
+Route::post('/projects/update/{id}', [ProjectController::class, 'update'])->name('projects.update');
+Route::post('/projects/delete/{id}', [ProjectController::class, 'delete'])->name('projects.delete');
+
 
 });
 
