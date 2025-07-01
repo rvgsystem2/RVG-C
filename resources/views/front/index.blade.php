@@ -257,117 +257,70 @@
 
     <!-- Service End -->
 
-    <!-- Projects Start -->
-    <div class="container-flued py-5">
-        <div class="container py-5 px-lg-5">
-            <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title  justify-content-center"><span></span>Our Projects<span></span></p>
-                <h1 class="text-center mb-5">Recently Completed Projects</h1>
-            </div>
-            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">Web Design</li>
-                        <li class="mx-2" data-filter=".second">Graphic Design</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-1.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-2.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-2.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-3.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-3.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-4.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front-asset/img/portfolio-4.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-5.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-5.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('front-asset/img/portfolio-6.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-dark mx-1" href="{{asset('front-asset/img/portfolio-6.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-dark mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-custom p-4">
-                            <p class="text-danger fw-medium mb-2">UI / UX Design</p>
-                            <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                        </div>
-                    </div>
-                </div>
+<!-- Projects Start -->
+<div class="container-flued py-5">
+    <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <p class="section-title justify-content-center"><span></span>Our Projects<span></span></p>
+            <h1 class="text-center mb-5">Recently Completed Projects</h1>
+        </div>
+
+        <!-- Dynamic Filter Buttons -->
+        <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-12 text-center">
+                <ul class="list-inline mb-5" id="portfolio-flters">
+                    <li class="mx-2 active" data-filter="*">All</li>
+                    @foreach($categories as $category)
+                        <li class="mx-2" data-filter=".{{ Str::slug($category) }}">{{ $category }}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
+
+        <!-- Dynamic Projects -->
+        <div class="row g-4 portfolio-container">
+            @foreach ($projects as $project)
+                @php
+                    $images = json_decode($project->project_images, true) ?? [];
+                    $firstImage = $images[0] ?? $project->thumb_image;
+                @endphp
+                <div class="col-lg-4 col-md-6 portfolio-item {{ Str::slug($project->project_category_name) }} wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="{{ asset('storage/' . $firstImage) }}" alt="{{ $project->title }}">
+                            <div class="portfolio-overlay">
+    @if(count($images))
+        <!-- First visible button to open lightbox -->
+        <a class="btn btn-square btn-outline-light mx-1" href="{{ asset('storage/' . $images[0]) }}" data-lightbox="portfolio-{{ $project->id }}">
+            <i class="fa fa-eye"></i>
+        </a>
+
+        <!-- Hidden links for rest of the images (for lightbox group) -->
+        @foreach ($images as $index => $img)
+            @if($index > 0)
+                <a href="{{ asset('storage/' . $img) }}" data-lightbox="portfolio-{{ $project->id }}" class="d-none"></a>
+            @endif
+        @endforeach
+    @endif
+
+    @if($project->project_url)
+        <a class="btn btn-square btn-outline-light mx-1" href="{{ $project->project_url }}"><i class="fa fa-link"></i></a>
+    @endif
+</div>
+
+                        </div>
+                        <div class="bg-custom p-4">
+                            <p class="text-danger fw-medium mb-2">{{ $project->project_category_name }}</p>
+                            <h5 class="lh-base mb-0">{{ $project->title }}</h5>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-    <!-- Projects End -->
+</div>
+<!-- Projects End -->
+
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">
@@ -487,5 +440,25 @@
 </div>
 
 
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var portfolioIsotope = document.querySelector('.portfolio-container');
+        if (portfolioIsotope) {
+            var iso = new Isotope(portfolioIsotope, {
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            document.querySelectorAll('#portfolio-flters li').forEach(function (filterEl) {
+                filterEl.addEventListener('click', function () {
+                    document.querySelectorAll('#portfolio-flters li').forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+                    iso.arrange({ filter: this.getAttribute('data-filter') });
+                });
+            });
+        }
+    });
+</script>
 
 @endsection

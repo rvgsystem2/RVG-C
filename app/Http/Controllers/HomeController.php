@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('front.index');
-    }
+   public function index()
+{
+    $projects = \App\Models\Project::latest()->get();
+
+    // Extract unique categories for filters
+    $categories = $projects->pluck('project_category_name')->unique();
+
+    return view('front.index', compact('projects', 'categories'));
+}
 
     public function about(){
         return view('front.about');
