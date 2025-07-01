@@ -12,6 +12,14 @@
     background: linear-gradient(135deg, #ab0303, #0a0101);
 }
 
+.logo{
+    background: #FFFFFF;
+    width: 100px;
+    height: 100px;
+    border-radius: 75%;
+    padding: 2px;
+}
+
 .btn-custom {
     background: var(--custom);
     color: white;

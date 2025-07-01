@@ -51,7 +51,11 @@ public function servicedetail($slug)
         return view('front.404');
     }
     public function project(){
-        return view('front.project');
+        $projects = \App\Models\Project::latest()->get();
+
+    // Extract unique categories for filters
+    $categories = $projects->pluck('project_category_name')->unique();
+        return view('front.project' , compact('projects', 'categories'));
     }
 
     public function blog(){

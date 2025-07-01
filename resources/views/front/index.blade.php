@@ -2,9 +2,9 @@
 @section('content')
 
 
-    <div class="container-flued bg-white p-0">
-        <!-- Spinner Start -->
-        {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<div class="container-flued bg-white p-0">
+    <!-- Spinner Start -->
+    {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -172,8 +172,8 @@
         <!-- Feature End -->
 
 
-        <!-- Service Start -->
-        <div class="container-fluid py-5">
+    <!-- Service Start -->
+       <div class="container-fluid py-5">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp text-center mb-5" data-wow-delay="0.1s">
                     <p class="section-title justify-content-center"><span></span>Our Services<span></span></p>
@@ -285,65 +285,53 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
 
-                    <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+                <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item bg-custom rounded p-4">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-1.jpg')}}" style="width: 65px; height: 65px;">
+                        <div class="ps-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-custom rounded p-4">
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                src="{{ asset('front-asset/img/testimonial-1.jpg') }}"
-                                style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
+                <div class="testimonial-item bg-custom rounded p-4">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-2.jpg')}}" style="width: 65px; height: 65px;">
+                        <div class="ps-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <span>Profession</span>
                         </div>
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <div class="testimonial-item bg-custom rounded p-4">
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                src="{{ asset('front-asset/img/testimonial-2.jpg') }}"
-                                style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-custom rounded p-4">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-3.jpg')}}" style="width: 65px; height: 65px;">
+                        <div class="ps-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <span>Profession</span>
                         </div>
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <div class="testimonial-item bg-custom rounded p-4">
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                src="{{ asset('front-asset/img/testimonial-3.jpg') }}"
-                                style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-custom rounded p-4">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-4.jpg')}}" style="width: 65px; height: 65px;">
+                        <div class="ps-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <span>Profession</span>
                         </div>
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <div class="testimonial-item bg-custom rounded p-4">
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                src="{{ asset('front-asset/img/testimonial-4.jpg') }}"
-                                style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+    </div>
+    <!-- Testimonial End -->
 
 
         <!-- Team Start -->
@@ -420,18 +408,15 @@
                     layoutMode: 'fitRows'
                 });
 
-                document.querySelectorAll('#portfolio-flters li').forEach(function(filterEl) {
-                    filterEl.addEventListener('click', function() {
-                        document.querySelectorAll('#portfolio-flters li').forEach(el => el.classList
-                            .remove('active'));
-                        this.classList.add('active');
-                        iso.arrange({
-                            filter: this.getAttribute('data-filter')
-                        });
-                    });
+            document.querySelectorAll('#portfolio-flters li').forEach(function (filterEl) {
+                filterEl.addEventListener('click', function () {
+                    document.querySelectorAll('#portfolio-flters li').forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+                    iso.arrange({ filter: this.getAttribute('data-filter') });
                 });
-            }
-        });
-    </script>
+            });
+        }
+    });
+</script>
 
 @endsection

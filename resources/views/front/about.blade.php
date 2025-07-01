@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Page Header -->
-<div class="container-fluid bg-danger py-5">
+<div class="container-fluid custom-color py-5">
     <div class="container text-center py-5">
         <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
         <nav aria-label="breadcrumb" class="animated slideInDown">
@@ -72,7 +72,7 @@
 </section>
 
 <!-- Facts -->
-<section class="bg-danger py-5 text-white">
+<section class="custom-color py-5 text-white">
     <div class="container">
         <div class="row text-center g-4">
             <div class="col-md-3">
@@ -95,34 +95,63 @@
     </div>
 </section>
 
-<!-- Team Section -->
-<section class="py-5">
-    <div class="container text-center">
-        <h2 class="text-danger mb-4">Meet Our Experts</h2>
-        <div class="row g-4">
-            @foreach ([
-                ['name' => 'John Doe', 'role' => 'CEO & Founder', 'img' => 'img/team-1.jpg'],
-                ['name' => 'Jessica Brown', 'role' => 'Web Designer', 'img' => 'img/team-2.jpg'],
-                ['name' => 'Tony Johnson', 'role' => 'SEO Expert', 'img' => 'img/team-3.jpg']
-            ] as $member)
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-light rounded shadow-sm">
-                        <div class="p-4 text-center border-bottom">
-                            <img src="{{ $member['img'] }}" class="img-fluid rounded-circle mb-3" width="100" height="100" alt="{{ $member['name'] }}">
-                            <h5 class="fw-bold">{{ $member['name'] }}</h5>
-                            <p class="mb-0 text-muted">{{ $member['role'] }}</p>
+
+    <!-- Team Start -->
+    <div class="container-flued py-5">
+        <div class="container py-5 px-lg-5">
+            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                <p class="section-title text-dark justify-content-center"><span></span>Our Team<span></span></p>
+                <h1 class="text-center mb-5">Our Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-custom rounded">
+                        <div class="text-center border-bottom p-4">
+                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-1.jpg')}}" alt="">
+                            <h5>John Doe</h5>
+                            <span>CEO & Founder</span>
                         </div>
-                        <div class="d-flex justify-content-center py-3">
-                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <div class="d-flex justify-content-center p-4">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-custom rounded">
+                        <div class="text-center border-bottom p-4">
+                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-2.jpg')}}" alt="">
+                            <h5>Jessica Brown</h5>
+                            <span>Web Designer</span>
+                        </div>
+                        <div class="d-flex justify-content-center p-4">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-custom rounded">
+                        <div class="text-center border-bottom p-4">
+                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-3.jpg')}}" alt="">
+                            <h5>Tony Johnson</h5>
+                            <span>SEO Expert</span>
+                        </div>
+                        <div class="d-flex justify-content-center p-4">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+    <!-- Team End -->
 
 @endsection
