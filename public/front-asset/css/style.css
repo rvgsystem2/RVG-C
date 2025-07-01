@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
     --primary: #6222CC;
-    --secondary: #FBA504;
+    --secondary: #333333;
     --light: #f9f4f4;
     --dark: #04000B;
     --custom: linear-gradient(135deg, #ab0303, #0a0101);
@@ -365,11 +365,11 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover {
+/* .service-item:hover {
     margin-top: -15px;
     padding-bottom: 60px;
     background: var(--custom);
-}
+} */
 
 .service-item .service-icon {
     margin: 0 auto 20px auto;
@@ -386,21 +386,21 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover .service-icon {
+/* .service-item:hover .service-icon {
     color: var(--dark);
     background: url(../img/blob-secondary.png) center center no-repeat;
     background-size: contain;
-}
+} */
 
 .service-item h5,
 .service-item p {
     transition: .5s;
 }
 
-.service-item:hover h5,
+/* .service-item:hover h5,
 .service-item:hover p {
     color: #FFFFFF;
-}
+} */
 
 .service-item a.btn {
     position: relative; /* Remove absolute */
