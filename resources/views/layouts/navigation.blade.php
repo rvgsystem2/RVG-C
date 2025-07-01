@@ -12,7 +12,8 @@
                 </div>
 
                 <!-- Navigation -->
-                <div class="hidden sm:flex sm:items-center sm:ms-10 text-sm font-medium text-gray-700 space-x-6" x-data="{ open: false }">
+                <div class="hidden sm:flex sm:items-center sm:ms-10 text-sm font-medium text-gray-700 space-x-6"
+                    x-data="{ open: false }">
 
                     <!-- Dashboard (Outside Dropdown) -->
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -21,7 +22,8 @@
 
                     <!-- Dropdown for Roles, Permissions, Users -->
                     <div class="relative">
-                        <button @click="open = !open" class="flex items-center space-x-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">
+                        <button @click="open = !open"
+                            class="flex items-center space-x-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">
                             <i class="fas fa-users-cog text-gray-600"></i>
                             <span>Admin Tools</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,59 +36,72 @@
                             class="absolute z-50 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
 
                             @can('view permission')
-                            <x-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')" class="block px-4 py-2 text-left">
-                                <i class="fas fa-key mr-1"></i> Permissions
-                            </x-nav-link>
+                                <x-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-key mr-1"></i> Permissions
+                                </x-nav-link>
                             @endcan
 
                             @can('view roles')
-                            <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')" class="block px-4 py-2 text-left">
-                                <i class="fas fa-user-shield mr-1"></i> Roles
-                            </x-nav-link>
+                                <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-user-shield mr-1"></i> Roles
+                                </x-nav-link>
                             @endcan
 
                             @can('view users')
-                            <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')" class="block px-4 py-2 text-left">
-                                <i class="fas fa-users mr-1"></i> Users
-                            </x-nav-link>
+                                <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-users mr-1"></i> Users
+                                </x-nav-link>
                             @endcan
 
                         </div>
                     </div>
 
-                    <!-- Banners -->
+                   <!-- Dropdown for Site Content -->
+<div x-data="{ open: false }" class="relative">
+    <button @click="open = !open"
+        class="flex items-center space-x-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">
+        <i class="fas fa-tools text-gray-600"></i>
+        <span>Site Content</span>
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
 
-                    @can('view banners')
-                        <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
-                            <i class="fas fa-image mr-1"></i> Banners
-                        </x-nav-link>
-                    @endcan
+    <div x-show="open" @click.away="open = false" x-cloak
+        class="absolute z-50 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
 
-                   
-                    <!-- About Section -->
-                    @can('view about')
-                            <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')" class="block px-4 py-2 text-left">
-                                <i class="fas fa-info-circle mr-1"></i> About
-                            </x-nav-link>
-                    @endcan
+        @can('view banners')
+            <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-image mr-1"></i> Banners
+            </x-nav-link>
+        @endcan
 
-                    
-                    @can("view ServiceCategory")
+        @can('view about')
+            <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-info-circle mr-1"></i> About
+            </x-nav-link>
+        @endcan
 
-                       <x-nav-link :href="route('service-category.index')" :active="request()->routeIs('service-category.*')" class="block px-4 py-2 text-left">
-                           <i class="fas fa-th-list mr-1"></i> Service Categories
-                       </x-nav-link>
+        @can('view ServiceCategory')
+            <x-nav-link :href="route('service-category.index')" :active="request()->routeIs('service-category.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-th-list mr-1"></i> Service Categories
+            </x-nav-link>
+        @endcan
 
-                    @endcan
+        @can('view serviceDetails')
+            <x-nav-link :href="route('service-detail.index')" :active="request()->routeIs('service-detail.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-concierge-bell mr-1"></i> Service Details
+            </x-nav-link>
+        @endcan
 
-                 
-                 @can("view serviceDetails")
+        @can('view projects')
+            <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-project-diagram mr-1"></i> Projects
+            </x-nav-link>
+        @endcan
 
-                   <x-nav-link :href="route('service-detail.index')" :active="request()->routeIs('service-detail.*')" class="block px-4 py-2 text-left">
-                       <i class="fas fa-concierge-bell mr-1"></i> Service Details
-                   </x-nav-link>
-
-                 @endcan
+    </div>
+</div>
 
 
                 </div>
@@ -100,7 +115,8 @@
                     <x-slot name="trigger">
                         <button
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-600 bg-white hover:text-gray-800 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }} ({{ Auth::user()->roles->pluck('name')->implode(', ') }})</div>
+                            <div>{{ Auth::user()->name }} ({{ Auth::user()->roles->pluck('name')->implode(', ') }})
+                            </div>
                             <div class="ms-1">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
@@ -137,9 +153,8 @@
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -154,21 +169,21 @@
             </x-responsive-nav-link>
 
             @can('view permission')
-            <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
-                <i class="fas fa-key mr-1"></i> Permissions
-            </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
+                    <i class="fas fa-key mr-1"></i> Permissions
+                </x-responsive-nav-link>
             @endcan
 
             @can('view roles')
-            <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
-                <i class="fas fa-user-shield mr-1"></i> Roles
-            </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
+                    <i class="fas fa-user-shield mr-1"></i> Roles
+                </x-responsive-nav-link>
             @endcan
 
             @can('view users')
-            <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                <i class="fas fa-users mr-1"></i> Users
-            </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                    <i class="fas fa-users mr-1"></i> Users
+                </x-responsive-nav-link>
             @endcan
 
 
