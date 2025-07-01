@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 
@@ -15,13 +15,33 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('front.index');
-});
-Route::get('/contact', function () {
-    return view('front.contact');
-});
+// Route::get('/', function () {
+//     return view('front.index');
+// });
+// Route::get('/contact', function () {
+//     return view('front.contact');
+// });
 
+
+// frontend routes
+Route::get('/', HomeController::class, 'index')->name('index');
+Route::get('/about', HomeController::class, 'about')->name('about');
+Route::get('service', HomeController::class, 'service')->name('service');
+Route::get('/team', HOmeController::class, 'team')->name('team');
+Route::get('/testimonial', HomeController::class, 'testimonial')->name('testimonial');
+Route::get('/contact', HomeController::class, 'contact')->name('contact');
+Route::get('/404', HomeController::class, 'notFound')->name('404');
+Route::get('/project', HomeController::class, 'project')->name('project');
+
+
+
+
+
+
+
+
+
+// DAshboard route
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth','verified'])->name('dashboard');
 
