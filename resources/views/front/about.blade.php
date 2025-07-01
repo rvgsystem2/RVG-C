@@ -1,190 +1,128 @@
 @extends('component.main')
 @section('content')
-<!-- Page Header Start -->
-<div class="container-fluid custom-color py-5">
-    <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4 animated slideInDown">About us</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
 
-                <li class="breadcrumb-item" aria-current="page">about-us</li>
+<!-- Page Header -->
+<div class="container-fluid bg-danger py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+        <nav aria-label="breadcrumb" class="animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
             </ol>
         </nav>
     </div>
 </div>
-<!-- Page Header End -->
 
-    <div class="container-fluid bg-white p-0">
-
-
-
-        <!-- Feature Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                            <h5 class="mb-3">Digital Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                            <h5 class="mb-3">SEO & Backlinks</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                            <h5 class="mb-3">Design & Development</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
+<!-- Features -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded shadow-sm h-100">
+                    <i class="fa fa-mail-bulk fa-3x text-danger mb-3"></i>
+                    <h5 class="fw-bold">Digital Marketing</h5>
+                    <p>Boost your brand visibility and drive traffic with our tailored digital marketing campaigns.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded shadow-sm h-100">
+                    <i class="fa fa-search fa-3x text-danger mb-3"></i>
+                    <h5 class="fw-bold">SEO & Backlinks</h5>
+                    <p>Rank higher on Google with strategic keyword targeting and authority-building backlinks.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded shadow-sm h-100">
+                    <i class="fa fa-laptop-code fa-3x text-danger mb-3"></i>
+                    <h5 class="fw-bold">Design & Development</h5>
+                    <p>We craft responsive and engaging websites that convert visitors into loyal customers.</p>
                 </div>
             </div>
         </div>
-        <!-- Feature End -->
-
-
-        <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="section-title text-secondary">About Us<span></span></p>
-                        <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
-                        <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat amet</p>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Digital Marketing</p>
-                                <p class="mb-2">85%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">SEO & Backlinks</p>
-                                <p class="mb-2">90%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Design & Development</p>
-                                <p class="mb-2">95%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-
-        <!-- Facts Start -->
-        <div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                        <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Years Experience</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                        <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Team Members</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                        <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Satisfied Clients</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                        <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Compleate Projects</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Facts End -->
-
-
-        <!-- Team Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
-                    <h1 class="text-center mb-5">Our Team Members</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-1.jpg" alt="">
-                                <h5>John Doe</h5>
-                                <span>CEO & Founder</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-2.jpg" alt="">
-                                <h5>Jessica Brown</h5>
-                                <span>Web Designer</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-3.jpg" alt="">
-                                <h5>Tony Johnson</h5>
-                                <span>SEO Expert</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-
     </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="text-danger mb-4">10+ Years of Excellence</h2>
+                <p class="mb-4">We are a team of digital enthusiasts delivering high-performing marketing and development services. From ideation to execution, we ensure your brand’s success online.</p>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>Digital Marketing</span><span>85%</span></div>
+                    <div class="progress"><div class="progress-bar bg-danger" style="width:85%"></div></div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>SEO & Backlinks</span><span>90%</span></div>
+                    <div class="progress"><div class="progress-bar bg-dark" style="width:90%"></div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between"><span>Design & Development</span><span>95%</span></div>
+                    <div class="progress"><div class="progress-bar bg-secondary" style="width:95%"></div></div>
+                </div>
+                <a href="#" class="btn btn-danger rounded-pill px-4 py-2">Read More</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="img/about.png" class="img-fluid rounded wow zoomIn" alt="About Us">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facts -->
+<section class="bg-danger py-5 text-white">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <i class="fa fa-certificate fa-2x mb-2"></i>
+                <h3>10+</h3><p>Years Experience</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-users-cog fa-2x mb-2"></i>
+                <h3>25</h3><p>Team Members</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-users fa-2x mb-2"></i>
+                <h3>500+</h3><p>Satisfied Clients</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-check fa-2x mb-2"></i>
+                <h3>850+</h3><p>Projects Completed</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="text-danger mb-4">Meet Our Experts</h2>
+        <div class="row g-4">
+            @foreach ([
+                ['name' => 'John Doe', 'role' => 'CEO & Founder', 'img' => 'img/team-1.jpg'],
+                ['name' => 'Jessica Brown', 'role' => 'Web Designer', 'img' => 'img/team-2.jpg'],
+                ['name' => 'Tony Johnson', 'role' => 'SEO Expert', 'img' => 'img/team-3.jpg']
+            ] as $member)
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-light rounded shadow-sm">
+                        <div class="p-4 text-center border-bottom">
+                            <img src="{{ $member['img'] }}" class="img-fluid rounded-circle mb-3" width="100" height="100" alt="{{ $member['name'] }}">
+                            <h5 class="fw-bold">{{ $member['name'] }}</h5>
+                            <p class="mb-0 text-muted">{{ $member['role'] }}</p>
+                        </div>
+                        <div class="d-flex justify-content-center py-3">
+                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-sm btn-outline-danger mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 
 @endsection

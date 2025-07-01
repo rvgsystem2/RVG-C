@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
     --primary: #6222CC;
-    --secondary: #333333;
+    --secondary: #544f4f;
     --light: #f9f4f4;
     --dark: #04000B;
     --custom: linear-gradient(135deg, #ab0303, #0a0101);
@@ -218,8 +218,8 @@ h6,
     }
 
     .navbar-light .btn {
-        color: var(--light);
-        background: #000000;
+        color: #090000;
+        background: var(--light);
     }
 
     .sticky-top.navbar-light .btn {
