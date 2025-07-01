@@ -35,6 +35,24 @@ class PermissionsTableSeeder extends Seeder
             'edit abouts',
             'delete abouts',
             'create abouts',
+            'view service categories',
+            'edit service categories',
+            'delete service categories',
+            'create service categories',
+            'view service details',
+            'edit service details',
+            'delete service details',
+            'create service details',
+            'view projects',
+            'edit projects',
+            'delete projects',
+            'create projects',  
+            'view testimonials',
+            'edit testimonials',
+            'delete testimonials',  
+            'create testimonials',
+
+            
         ];
 
         foreach ($permissions as $permission) {

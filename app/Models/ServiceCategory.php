@@ -9,7 +9,13 @@ class ServiceCategory extends Model
     //
     protected $guarded = ['id'];
 
-    public function ServiceDetails(){
-        return $this->hasMany(ServiceDetail::class);
+   public function serviceDetails()
+{
+    return $this->hasMany(ServiceDetail::class, 'category_id');
+}
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

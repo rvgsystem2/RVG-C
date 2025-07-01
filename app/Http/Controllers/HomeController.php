@@ -2,19 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\ServiceCategory;
+use App\Models\ServiceDetail;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-   public function index()
+public function index()
 {
-    $projects = \App\Models\Project::latest()->get();
-
-    // Extract unique categories for filters
+    $projects = Project::latest()->get();
     $categories = $projects->pluck('project_category_name')->unique();
 
-    return view('front.index', compact('projects', 'categories'));
+    $serviceCategories = ServiceCategory::with('serviceDetails')->get();
+
+    return view('front.index', compact('projects', 'categories', 'serviceCategories'));
 }
+
+
+public function servicedetail($slug)
+{
+    $service = ServiceCategory::with('serviceDetails')->where('slug', $slug)->firstOrFail();
+    return view('front.servicedetail', compact('service'));
+}
+
 
     public function about(){
         return view('front.about');
@@ -52,7 +63,6 @@ class HomeController extends Controller
     }
 
 
-    public function servicedetail(){
-        return view('front.servicedeatail');
-    }
+
+
 }

@@ -10,8 +10,8 @@ class ServiceDetail extends Model
     protected $guarded = ['id'];
 
 
-     public function category()
+    public function category()
     {
-        return $this->belongsTo(ServiceCategory::class);
+        return $this->belongsTo(ServiceCategory::class, 'category_id');
     }
 }
