@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Banner extends Model
+class About extends Model
 {
-    protected $guarded = ['id'];
+    //
 
-    
+    protected $guarded = ['id'];
 }

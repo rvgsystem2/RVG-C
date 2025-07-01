@@ -27,10 +27,14 @@ class PermissionsTableSeeder extends Seeder
             'delete permission',
             'create permission',
             'assign permissions user',
-           
-           
-        
-
+            'view banners',
+            'edit banners',
+            'delete banners',
+            'create banners',
+            'view abouts',
+            'edit abouts',
+            'delete abouts',
+            'create abouts',
         ];
 
         foreach ($permissions as $permission) {

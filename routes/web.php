@@ -7,7 +7,8 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\RoleController;
-
+use App\Http\Controllers\ServiceCategoryController;
+use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Response;
@@ -91,8 +92,27 @@ Route::middleware('auth')->group(function () {
     Route::get('banner/delete/{banner}',[BannerController::class,'delete'])->name('banner.delete');
 
 
+    // About Routes
+    Route::get('about/index', [App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
+    Route::get('about/create', [App\Http\Controllers\AboutController::class, 'create'])->name('about.create');
+    Route::post('about/store', [App\Http\Controllers\AboutController::class, 'store'])->name('about.store');
+    Route::post('about/update/{about}', [App\Http\Controllers\AboutController::class, 'update'])->name('about.update');
+    Route::get('about/delete/{about}', [App\Http\Controllers\AboutController::class, 'delete'])->name('about.delete');
+
+    Route::prefix('service-category')->group(function () {
+    Route::get('/', [ServiceCategoryController::class, 'index'])->name('service-category.index');
+    Route::post('/store', [ServiceCategoryController::class, 'store'])->name('service-category.store');
+    Route::post('/update/{id}', [ServiceCategoryController::class, 'update'])->name('service-category.update');
+    Route::get('/delete/{id}', [ServiceCategoryController::class, 'destroy'])->name('service-category.delete');
+});
 
 
+Route::prefix('service-detail')->group(function () {
+    Route::get('/', [ServiceDetailsController::class, 'index'])->name('service-detail.index');
+    Route::post('/store', [ServiceDetailsController::class, 'store'])->name('service-detail.store');
+    Route::post('/update/{id}', [ServiceDetailsController::class, 'update'])->name('service-detail.update');
+    Route::get('/delete/{id}', [ServiceDetailsController::class, 'destroy'])->name('service-detail.delete');
+});
 
 });
 

@@ -53,6 +53,42 @@
 
                         </div>
                     </div>
+
+                    <!-- Banners -->
+
+                    @can('view banners')
+                        <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
+                            <i class="fas fa-image mr-1"></i> Banners
+                        </x-nav-link>
+                    @endcan
+
+                   
+                    <!-- About Section -->
+                    @can('view about')
+                            <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')" class="block px-4 py-2 text-left">
+                                <i class="fas fa-info-circle mr-1"></i> About
+                            </x-nav-link>
+                    @endcan
+
+                    
+                    @can("view ServiceCategory")
+
+                       <x-nav-link :href="route('service-category.index')" :active="request()->routeIs('service-category.*')" class="block px-4 py-2 text-left">
+                           <i class="fas fa-th-list mr-1"></i> Service Categories
+                       </x-nav-link>
+
+                    @endcan
+
+                 
+                 @can("view serviceDetails")
+
+                   <x-nav-link :href="route('service-detail.index')" :active="request()->routeIs('service-detail.*')" class="block px-4 py-2 text-left">
+                       <i class="fas fa-concierge-bell mr-1"></i> Service Details
+                   </x-nav-link>
+
+                 @endcan
+
+
                 </div>
             </div>
 
