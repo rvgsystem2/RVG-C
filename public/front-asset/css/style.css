@@ -5,7 +5,7 @@
     --light: #F6F4F9;
     --dark: #04000B;
     --custom: linear-gradient(135deg, #ab0303, #0a0101);
-
+    
 }
 
 .custom-color {
@@ -102,16 +102,6 @@ h6,
     border-radius: 50px;
 }
 
-.logo{
-    height: 90px;
-    width: 90px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: #F6F4F9;
-    padding: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
 
 /*** Navbar ***/
 .navbar .dropdown-toggle::after {
@@ -122,7 +112,6 @@ h6,
     font-weight: bold;
     vertical-align: middle;
     margin-left: 8px;
-
 
 }
 
