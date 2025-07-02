@@ -65,7 +65,7 @@
                 <a href="#" class="btn btn-danger rounded-pill px-4 py-2">Read More</a>
             </div>
             <div class="col-lg-6">
-                <img src="img/about.png" class="img-fluid rounded wow zoomIn" alt="About Us">
+                <img src="{{asset('front-asset/img/about.png')}}" class="img-fluid rounded wow zoomIn" alt="About Us">
             </div>
         </div>
     </div>
