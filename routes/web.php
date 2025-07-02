@@ -39,7 +39,7 @@ Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blogdetail', [HomeController::class, 'blogdetail'])->name('blogdetail');
 Route::get('/service/{slug}', [HomeController::class, 'servicedetail'])->name('servicedetail');
-
+Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 
 
 

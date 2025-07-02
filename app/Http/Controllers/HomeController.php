@@ -27,7 +27,7 @@ public function index()
 public function servicedetail($slug)
 {
     $service = ServiceCategory::with('serviceDetails')->where('slug', $slug)->firstOrFail();
-   
+
     return view('front.servicedetail', compact('service'));
 }
 
@@ -76,6 +76,9 @@ public function servicedetail($slug)
     }
 
 
+    public function privacy(){
+        return view('front.privacy');
+    }
 
 
 }
