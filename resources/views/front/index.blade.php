@@ -100,7 +100,7 @@
         <!-- Facts End -->
 
 
-        <!-- Feature Start -->
+        <!-- PRODUCT Start -->
   @include('front.product')
         <!-- Feature End -->
 
