@@ -25,6 +25,66 @@
     <link href="{{asset('front-asset/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('front-asset/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
+ 
+<!-- Your custom style -->
+<style>
+    .testimonial-item {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .testimonial-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .transition-scale {
+    transition: transform 0.3s ease-in-out;
+}
+.transition-scale:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+    .transition-scale {
+    transition: transform 0.4s ease-in-out;
+}
+.transition-scale:hover {
+    transform: scale(1.05);
+}
+
+.product-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+#portfolio-flters button {
+    transition: 0.3s;
+    border-radius: 50px;
+    padding: 6px 18px;
+}
+
+#portfolio-flters button.active,
+#portfolio-flters button:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+</style>
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('front-asset/css/bootstrap.min.css')}}" rel="stylesheet">
 
