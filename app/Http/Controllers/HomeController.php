@@ -32,7 +32,8 @@ public function servicedetail($slug)
     }
 
     public function service(){
-        return view('front.service');
+        $serviceCategories = ServiceCategory::with('serviceDetails')->get();
+        return view('front.service' , compact('serviceCategories'));
     }
 
     public function team(){
