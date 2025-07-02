@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Product;
 use App\Models\Project;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
+use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use PHPUnit\Event\Code\Test;
 
 class HomeController extends Controller
 {
@@ -21,7 +25,9 @@ public function index()
     // dd($serviceCategories);
    $abouts=About::where('status', 'active')->get();
    $banners =Banner::where('status', 'active')->get();
-    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners'));
+   $products = Product::where('status', 'active')->get();
+   $testimonials = Testimonial::where('status', 'active')->get();
+    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners', 'products', 'testimonials'));
 }
 
 
@@ -35,7 +41,9 @@ public function servicedetail($slug)
 
     public function about(){
          $abouts=About::where('status', 'active')->get();
-        return view('front.about', compact('abouts'));
+          $products = Product::where('status', 'active')->get();
+          $teams=Team::where('status', 'active')->get();
+        return view('front.about', compact('abouts', 'products','teams'));
     }
 
     public function service(){

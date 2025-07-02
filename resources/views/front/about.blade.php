@@ -38,7 +38,7 @@
 
 
 
-                        <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
+                        {{-- <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> --}}
                     </div>
 
                 </div>
@@ -77,64 +77,67 @@
 
     <!-- Facts End -->
 
-    <!-- Team Start -->
-    <div class="container-flued py-5">
-        <div class="container py-5 px-lg-5">
-            <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-dark justify-content-center"><span></span>Our Team<span></span></p>
-                <h1 class="text-center mb-5">Our Team Members</h1>
-            </div>
-            <div class="row g-4">
+   <!-- Team Start -->
+<div class="container-fluid py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            {{-- <p class="section-title text-dark"><span></span>Our Team<span></span></p> --}}
+            <h1 class="display-6">Meet Our Experts</h1>
+            <p class="text-muted">Our dedicated team members who turn vision into reality.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            @forelse ($teams as $team)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{ asset('front-asset/img/team-1.jpg') }}"
-                                alt="">
-                            <h5>John Doe</h5>
-                            <span>CEO & Founder</span>
+                    <div class="team-item bg-white rounded shadow text-center h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-circle border border-4 border-white shadow mt-4"
+                                 src="{{ asset('storage/' . ($team->image ?? 'front-asset/img/team-1.jpg')) }}"
+                                 alt="{{ $team->name }}"
+                                 style="width: 120px; height: 120px; object-fit: cover;">
                         </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <div class="p-4">
+                            <h5 class="mb-1">{{ $team->name }}</h5>
+                            <p class="text-muted small mb-2">{{ $team->designation }}</p>
+                            @if ($team->company)
+                                <p class="text-muted small fst-italic">{{ $team->company }}</p>
+                            @endif
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{ asset('front-asset/img/team-2.jpg') }}"
-                                alt="">
-                            <h5>Jessica Brown</h5>
-                            <span>Web Designer</span>
-                        </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{ asset('front-asset/img/team-3.jpg') }}"
-                                alt="">
-                            <h5>Tony Johnson</h5>
-                            <span>SEO Expert</span>
-                        </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <div class="d-flex justify-content-center mb-4 mt-auto">
+                            @if ($team->facebook)
+                                <a href="{{ $team->facebook }}" class="btn btn-sm btn-outline-primary rounded-circle mx-1" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            @endif
+                            @if ($team->linkedin)
+                                <a href="{{ $team->linkedin }}" class="btn btn-sm btn-outline-info rounded-circle mx-1" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            @endif
+                            @if ($team->instagram)
+                                <a href="{{ $team->instagram }}" class="btn btn-sm btn-outline-danger rounded-circle mx-1" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            @endif
+                            @if ($team->github)
+                                <a href="{{ $team->github }}" class="btn btn-sm btn-outline-dark rounded-circle mx-1" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            @endif
+                            @if ($team->whatsapp)
+                                <a href="https://wa.me/+91{{ $team->whatsapp }}" class="btn btn-sm btn-outline-success rounded-circle mx-1" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
-            </div>
+            @empty
+                <p class="text-muted text-center">No team members available.</p>
+            @endforelse
         </div>
     </div>
-    <!-- Team End -->
+</div>
+<!-- Team End -->
+
 @endsection
