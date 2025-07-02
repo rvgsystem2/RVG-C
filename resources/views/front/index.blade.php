@@ -3,7 +3,7 @@
 
 
     <div class="container-flued bg-white p-0">
-    
+
 
 
         <!-- Navbar & Hero Start -->
@@ -54,7 +54,7 @@
                         <h1 class="mb-5">{{ $about->subtitle }}</h1>
                         <p class="mb-4">{!! $about->description !!}</p>
 
-                      
+
 
                         <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
                     </div>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             @empty
-                
+
             @endforelse
         </div>
 
@@ -100,37 +100,8 @@
         <!-- Facts End -->
 
 
-        <!-- Feature Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="feature-item bg-custom rounded text-center p-4">
-                            <i class="fa fa-3x fa-mail-bulk text-danger mb-4"></i>
-                            <h5 class="mb-3">Digital Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="feature-item bg-custom rounded text-center p-4">
-                            <i class="fa fa-3x fa-search text-danger mb-4"></i>
-                            <h5 class="mb-3">SEO & Backlinks</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="feature-item bg-custom rounded text-center p-4">
-                            <i class="fa fa-3x fa-laptop-code text-danger mb-4"></i>
-                            <h5 class="mb-3">Design & Development</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- PRODUCT Start -->
+  @include('front.product')
         <!-- Feature End -->
 
 
