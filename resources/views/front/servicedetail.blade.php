@@ -65,11 +65,11 @@
                 </div>
 
                 <!-- Quick Contact -->
-                <div class="p-4 bg-white rounded shadow-sm">
+                <div class="p-4 bg-success rounded shadow-sm">
                     <h5 class="fw-bold mb-3">Need Help?</h5>
-                    <p class="mb-3">Get in touch with our experts to find out how we can boost your digital presence.</p>
-                    <a href="{{ url('/contact') }}" class="btn btn-imp w-100 mb-2">Request a Call Back</a>
-                    <a href="mailto:info@yourdomain.com" class="btn btn-imp w-100">Email Us</a>
+                    <p class="mb-3 text-white">Get in touch with our experts to find out how we can boost your digital presence.</p>
+                    <a href="tel:+917753800444" class="btn btn-custom w-100 mb-2">Request a Call Back</a>
+                    <a href="mailto:realvictorygroups@gmail.com" class="btn btn-custom w-100">Email Us</a>
                 </div>
             </div>
         </div>
