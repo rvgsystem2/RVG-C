@@ -100,6 +100,19 @@
             </x-nav-link>
         @endcan
 
+        @can('view testimonials')
+            <x-nav-link :href="route('testimonials.index')" :active="request()->routeIs('testimonials.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-comments mr-1"></i> Testimonials
+            </x-nav-link>
+        @endcan
+
+        @can('view teams')
+            <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-users mr-1"></i> Teams
+            </x-nav-link>
+
+        @endcan
+
     </div>
 </div>
 
