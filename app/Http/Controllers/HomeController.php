@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\Project;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
@@ -18,7 +19,8 @@ public function index()
     $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
     // dd($serviceCategories);
    $abouts=About::where('status', 'active')->get();
-    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts'));
+   $banners =Banner::where('status', 'active')->get();
+    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners'));
 }
 
 
