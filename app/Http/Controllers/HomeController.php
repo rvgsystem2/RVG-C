@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Project;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
@@ -67,13 +68,18 @@ public function servicedetail($slug)
         return view('front.project' , compact('projects', 'categories'));
     }
 
-    public function blogs(){
-        return view('front.blogs');
-    }
+public function blog()
+{
+    $blogs = Blog::with('category')->latest()->paginate(6); // pagination added
+    return view('front.blog', compact('blogs'));
+}
 
-    public function blogdetail(){
-        return view('front.blogdetail');
-    }
+public function blogdetail($slug)
+{
+    $blog = Blog::with('category')->where('slug', $slug)->firstOrFail();
+    return view('front.blogdetail', compact('blog'));
+}
+
 
 
     public function privacy(){
