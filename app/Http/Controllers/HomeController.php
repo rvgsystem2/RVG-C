@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\Project;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
@@ -18,7 +19,8 @@ public function index()
     $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
     // dd($serviceCategories);
    $abouts=About::where('status', 'active')->get();
-    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts'));
+   $banners =Banner::where('status', 'active')->get();
+    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners'));
 }
 
 
@@ -31,12 +33,15 @@ public function servicedetail($slug)
 
 
     public function about(){
-        return view('front.about');
+         $abouts=About::where('status', 'active')->get();
+        return view('front.about', compact('abouts'));
     }
 
     public function service(){
-        $serviceCategories = ServiceCategory::with('serviceDetails')->get();
-        return view('front.service' , compact('serviceCategories'));
+        $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
+          $projects = Project::latest()->get();
+    $categories = $projects->pluck('project_category_name')->unique();
+        return view('front.service' , compact('serviceCategories', 'projects', 'categories'));
     }
 
     public function team(){

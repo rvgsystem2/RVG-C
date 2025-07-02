@@ -44,33 +44,35 @@
 </section>
 
 <!-- About Section -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <h2 class="text-danger mb-4">10+ Years of Excellence</h2>
-                <p class="mb-4">We are a team of digital enthusiasts delivering high-performing marketing and development services. From ideation to execution, we ensure your brand’s success online.</p>
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between"><span>Digital Marketing</span><span>85%</span></div>
-                    <div class="progress"><div class="progress-bar bg-danger" style="width:85%"></div></div>
-                </div>
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between"><span>SEO & Backlinks</span><span>90%</span></div>
-                    <div class="progress"><div class="progress-bar bg-dark" style="width:90%"></div></div>
-                </div>
-                <div class="mb-4">
-                    <div class="d-flex justify-content-between"><span>Design & Development</span><span>95%</span></div>
-                    <div class="progress"><div class="progress-bar bg-secondary" style="width:95%"></div></div>
-                </div>
-                <a href="#" class="btn btn-danger rounded-pill px-4 py-2">Read More</a>
-            </div>
-            <div class="col-lg-6">
-                <img src="{{asset('front-asset/img/about.png')}}" class="img-fluid rounded wow zoomIn" alt="About Us">
-            </div>
-        </div>
-    </div>
-</section>
+ <div class="container-fluid py-5">
+            @forelse ($abouts as $about)
+                <div class="container py-5 px-lg-5">
+                <p class="section-title ">{{ $about->title }}<span></span></p>
+                <div class="row g-5 align-items-center">
 
+                    <!-- Image Column: Order-1 on mobile, Order-2 on large screens -->
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s"
+                            src="{{ asset('storage/' . ($about->image ?? 'front-asset/img/about.png')) }}" alt="{{ $about->image_alt ?? 'Abouts Image' }}">
+                    </div>
+
+                    <!-- Content Column: Order-2 on mobile, Order-1 on large screens -->
+                    <div class="col-lg-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.1s">
+
+                        <h1 class="mb-5">{{ $about->subtitle }}</h1>
+                        <p class="mb-4">{!! $about->description !!}</p>
+
+                      
+
+                        <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+            @empty
+                
+            @endforelse
+        </div>
 <!-- Facts -->
 <section class="custom-color py-5 text-white">
     <div class="container">

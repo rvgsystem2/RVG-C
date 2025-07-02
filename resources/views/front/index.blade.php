@@ -12,24 +12,21 @@
 
             <div class="container-flued pb-5 pt-5 custom-color" id="">
                 <div class="container px-lg-5 pt-5">
-                    <div class="row g-5 align-items-end">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">A Digital Agency Of Inteligents & Creative
-                                People</h1>
-                            <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum
-                                ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo
-                                amet ipsum vero ipsum clita lorem</p>
-                            <a href=""
-                                class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href=""
-                                class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">Contact
-                                Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start pt-5">
-                            <img class="img-fluid animated zoomIn" src="{{ asset('front-asset/img/hero.png') }}"
-                                alt="">
-                        </div>
-                    </div>
+                  @forelse ($banners as $banner)
+                      <div class="row g-5 align-items-end">
+                          <div class="col-lg-6 text-center text-lg-start">
+                              <h1 class="text-white mb-4 animated slideInDown">{{ $banner->title }}</h1>
+                              <p class="text-white pb-3 animated slideInDown">{{ $banner->subtitle }}</p>
+                              <a href="{{url('about')}}" class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
+                              <a href="{{ url('contact') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">Contact Us</a>
+                          </div>
+                          <div class="col-lg-6 text-center text-lg-start pt-5">
+                              <img class="img-fluid animated zoomIn" src="{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}" alt="{{ $banner->img_alt_text ?? 'Banner Image' }}">
+                          </div>
+                      </div>
+                  @empty
+                      <p class="text-white">No banners available</p>
+                  @endforelse
                 </div>
             </div>
         </div>
@@ -57,40 +54,9 @@
                         <h1 class="mb-5">{{ $about->subtitle }}</h1>
                         <p class="mb-4">{!! $about->description !!}</p>
 
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Digital Marketing</p>
-                                <p class="mb-2">85%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-custom" style="width: 85%;" role="progressbar"
-                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
+                      
 
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">SEO & Backlinks</p>
-                                <p class="mb-2">90%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-secondary" style="width: 90%;" role="progressbar"
-                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Design & Development</p>
-                                <p class="mb-2">95%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-dark" style="width: 95%;" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <a href="#" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
+                        <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
                     </div>
 
                 </div>
