@@ -68,15 +68,18 @@ public function servicedetail($slug)
         return view('front.project' , compact('projects', 'categories'));
     }
 
-    public function blog(){
-         $blogs = Blog::with('category')->latest()->get();
-        return view('front.blog', compact('blogs'));
-    }
+public function blog()
+{
+    $blogs = Blog::with('category')->latest()->paginate(6); // pagination added
+    return view('front.blog', compact('blogs'));
+}
 
-    public function blogdetail($slug){
-        $blog = Blog::with('category')->where('slug', $slug)->firstOrFail();
-        return view('front.blogdetail', compact('blog'));
-    }
+public function blogdetail($slug)
+{
+    $blog = Blog::with('category')->where('slug', $slug)->firstOrFail();
+    return view('front.blogdetail', compact('blog'));
+}
+
 
 
     public function privacy(){
