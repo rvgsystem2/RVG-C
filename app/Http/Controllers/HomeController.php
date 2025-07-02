@@ -45,13 +45,13 @@ public function servicedetail($slug)
         return view('front.service' , compact('serviceCategories', 'projects', 'categories'));
     }
 
-    public function team(){
-        return view('front.team');
-    }
+    // public function team(){
+    //     return view('front.team');
+    // }
 
-    public function testimonial(){
-        return view('front.testimonial');
-    }
+    // public function testimonial(){
+    //     return view('front.testimonial');
+    // }
 
     public function contact(){
         return view('front.contact');
