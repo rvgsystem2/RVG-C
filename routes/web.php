@@ -40,7 +40,7 @@ Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testim
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/404', [HomeController::class, 'notFound'])->name('404');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
-Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
 Route::get('/blogdetail', [HomeController::class, 'blogdetail'])->name('blogdetail');
 Route::get('/service/{slug}', [HomeController::class, 'servicedetail'])->name('servicedetail');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
