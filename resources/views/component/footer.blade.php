@@ -1,6 +1,6 @@
 <!-- Footer Start -->
 <div class="container-fluid custom-color text-light wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5 px-lg-5">
+    <div class="container-fluid py-5 px-lg-5">
         <div class="row gy-5 gx-4">
             <!-- Contact Info -->
             <div class="col-lg-4 col-md-6">
@@ -10,9 +10,9 @@
                 <p><i class="fa fa-envelope me-3"></i>info@realvictorygroups.com</p>
                 <div class="d-flex pt-3">
                     <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social me-2" href="https://www.facebook.com/realvictorygroups/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social me-2" href="https://www.instagram.com/realvictorygroups/"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="http://linkedin.com/company/realvictorygroups/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
