@@ -50,7 +50,8 @@ public function servicedetail($slug)
         $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
           $projects = Project::latest()->get();
     $categories = $projects->pluck('project_category_name')->unique();
-        return view('front.service' , compact('serviceCategories', 'projects', 'categories'));
+    $testimonials = Testimonial::where('status', 'active')->get();
+        return view('front.service' , compact('serviceCategories', 'projects', 'categories', 'testimonials'));
     }
 
     // public function team(){
