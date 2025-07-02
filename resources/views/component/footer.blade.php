@@ -4,9 +4,9 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>  73 Basement, Ekta Enclave Society, Lakhanpur, Khyora, Kanpur, Uttar Pradesh 208024</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+918299012292</p>
+                    <p><i class="fa fa-envelope me-3"></i>realvictorygroups.com</p>
                     <div class="d-flex pt-2 footer-social">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -16,32 +16,32 @@
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="{{route('about')}}">About Us</a>
+                    <a class="btn btn-link" href="{{route('contact')}}">Contact Us</a>
                     <a class="btn btn-link" href="">Privacy Policy</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Career</a>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                    <p class="section-title text-white h5 mb-4">Our Services<span></span></p>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-1.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href="">Digital Marketing</a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-2.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href="">Social Media Handling</a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-3.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href="">Web Development</a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-4.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href="">App Development</a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-5.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href=""></a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="{{asset('front-asset/img/portfolio-6.jpg')}}" alt="Image">
+                            <a class="btn btn-link" href="">Web Development</a>
                         </div>
                     </div>
                 </div>
