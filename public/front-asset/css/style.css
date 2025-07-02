@@ -16,8 +16,7 @@
     /* background: #FFFFFF; */
     width: 90px;
     height: 120px;
-    border-radius: 50%;
-    padding: 2px;
+
 }
 
 .btn-custom {
@@ -136,7 +135,7 @@ h6,
     font-family: 'Jost', sans-serif;
     font-size: 18px;
     font-weight: 500;
-    color: var(--light) !important;
+    color: var(--dark) !important;
     outline: none;
     transition: .5s;
 }
@@ -150,6 +149,8 @@ h6,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--secondary) !important;
 }
+
+
 
 .navbar-light .navbar-brand h1 {
     color: #FFFFFF;
