@@ -21,14 +21,14 @@
 
 
         <!-- Service Start -->
-        <div class="container-fluid py-5">
+      <div class="container-fluid py-5">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp text-center mb-5" data-wow-delay="0.1s">
                     <p class="section-title justify-content-center"><span></span>Our Services<span></span></p>
                     <h1 class="text-center">What Solutions We Provide</h1>
                 </div>
 
-                <div class="row g-4">
+              <div class="row g-4">
                     @forelse ($serviceCategories as $category)
                         @foreach ($category->serviceDetails as $detail)
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -36,6 +36,7 @@
                                     <div class="service-icon mb-3">
                                         <i class="{{ $category->icon }}"></i>
                                     </div>
+
                                     <h5 class="mb-3">{{ $category->name }}</h5>
                                     <p class="mb-4">{{ $detail->sort_description }}</p>
                                     <div class="d-flex gap-2">
