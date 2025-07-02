@@ -10,21 +10,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
-            <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-            <a href="{{route('blog')}}" class="nav-item nav-link">Blog</a>
-            <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
-            <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu m-0">
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="404.html" class="dropdown-item">404 Page</a>
-                </div>
-            </div> --}}
-            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+            <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active text-secondary' : '' }}">
+                Home
+            </a>
+            <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active text-secondary' : '' }}">
+                About
+            </a>
+            <a href="{{ route('blog') }}" class="nav-item nav-link {{ request()->routeIs('blog') ? 'active text-secondary' : '' }}">
+                Blog
+            </a>
+            <a href="{{ route('service') }}" class="nav-item nav-link {{ request()->routeIs('service') ? 'active text-secondary' : '' }}">
+                Service
+            </a>
+            <a href="{{ route('project') }}" class="nav-item nav-link {{ request()->routeIs('project') ? 'active text-secondary' : '' }}">
+                Project
+            </a>
+            <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active text-secondary' : '' }}">
+                Contact
+            </a>
         </div>
+
         <button href="#" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block ">Get Started</button>
     </div>
 </nav>
