@@ -38,7 +38,9 @@ Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blogdetail', [HomeController::class, 'blogdetail'])->name('blogdetail');
 Route::get('/service/{slug}', [HomeController::class, 'servicedetail'])->name('servicedetail');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
-
+Route::get('/term', [HomeController::class, 'term'])->name('term');
+Route::get('/refund', [HomeController::class, 'refund_policy'])->name('refund_policy');
+Route::get('/carrer', [HomeController::class, 'carrer'])->name('carrer');
 
 
 

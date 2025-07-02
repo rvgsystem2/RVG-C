@@ -80,5 +80,15 @@ public function servicedetail($slug)
         return view('front.privacy');
     }
 
+    public function term(){
+        return view('front.term');
+    }
 
+    public function refund_policy(){
+        return view('front.refund_policy');
+    }
+
+    public function carrer(){
+        return view('front.carrer');
+    }
 }
