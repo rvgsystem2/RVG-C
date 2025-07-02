@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Project;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
@@ -14,10 +15,10 @@ public function index()
     $projects = Project::latest()->get();
     $categories = $projects->pluck('project_category_name')->unique();
 
-    $serviceCategories = ServiceCategory::with('serviceDetails')->get();
+    $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
     // dd($serviceCategories);
-
-    return view('front.index', compact('projects', 'categories', 'serviceCategories'));
+   $abouts=About::where('status', 'active')->get();
+    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts'));
 }
 
 
