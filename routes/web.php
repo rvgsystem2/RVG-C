@@ -9,6 +9,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceDetailsController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Response;
@@ -127,6 +129,18 @@ Route::post('/projects/update/{id}', [ProjectController::class, 'update'])->name
 Route::post('/projects/delete/{id}', [ProjectController::class, 'delete'])->name('projects.delete');
 
 
+Route::prefix('team')->group(function () {
+    Route::get('/', [TeamController::class, 'index'])->name('team.index');
+    Route::post('/store', [TeamController::class, 'store'])->name('team.store');
+    Route::post('/update/{id}', [TeamController::class, 'update'])->name('team.update');
+    Route::get('/delete/{id}', [TeamController::class, 'destroy'])->name('team.delete');
+});
+
+
+ Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
+    Route::post('/testimonials/store', [TestimonialController::class, 'store'])->name('testimonials.store');
+    Route::post('/testimonials/update/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update');
+    Route::get('/testimonials/delete/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.delete');
 });
 
 require __DIR__.'/auth.php';
