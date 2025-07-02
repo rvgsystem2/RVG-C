@@ -15,33 +15,7 @@
 </div>
 
 <!-- Features -->
-<section class="py-5">
-    <div class="container">
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded shadow-sm h-100">
-                    <i class="fa fa-mail-bulk fa-3x text-danger mb-3"></i>
-                    <h5 class="fw-bold">Digital Marketing</h5>
-                    <p>Boost your brand visibility and drive traffic with our tailored digital marketing campaigns.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded shadow-sm h-100">
-                    <i class="fa fa-search fa-3x text-danger mb-3"></i>
-                    <h5 class="fw-bold">SEO & Backlinks</h5>
-                    <p>Rank higher on Google with strategic keyword targeting and authority-building backlinks.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded shadow-sm h-100">
-                    <i class="fa fa-laptop-code fa-3x text-danger mb-3"></i>
-                    <h5 class="fw-bold">Design & Development</h5>
-                    <p>We craft responsive and engaging websites that convert visitors into loyal customers.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('front.product')
 
 <!-- About Section -->
  <div class="container-fluid py-5">
@@ -62,7 +36,7 @@
                         <h1 class="mb-5">{{ $about->subtitle }}</h1>
                         <p class="mb-4">{!! $about->description !!}</p>
 
-                      
+
 
                         <a href="{{ url('about') }}" class="btn btn-custom py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
                     </div>
@@ -70,7 +44,7 @@
                 </div>
             </div>
             @empty
-                
+
             @endforelse
         </div>
 <!-- Facts -->
