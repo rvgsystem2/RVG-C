@@ -67,8 +67,8 @@ public function servicedetail($slug)
         return view('front.project' , compact('projects', 'categories'));
     }
 
-    public function blog(){
-        return view('front.blog');
+    public function blogs(){
+        return view('front.blogs');
     }
 
     public function blogdetail(){

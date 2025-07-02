@@ -18,7 +18,7 @@
             <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active text-secondary' : '' }}">
                 About
             </a>
-            <a href="{{ route('blog') }}" class="nav-item nav-link {{ request()->routeIs('blog') ? 'active text-secondary' : '' }}">
+            <a href="{{route('blogs')}}" class="nav-item nav-link {{ request()->routeIs('blogs') ? 'active text-secondary' : '' }}">
                 Blog
             </a>
             <a href="{{ route('service') }}" class="nav-item nav-link {{ request()->routeIs('service') ? 'active text-secondary' : '' }}">
