@@ -3,13 +3,7 @@
 
 
     <div class="container-flued bg-white p-0">
-        <!-- Spinner Start -->
-        {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div> --}}
-        <!-- Spinner End -->
+    
 
 
         <!-- Navbar & Hero Start -->
@@ -46,23 +40,22 @@
 
         <!-- About Start -->
         <div class="container-fluid py-5">
-            <div class="container py-5 px-lg-5">
-                <p class="section-title ">About Us<span></span></p>
+            @forelse ($abouts as $about)
+                <div class="container py-5 px-lg-5">
+                <p class="section-title ">{{ $about->title }}<span></span></p>
                 <div class="row g-5 align-items-center">
 
                     <!-- Image Column: Order-1 on mobile, Order-2 on large screens -->
                     <div class="col-lg-6 order-1 order-lg-2">
                         <img class="img-fluid wow zoomIn" data-wow-delay="0.5s"
-                            src="{{ asset('front-asset/img/about.png') }}" alt="About Image">
+                            src="{{ asset('storage/' . ($about->image ?? 'front-asset/img/about.png')) }}" alt="{{ $about->image_alt ?? 'Abouts Image' }}">
                     </div>
 
                     <!-- Content Column: Order-2 on mobile, Order-1 on large screens -->
                     <div class="col-lg-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.1s">
 
-                        <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
-                        <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita
-                            erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore
-                            erat amet</p>
+                        <h1 class="mb-5">{{ $about->subtitle }}</h1>
+                        <p class="mb-4">{!! $about->description !!}</p>
 
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
@@ -102,6 +95,9 @@
 
                 </div>
             </div>
+            @empty
+                
+            @endforelse
         </div>
 
         <!-- About End -->
@@ -349,69 +345,13 @@
 
 
         <!-- Contact Start -->
-      @include('front.contact')
+     @include('front.contentcomponent')
 
         {{-- start contact us --}}
         {{-- end contact us --}}
 
 
-        <!-- Team Start -->
-        {{-- <div class="container-flued py-5">
-        <div class="container py-5 px-lg-5">
-            <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
-                <h1 class="text-center mb-5">Our Team Members</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-1.jpg')}}" alt="">
-                            <h5>John Doe</h5>
-                            <span>CEO & Founder</span>
-                        </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-2.jpg')}}" alt="">
-                            <h5>Jessica Brown</h5>
-                            <span>Web Designer</span>
-                        </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-custom rounded">
-                        <div class="text-center border-bottom p-4">
-                            <img class="img-fluid rounded-circle mb-4" src="{{asset('front-asset/img/team-3.jpg')}}" alt="">
-                            <h5>Tony Johnson</h5>
-                            <span>SEO Expert</span>
-                        </div>
-                        <div class="d-flex justify-content-center p-4">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-        <!-- Team End -->
+
 
 
 
