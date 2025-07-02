@@ -113,6 +113,23 @@
 
         @endcan
 
+        @can('view products')
+            <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-box mr-1"></i> Products
+            </x-nav-link>
+        @endcan
+
+        @can('view blogcategory')
+            <x-nav-link :href="route('blog-category.index')" :active="request()->routeIs('blog-category.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-list-alt mr-1"></i> Blog Categories
+            </x-nav-link>
+        @endcan
+
+        @can('view blog')
+            <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-blog mr-1"></i> Blogs
+            </x-nav-link>
+        @endcan
     </div>
 </div>
 

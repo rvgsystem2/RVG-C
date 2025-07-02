@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogCategoryControlloer;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
@@ -143,4 +147,25 @@ Route::prefix('team')->group(function () {
     Route::get('/testimonials/delete/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.delete');
 });
 
+
+Route::prefix('product')->group(function () {
+    Route::get('/', [ProductController::class, 'index'])->name('product.index');
+    Route::post('/store', [ProductController::class, 'store'])->name('product.store');
+    Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+});
+
+Route::prefix('blog-category')->group(function () {
+    Route::get('/', [BlogCategoryController::class, 'index'])->name('blog-category.index');
+    Route::post('/store', [BlogCategoryController::class, 'store'])->name('blog-category.store');
+    Route::post('/update/{id}', [BlogCategoryController::class, 'update'])->name('blog-category.update');
+    Route::get('/delete/{id}', [BlogCategoryController::class, 'delete'])->name('blog-category.delete');
+});
+
+Route::prefix('blog')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+    Route::post('/store', [BlogController::class, 'store'])->name('blog.store');
+    Route::post('/update/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
+});
 require __DIR__.'/auth.php';
