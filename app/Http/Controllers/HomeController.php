@@ -15,6 +15,7 @@ public function index()
     $categories = $projects->pluck('project_category_name')->unique();
 
     $serviceCategories = ServiceCategory::with('serviceDetails')->get();
+    // dd($serviceCategories);
 
     return view('front.index', compact('projects', 'categories', 'serviceCategories'));
 }
@@ -23,6 +24,7 @@ public function index()
 public function servicedetail($slug)
 {
     $service = ServiceCategory::with('serviceDetails')->where('slug', $slug)->firstOrFail();
+   
     return view('front.servicedetail', compact('service'));
 }
 

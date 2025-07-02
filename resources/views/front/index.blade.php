@@ -2,9 +2,9 @@
 @section('content')
 
 
-<div class="container-flued bg-white p-0">
-    <!-- Spinner Start -->
-    {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="container-flued bg-white p-0">
+        <!-- Spinner Start -->
+        {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -172,8 +172,8 @@
         <!-- Feature End -->
 
 
-    <!-- Service Start -->
-       <div class="container-fluid py-5">
+        <!-- Service Start -->
+        <div class="container-fluid py-5">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp text-center mb-5" data-wow-delay="0.1s">
                     <p class="section-title justify-content-center"><span></span>Our Services<span></span></p>
@@ -188,6 +188,7 @@
                                     <div class="service-icon mb-3">
                                         <i class="{{ $category->icon }}"></i>
                                     </div>
+
                                     <h5 class="mb-3">{{ $category->name }}</h5>
                                     <p class="mb-4">{{ $detail->sort_description }}</p>
                                     <div class="d-flex gap-2">
@@ -285,151 +286,167 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
 
-                <h1 class="display-6 mb-4">What Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item bg-custom rounded p-4">
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-1.jpg')}}" style="width: 65px; height: 65px;">
-                        <div class="ps-4">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <h1 class="display-6 mb-4">What Our Clients Say!</h1>
                 </div>
-                <div class="testimonial-item bg-custom rounded p-4">
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-2.jpg')}}" style="width: 65px; height: 65px;">
-                        <div class="ps-4">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item bg-custom rounded p-4">
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('front-asset/img/testimonial-1.jpg') }}"
+                                style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
                         </div>
+                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
+                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-custom rounded p-4">
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-3.jpg')}}" style="width: 65px; height: 65px;">
-                        <div class="ps-4">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                    <div class="testimonial-item bg-custom rounded p-4">
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('front-asset/img/testimonial-2.jpg') }}"
+                                style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
                         </div>
+                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
+                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-custom rounded p-4">
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('front-asset/img/testimonial-4.jpg')}}" style="width: 65px; height: 65px;">
-                        <div class="ps-4">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                    <div class="testimonial-item bg-custom rounded p-4">
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('front-asset/img/testimonial-3.jpg') }}"
+                                style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
                         </div>
+                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
+                            eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <div class="testimonial-item bg-custom rounded p-4">
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('front-asset/img/testimonial-4.jpg') }}"
+                                style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
+                            eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Testimonial End -->
+        <!-- Testimonial End -->
 
 
 
-<!-- Contact Start -->
-<div class="container-fluid py-5 mt-0 position-relative overflow-hidden">
-    <!-- Background Image -->
-    <img src="{{ asset('asset/img/image1.jpg') }}" alt="Contact Background"
-        class="position-absolute w-100 h-100 object-fit-cover top-0 start-0 z-n1" style="opacity: 0.8;">
+        <!-- Contact Start -->
+        <div class="container-fluid py-5 mt-0 position-relative overflow-hidden">
+            <!-- Background Image -->
+            <img src="{{ asset('asset/img/image1.jpg') }}" alt="Contact Background"
+                class="position-absolute w-100 h-100 object-fit-cover top-0 start-0 z-n1" style="opacity: 0.8;">
 
-    <div class="container py-5 position-relative z-1">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-dark">Get In Touch</h5>
-            <h1 class="mb-3">Contact for any query</h1>
-            <p class="mb-2 text-dark">
-                The contact form is currently inactive. You can get a working Ajax & PHP form in minutes.
-                <a href="https://htmlcodex.com/contact-form" class="text-dark fw-bold">Download Now</a>.
-            </p>
-        </div>
+            <div class="container py-5 position-relative z-1">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-dark">Get In Touch</h5>
+                    <h1 class="mb-3">Contact for any query</h1>
+                    <p class="mb-2 text-dark">
+                        The contact form is currently inactive. You can get a working Ajax & PHP form in minutes.
+                        <a href="https://htmlcodex.com/contact-form" class="text-dark fw-bold">Download Now</a>.
+                    </p>
+                </div>
 
-        <div class="contact-detail bg-white rounded shadow-lg position-relative p-5">
-            <!-- Contact Details -->
-            <div class="row g-5 mb-5 justify-content-center">
-                <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="d-flex bg-light p-3 rounded h-100">
-                        <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
-                             style="width: 64px; height: 64px;">
-                            <i class="fas fa-map-marker-alt text-white fs-4"></i>
+                <div class="contact-detail bg-white rounded shadow-lg position-relative p-5">
+                    <!-- Contact Details -->
+                    <div class="row g-5 mb-5 justify-content-center">
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="d-flex bg-light p-3 rounded h-100">
+                                <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 64px; height: 64px;">
+                                    <i class="fas fa-map-marker-alt text-white fs-4"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-dark">Address</h4>
+                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank"
+                                        class="h5 d-block text-dark text-decoration-none">
+                                        23 Rank Str, NY
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ms-3">
-                            <h4 class="text-dark">Address</h4>
-                            <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5 d-block text-dark text-decoration-none">
-                                23 Rank Str, NY
-                            </a>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="d-flex bg-light p-3 rounded h-100">
+                                <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 64px; height: 64px;">
+                                    <i class="fa fa-phone text-white fs-4"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-dark">Call Us</h4>
+                                    <a class="h5 d-block text-dark text-decoration-none" href="tel:+0123456789"
+                                        target="_blank">
+                                        +012 3456 7890
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+                            <div class="d-flex bg-light p-3 rounded h-100">
+                                <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 64px; height: 64px;">
+                                    <i class="fa fa-envelope text-white fs-4"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-dark">Email Us</h4>
+                                    <a class="h5 d-block text-dark text-decoration-none" href="mailto:info@example.com"
+                                        target="_blank">
+                                        info@example.com
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                    <div class="d-flex bg-light p-3 rounded h-100">
-                        <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
-                             style="width: 64px; height: 64px;">
-                            <i class="fa fa-phone text-white fs-4"></i>
+
+                    <!-- Contact Form + Map -->
+                    <div class="row g-5">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="h-100 rounded overflow-hidden shadow-sm">
+                                <iframe class="w-100 h-100 border-0 rounded"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.4710403339755!2d-73.82241512404069!3d40.685622471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26749046ee14f%3A0xea672968476d962c!2s123rd%20St%2C%20Queens%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1686493221834!5m2!1sen!2sbd"
+                                    allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </div>
-                        <div class="ms-3">
-                            <h4 class="text-dark">Call Us</h4>
-                            <a class="h5 d-block text-dark text-decoration-none" href="tel:+0123456789" target="_blank">
-                                +012 3456 7890
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
-                    <div class="d-flex bg-light p-3 rounded h-100">
-                        <div class="flex-shrink-0 btn-square custom-color rounded-circle d-flex align-items-center justify-content-center"
-                             style="width: 64px; height: 64px;">
-                            <i class="fa fa-envelope text-white fs-4"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h4 class="text-dark">Email Us</h4>
-                            <a class="h5 d-block text-dark text-decoration-none" href="mailto:info@example.com" target="_blank">
-                                info@example.com
-                            </a>
+
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <form class="p-4 bg-light rounded shadow-sm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Your Name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control border-0 py-3" placeholder="Your Email">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Project">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control border-0 py-3" rows="5" placeholder="Message"></textarea>
+                                </div>
+                                <button type="button" class="btn custom-color text-white py-3 px-5">Send Message</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Contact Form + Map -->
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="h-100 rounded overflow-hidden shadow-sm">
-                        <iframe class="w-100 h-100 border-0 rounded"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.4710403339755!2d-73.82241512404069!3d40.685622471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26749046ee14f%3A0xea672968476d962c!2s123rd%20St%2C%20Queens%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1686493221834!5m2!1sen!2sbd"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                    <form class="p-4 bg-light rounded shadow-sm">
-                        <div class="mb-3">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Project">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control border-0 py-3" rows="5" placeholder="Message"></textarea>
-                        </div>
-                        <button type="button" class="btn custom-color text-white py-3 px-5">Send Message</button>
-                    </form>
-                </div>
-            </div>
         </div>
-    </div>
-</div>
-{{-- end contact us --}}
+        {{-- end contact us --}}
 
 
         <!-- Team Start -->
@@ -506,15 +523,18 @@
                     layoutMode: 'fitRows'
                 });
 
-            document.querySelectorAll('#portfolio-flters li').forEach(function (filterEl) {
-                filterEl.addEventListener('click', function () {
-                    document.querySelectorAll('#portfolio-flters li').forEach(el => el.classList.remove('active'));
-                    this.classList.add('active');
-                    iso.arrange({ filter: this.getAttribute('data-filter') });
+                document.querySelectorAll('#portfolio-flters li').forEach(function(filterEl) {
+                    filterEl.addEventListener('click', function() {
+                        document.querySelectorAll('#portfolio-flters li').forEach(el => el.classList
+                            .remove('active'));
+                        this.classList.add('active');
+                        iso.arrange({
+                            filter: this.getAttribute('data-filter')
+                        });
+                    });
                 });
-            });
-        }
-    });
-</script>
+            }
+        });
+    </script>
 
 @endsection
