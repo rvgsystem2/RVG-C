@@ -32,8 +32,8 @@
                 Contact
             </a>
         </div>
-        <button class="btn-imp  w-auto rounded-pill py-2 px-4 px-sm-3 mt-3 mt-sm-0">
-          <a href="https://post.realvictorygroups.com/">  Download Our Post</a>
+        <button style="background-color: #040505; color: white;" class=" w-auto rounded-pill py-2 px-4 px-sm-3 mt-3 mt-sm-0">
+            <a href="https://post.realvictorygroups.com/" class="text-white">  Download Our Post</a>
         </button>
 
     </div>
