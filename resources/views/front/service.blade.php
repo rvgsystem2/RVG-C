@@ -41,7 +41,7 @@
                             <p class="text-muted mb-4">{{ \Illuminate\Support\Str::limit($detail->sort_description, 120) }}</p>
                             <div class="d-flex justify-content-center gap-3">
                                 <a href="{{ route('servicedetail', $category->slug) }}" class="btn btn-success btn-sm px-4">Read More</a>
-                                <a href="#contact" class="btn btn-custom btn-sm px-4">Contact Us</a>
+                                <a href="{{ url('contact') }}" class="btn btn-custom btn-sm px-4">Contact Us</a>
                             </div>
                         </div>
                     </div>
