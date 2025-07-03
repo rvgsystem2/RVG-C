@@ -243,10 +243,10 @@
         <!-- Action Buttons -->
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
 
-            <a href="tel:+91 82990 12292" class="btn contact py-3 px-4 rounded-pill">
+            <a href="tel:+918299012292" class="btn contact py-3 px-4 rounded-pill">
                 <i class="fa fa-phone-alt me-3"></i> Call Now
             </a>
-            <a href="https://wa.me/+91 82990 12292" target="_blank" class="btn contact py-3 px-4 rounded-pill">
+            <a href="https://wa.me/+918299012292" target="_blank" class="btn contact py-3 px-4 rounded-pill">
                <i class="fab fa-whatsapp me-3"></i> WhatsApp
             </a>
             <a href="mailto:realvictorygroups@gmail.com" class="btn contact py-3 px-4 rounded-pill">

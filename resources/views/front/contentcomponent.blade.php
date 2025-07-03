@@ -41,7 +41,7 @@
                         <div class="ms-3">
                             <h5 class="text-dark mb-1">Call Us</h5>
                             <a href="tel:+918299012292" class="text-dark text-decoration-none">
-                                +91 82990 12292
+                                +918299012292
                             </a>
                         </div>
                     </div>
