@@ -12,7 +12,7 @@
                 <p><a href="mailto:realvictorygroups@gmail.com"><i
                             class="fa fa-envelope me-3"></i>realvictorygroups@gmail.com</p></a>
                 <div class="d-flex pt-3">
-                    <a class="btn btn-outline-light btn-social me-2" href="https://wa.me/+91 82990 12292"><i
+                    <a class="btn btn-outline-light btn-social me-2" href="https://wa.me/+918299012292"><i
                             class="fab fa-whatsapp"></i></a>
                     <a class="btn btn-outline-light btn-social me-2"
                         href="https://www.facebook.com/realvictorygroups/"><i class="fab fa-facebook-f"></i></a>
