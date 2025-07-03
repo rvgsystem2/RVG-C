@@ -140,7 +140,7 @@
                 @foreach ($testimonials as $testimonial)
                     <div class="testimonial-item bg-white rounded-4 shadow-sm p-4 border border-light">
                         <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle border border-3 border-secondary"
+                            <img class="img-fluid rounded-circle border border-3 border-dark"
                                  src="{{ asset('storage/' . $testimonial->image) }}"
                                  alt="{{ $testimonial->name }}"
                                  style="width: 65px; height: 65px; object-fit: cover;">
