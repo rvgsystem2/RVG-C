@@ -176,7 +176,7 @@
     </div>
 
       <!-- Services table -->
-      <div class="table-responsive">
+      <div class="table-responsive  d-none d-md-block d-lg-block">
         <table class="table table-bordered align-middle text-nowrap">
           <thead class="table-light text-center">
             <tr>
@@ -255,11 +255,91 @@
         </table>
       </div><!-- /table-responsive -->
 
+
+      {{-- for mobile view --}}
+
+      <div class="container-fluid py-4 d-sm-block d-md-none d-lg-none">
+        <div class="row g-4">
+
+          <!-- Graphic Services -->
+          <div class="col-12">
+            <div class="bg-light border border-danger shadow-sm h-100">
+              <div class="p-3 border-bottom border-danger">
+                <h5 class="fw-bold text-danger mb-0">Graphic Services</h5>
+              </div>
+              <div class="px-0">
+                <div class="border-bottom  border-danger px-2 py-2">Logo Design</div>
+                <div class="border-bottom  border-danger px-2 py-2">Yearly Jewellery Post Package</div>
+                <div class="border-bottom  border-danger px-2 py-2">Custom Jewellery Package</div>
+                <div class="border-bottom  border-danger px-2 py-2">Custom Images & LED Videos for Shop TV</div>
+                <div class="border-bottom  border-danger px-2 py-2">Video Reels Package for Social Media</div>
+                <div class="border-bottom  border-danger px-2 py-2">Birthday / Anniversary Post Package</div>
+                <div class="border-bottom  border-danger px-2 py-2">Daily Gold/Silver Rate Posters</div>
+                <div class="border-bottom  border-danger px-2 py-2">Custom Post for Print / Web / Packaging / Ads</div>
+                <div class="border-bottom  border-danger px-2 py-2">Voice‑over Video Creation <small>(with voice)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Jewellery Catalog Design <small>(PDF / Print)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Festival & Campaign Branding Pack</div>
+                <div class="border-bottom  border-danger px-2 py-2">3D Jewellery Mockups / Renders</div>
+                <div class="py-2 px-2">Instagram Highlight Cover Design</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Services -->
+          <div class="col-12">
+            <div class="bg-light border border-danger shadow-sm h-100">
+              <div class="p-3 border-bottom border-danger">
+                <h5 class="fw-bold text-danger mb-0">IT Services</h5>
+              </div>
+              <div class="px-0">
+                <div class="border-bottom  border-danger px-2 py-2">Website Development & Design</div>
+                <div class="border-bottom  border-danger px-2 py-2">Gold Silver Live Rate App / Website</div>
+                <div class="border-bottom  border-danger px-2 py-2">E‑commerce Website <small>(Buy/Sell Jewellery Online)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Mobile App Development</div>
+                <div class="border-bottom  border-danger px-2 py-2">Billing Software</div>
+                <div class="border-bottom  border-danger px-2 py-2">Employee Attendance & Salary Management</div>
+                <div class="border-bottom  border-danger px-2 py-2">Inventory Software <small>(Stock Tracking)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Online Booking / Virtual Try‑On</div>
+                <div class="border-bottom  border-danger px-2 py-2">Custom CRM for Jewellery <small>(Customer tracking)</small></div>
+                <div class="py-2 px-2">Cloud Backup & Storage</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promotion & Search -->
+          <div class="col-12">
+            <div class="bg-light border border-danger shadow-sm h-100">
+              <div class="p-3 border-bottom border-danger">
+                <h5 class="fw-bold text-danger mb-0">Promotion & Search</h5>
+              </div>
+              <div class="px-0">
+                <div class="border-bottom  border-danger px-2 py-2">Social Media Handling <small>(Monthly Package)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Google Business Verification <small>(Improve local search)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Facebook & Instagram Ads</div>
+                <div class="border-bottom  border-danger px-2 py-2">SEO Optimisation <small>(Improve search ranking)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">Bulk SMS / Voice Call Package</div>
+                <div class="border-bottom  border-danger px-2 py-2">Bulk WhatsApp Package</div>
+                <div class="border-bottom  border-danger px-2 py-2">Official WhatsApp Verified Service</div>
+                <div class="border-bottom  border-danger px-2 py-2">Google Review & Rating Management</div>
+                <div class="border-bottom  border-danger px-2 py-2">Content Writing for Website</div>
+                <div class="border-bottom  border-danger px-2 py-2">Influencer Marketing <small>(Local + Bridal)</small></div>
+                <div class="border-bottom  border-danger px-2 py-2">YouTube Setup + Reels Editing</div>
+                <div class="border-bottom  border-danger px-2 py-2">Pinterest Marketing for Bridal Jewellery</div>
+                <div class="py-2 px-2">Online Reputation & Response Management</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      {{-- mobile view end --}}
       <!-- Contact Section -->
-      <div class="row text-center text-md-start g-4 mt-lg-5">
+      <div class="row text-center text-md-start g-4 mt-lg-5 mt-md-4">
 
         <!-- Email -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
             <span class="contact-badge text-white fs-4">
               <i class="fas fa-envelope"></i>
@@ -274,7 +354,7 @@
         </div>
 
         <!-- Phone -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
             <span class="contact-badge text-white fs-4">
               <i class="fas fa-phone-alt"></i>
@@ -289,7 +369,7 @@
         </div>
 
         <!-- Address -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
             <span class="contact-badge text-white fs-4">
               <i class="fas fa-map-marker-alt"></i>

@@ -78,7 +78,11 @@
     /* background: linear-gradient(135deg, #ab0303, #0a0101); */
     background: #ed011b;
 }
-
+.border-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-color: #ed011b;
+    padding: 2px;
+}
 .contact{
     background: #4ebc7a;
 }
