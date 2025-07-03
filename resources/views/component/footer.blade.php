@@ -30,10 +30,10 @@
                 <div class="d-flex flex-column">
                     <a class="btn btn-link text-light text-start" href="{{ route('about') }}">About Us</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('contact') }}">Contact Us</a>
-                    <a class="btn btn-link text-light text-start" href="{{route('privacy')}}">Privacy Policy</a>
-                    <a class="btn btn-link text-light text-start" href="{{route('term')}}">Terms & Conditions</a>
-                    <a class="btn btn-link text-light text-start" href="{{route('refund_policy')}}">Return Policy</a>
-                    <a class="btn btn-link text-light text-start" href="{{route('carrer')}}">Career</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('privacy') }}">Privacy Policy</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('term') }}">Terms & Conditions</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('refund_policy') }}">Return Policy</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('carrer') }}">Career</a>
                 </div>
             </div>
 
@@ -50,16 +50,35 @@
                 </div>
             </div>
 
-            <!-- Newsletter -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Subscribe to receive latest news and updates from us.</p>
-                <div class="position-relative w-100 mt-3">
-                    <input class="form-control border-0 rounded-pill ps-4 pe-5" type="email" placeholder="Your Email"
-                        style="height: 48px;">
-                    <button type="submit" class="btn btn-send shadow-none position-absolute top-0 end-0 mt-1 me-2">
-                        <i class="fa fa-paper-plane fs-5"></i>
-                    </button>
+            <!-- Download Application -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Download Our App</h5>
+
+                <!-- App Store Buttons -->
+                <div class="d-flex flex-column gap-3">
+
+                    <p class="text-white mb-4" style="font-size: 0.95rem;">
+                        Get instant access to our services, updates, and offers anytime, anywhere. Download our app
+                        today and stay connected on the go!
+                    </p>
+                    <a href="https://apps.apple.com/in/app/real-victory-groups-daily-post/id6746252505 "
+                        class="d-flex align-items-center bg-dark text-white rounded px-3 py-2 shadow-sm text-decoration-none hover-opacity">
+                        <i class="fab fa-apple fa-2x me-3"></i>
+                        <div class="text-start">
+                            <small class="d-block">Download on the</small>
+                            <strong class="fs-6">App Store</strong>
+                        </div>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.rvg.chat_real_victory&pcampaignid=web_share
+"
+                        class="d-flex align-items-center bg-dark text-white rounded px-3 py-2 shadow-sm text-decoration-none hover-opacity">
+                        <i class="fab fa-google-play fa-2x me-3"></i>
+                        <div class="text-start">
+                            <small class="d-block">Get it on</small>
+                            <strong class="fs-6">Google Play</strong>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -70,7 +89,8 @@
     <div class="container px-lg-5 border-top border-light pt-4 mt-4">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="text-white fw-bold" href="https://realvictorygroups.">2025 Real Victory Groups</a>. All Rights Reserved.
+                &copy; <a class="text-white fw-bold" href="https://realvictorygroups.">2025 Real Victory Groups</a>. All
+                Rights Reserved.
             </div>
 
         </div>

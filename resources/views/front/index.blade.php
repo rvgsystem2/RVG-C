@@ -185,7 +185,7 @@
 
 
         <!-- Testimonials Start -->
-<div class="container-xxl py-5 bg-light">
+<div class="container-fluid py-5 bg-light">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h5 class="text-dark">Testimonials</h5>
@@ -243,13 +243,13 @@
         <!-- Action Buttons -->
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
 
-            <a href="tel:+1234567890" class="btn contact py-3 px-4 rounded-pill">
+            <a href="tel:+91 82990 12292" class="btn contact py-3 px-4 rounded-pill">
                 <i class="fa fa-phone-alt me-3"></i> Call Now
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" class="btn contact py-3 px-4 rounded-pill">
+            <a href="https://wa.me/+91 82990 12292" target="_blank" class="btn contact py-3 px-4 rounded-pill">
                <i class="fab fa-whatsapp me-3"></i> WhatsApp
             </a>
-            <a href="mailto:your@email.com" class="btn contact py-3 px-4 rounded-pill">
+            <a href="mailto:realvictorygroups@gmail.com" class="btn contact py-3 px-4 rounded-pill">
                 <i class="fa fa-envelope  me-3"> </i> Email
             </a>
         </div>

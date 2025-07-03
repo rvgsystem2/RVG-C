@@ -1,11 +1,77 @@
 /********** Template CSS **********/
 :root {
     --primary: #6222CC;
-    --secondary: #000000;
+    --secondary: #0e0101;
     --light: #f9f4f4;
     --dark: #04000B;
     /* --custom: linear-gradient(135deg, #ab0303, #0a0101); */
     --custom: #ed011b;
+    --clr-primary:#c4002b;   /* Vivid red */
+    --clr-dark:#111;
+}
+
+/* ---------- Heading ---------- */
+.heading{
+    font-size:clamp(1.35rem,1.2vw+1.25rem,2rem);
+    color:var(--clr-dark);
+    position:relative;
+    padding-left:.75rem;
+    margin-bottom:1.25rem;
+}
+.heading::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:var(--clr-primary);
+    font-size:1.25em;
+    line-height:1;
+}
+
+.contact-badge {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #faf8f8;
+    border-radius: 0.5rem;
+  }
+
+/* ---------- Table ---------- */
+.table thead th{
+    background:var(--clr-primary);
+    color:#ed011b;
+    border-color:var(--clr-primary);
+    white-space:nowrap;
+}
+.table-bordered>:not(caption)>*{
+    border-color:var(--clr-primary);
+}
+.table tbody tr{
+    transition:background .2s;
+}
+.table tbody tr:hover{
+    background:rgba(196,0,43,.06);
+}
+
+.table tbody tr td{
+    vertical-align:middle;
+    color: #04000B;
+}
+
+/* ---------- Contact badges ---------- */
+.contact-badge{
+    width:46px;height:46px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:.5rem;background:var(--clr-primary);color:#fff;
+    flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+.contact-link:hover{color:var(--clr-primary)!important;}
+
+/* ---------- Card look ---------- */
+.service-card{
+    background:#fff;border:0;border-radius:1rem;box-shadow:0 6px 20px rgba(0,0,0,.08);
+    overflow:hidden;
 }
 
 .custom-color {
@@ -136,13 +202,23 @@ h6,
 .navbar-light .navbar-nav .nav-link {
     position: relative;
     margin-right: 25px;
-    padding: 30px 0;
+    padding: 20px 0;
     font-family: 'Jost', sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--dark) !important;
     outline: none;
 
+}
+
+.heading   { font-size: clamp(1.25rem, 1vw + 1.25rem, 2rem); }
+.table thead th { background: #f8f9fa; font-weight: 600; }
+/* Icon badges */
+.contact-badge {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: .5rem; color: #120101; background: #dc3545;
+    flex-shrink: 0;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {

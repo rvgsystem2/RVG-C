@@ -34,7 +34,7 @@
                 @foreach ($category->serviceDetails as $detail)
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="bg-white shadow rounded-4 text-center h-100 p-4 service-card transition-scale">
-                            <div class="service-icon mb-3 text-primary fs-1">
+                            <div class="service-icon mb-3 text-secondary fs-1">
                                 <i class="{{ $category->icon }}"></i>
                             </div>
                             <h5 class="fw-bold mb-2">{{ $category->name }}</h5>
@@ -127,10 +127,10 @@
         <!-- Projects End -->
 
               <!-- Testimonials Start -->
-<div class="container-xxl py-5 bg-light">
+<div class="container-fluid py-5 bg-light">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h5 class="text-primary">Testimonials</h5>
+            <h5 class="text-dark">Testimonials</h5>
             <h1 class="display-6 mb-4">What Our Clients Say!</h1>
             <p class="text-muted">Real stories from real people. See how our service is making an impact.</p>
         </div>
@@ -140,7 +140,7 @@
                 @foreach ($testimonials as $testimonial)
                     <div class="testimonial-item bg-white rounded-4 shadow-sm p-4 border border-light">
                         <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle border border-3 border-primary"
+                            <img class="img-fluid rounded-circle border border-3 border-secondary"
                                  src="{{ asset('storage/' . $testimonial->image) }}"
                                  alt="{{ $testimonial->name }}"
                                  style="width: 65px; height: 65px; object-fit: cover;">
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <p class="fst-italic text-dark mb-0">
-                            <i class="fas fa-quote-left me-2 text-primary"></i>{{ $testimonial->message }}
+                            <i class="fas fa-quote-left me-2 text-dark"></i>{{ $testimonial->message }}
                         </p>
                     </div>
                 @endforeach
@@ -162,9 +162,154 @@
     </div>
 </div>
 <!-- Testimonials End -->
-    
 
 
+{{-- services table --}}
+<div class="container-fluid">
+    <div class="py-5 bg-white shadow px-3 px-sm-4 px-md-5">
+
+      <!-- Heading -->
+      <ul class="list-unstyled mb-4">
+        <li class="h5 fw-bold text-dark mb-3">
+          • Graphic, IT And Promotion Service for Jewellery Business
+        </li>
+      </ul>
+
+      <!-- Services table -->
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle text-nowrap">
+          <thead class="table-light text-center">
+            <tr>
+              <th>Graphic Services</th>
+              <th>IT Services</th>
+              <th>Promotion And Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logo Design</td>
+              <td>Website Development &amp; Design</td>
+              <td>Social Media Handling <small>(Monthly Package)</small></td>
+            </tr>
+            <tr>
+              <td>Yearly Jewellery Post Package</td>
+              <td>Gold Silver Live Rate App / Website</td>
+              <td>Google Business Verification <small>(Improve local search)</small></td>
+            </tr>
+            <tr>
+              <td>Custom Jewellery Package</td>
+              <td>E‑commerce Website <small>(Buy/Sell Jewellery Online)</small></td>
+              <td>Facebook &amp; Instagram Ads</td>
+            </tr>
+            <tr>
+              <td>Custom Images &amp; LED Videos for Shop TV</td>
+              <td>Mobile App Development</td>
+              <td>SEO Optimisation <small>(Improve search ranking)</small></td>
+            </tr>
+            <tr>
+              <td>Video Reels Package for Social Media</td>
+              <td>Billing Software</td>
+              <td>Bulk SMS / Voice Call Package</td>
+            </tr>
+            <tr>
+              <td>Birthday / Anniversary Post Package</td>
+              <td>Employee Attendance &amp; Salary Management</td>
+              <td>Bulk WhatsApp Package</td>
+            </tr>
+            <tr>
+              <td>Daily Gold/Silver Rate Posters</td>
+              <td>Inventory Software <small>(Stock Tracking)</small></td>
+              <td>Official WhatsApp Verified Service</td>
+            </tr>
+            <tr>
+              <td>Custom Post for Print / Web / Packaging / Ads</td>
+              <td>Online Booking / Virtual Try‑On</td>
+              <td>Google Review &amp; Rating Management</td>
+            </tr>
+            <tr>
+              <td>Voice‑over Video Creation <small>(with voice)</small></td>
+              <td>Custom CRM for Jewellery <small>(Customer tracking)</small></td>
+              <td>Content Writing for Website</td>
+            </tr>
+            <tr>
+              <td>Jewellery Catalog Design <small>(PDF / Print)</small></td>
+              <td>Cloud Backup &amp; Storage</td>
+              <td>Influencer Marketing <small>(Local + Bridal)</small></td>
+            </tr>
+            <tr>
+              <td>Festival &amp; Campaign Branding Pack</td>
+              <td></td>
+              <td>YouTube Setup + Reels Editing</td>
+            </tr>
+            <tr>
+              <td>3D Jewellery Mockups / Renders</td>
+              <td></td>
+              <td>Pinterest Marketing for Bridal Jewellery</td>
+            </tr>
+            <tr>
+              <td>Instagram Highlight Cover Design</td>
+              <td></td>
+              <td>Online Reputation &amp; Response Management</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /table-responsive -->
+
+      <!-- Contact Section -->
+      <div class="row text-center text-md-start g-4 mt-lg-5">
+
+        <!-- Email -->
+        <div class="col-12 col-md-4">
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+            <span class="contact-badge text-white fs-4">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <div>
+              <div class="fw-semibold text-uppercase small text-muted">Email</div>
+              <a href="mailto:realvictorygroups@gmail.com" class="text-decoration-none text-dark">
+                realvictorygroups@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-12 col-md-4">
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+            <span class="contact-badge text-white fs-4">
+              <i class="fas fa-phone-alt"></i>
+            </span>
+            <div>
+              <div class="fw-semibold text-uppercase small text-muted">Phone</div>
+              <a href="tel:+918299012292" class="text-decoration-none text-dark">
+                +91 82990 12292
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="col-12 col-md-4">
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+            <span class="contact-badge text-white fs-4">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <div>
+              <div class="fw-semibold text-uppercase small text-muted">Address</div>
+              <address class="mb-0 small lh-sm">
+                73 Basement, Ekta Enclave Society,<br>
+                Lakhnapur, Kanpur, Uttar Pradesh 208024
+              </address>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div><!-- /inner container -->
+  </div><!-- /container-fluid -->
+
+
+{{-- service table end --}}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
