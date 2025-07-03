@@ -19,7 +19,7 @@
             <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active ' : '' }}">
                 About
             </a>
-            <a href="{{route('blog')}}" class="nav-item nav-link {{ request()->routeIs('blogs') ? 'active ' : '' }}">
+            <a href="{{route('blog')}}" class="nav-item nav-link {{ request()->routeIs('blog') ? 'active ' : '' }}">
                 Blog
             </a>
             <a href="{{ route('service') }}" class="nav-item nav-link {{ request()->routeIs('service') ? 'active ' : '' }}">
@@ -32,7 +32,9 @@
                 Contact
             </a>
         </div>
+        <button class="btn-imp  w-auto rounded-pill py-2 px-4 px-sm-3 mt-3 mt-sm-0">
+            Download Our Post
+        </button>
 
-        <button href="#" class="btn-imp rounded-pill py-2 px-4 ms-3 d-none d-lg-block ">Get Started</button>
     </div>
 </nav>

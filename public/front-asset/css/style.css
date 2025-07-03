@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
     --primary: #6222CC;
-    --secondary: #544f4f;
+    --secondary: #000000;
     --light: #f9f4f4;
     --dark: #04000B;
     /* --custom: linear-gradient(135deg, #ab0303, #0a0101); */
@@ -13,7 +13,9 @@
     background: #ed011b;
 }
 
-
+.contact{
+    background: #4ebc7a;
+}
 
 .logo{
     /* background: #FFFFFF; */

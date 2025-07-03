@@ -26,7 +26,7 @@
             <h5 class="text-dark">Our Blog</h5>
             <h1>Latest Blog & News</h1>
         </div>
-     <div class="row g-5 justify-content-center">
+     <div class="row g-5 gap-5 justify-content-center">
     @foreach($blogs as $blog)
     <div class="col-lg-6 col-xl-4 wow fadeIn blog py-5" data-wow-delay=".3s">
         <div class="blog-item position-relative bg-light rounded ">
