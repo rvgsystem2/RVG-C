@@ -10,7 +10,7 @@
         <div class="container-flued position-relative p-0">
 
 
-            <div class="container-flued pb-5 pt-5 custom-color" id="">
+            <div class="container-fluid pb-5 pt-5 custom-color" id="">
                 <div class="container px-lg-5 pt-5">
                   @forelse ($banners as $banner)
                       <div class="row g-5 align-items-end">
