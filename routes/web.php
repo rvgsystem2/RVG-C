@@ -48,6 +48,7 @@ Route::get('/term', [HomeController::class, 'term'])->name('term');
 Route::get('/refund', [HomeController::class, 'refund_policy'])->name('refund_policy');
 Route::get('/carrer', [HomeController::class, 'carrer'])->name('carrer');
 
+Route::post('/contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 
 
@@ -168,4 +169,8 @@ Route::prefix('blog')->group(function () {
     Route::post('/update/{id}', [BlogController::class, 'update'])->name('blog.update');
     Route::get('/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
 });
+
+Route::get('/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+Route::get('/contact/delete/{id}', [App\Http\Controllers\ContactController::class, 'destroy'])->name('contact.delete');
+
 require __DIR__.'/auth.php';

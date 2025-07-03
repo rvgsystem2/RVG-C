@@ -80,18 +80,21 @@
 
                 <!-- Contact Form -->
                 <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                    <form class="bg-light rounded shadow-sm p-4">
+                    <form id="contactForm" class="bg-light rounded shadow-sm p-4" action="{{ route('contact.store') }}" method="POST">
+
+                    {{-- <form class="bg-light rounded shadow-sm p-4" action="{{ route('contact.store') }}" method="POST"> --}}
+                        @csrf
                         <div class="mb-3">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name" required>
+                            <input type="text" name="name" class="form-control border-0 py-3" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email" required>
+                            <input type="email" name="email" class="form-control border-0 py-3" placeholder="Your Email (optional)">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Subject">
+                            <input type="text" name="subject" class="form-control border-0 py-3" placeholder="Subject">
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control border-0 py-3" rows="5" placeholder="Message"></textarea>
+                            <textarea class="form-control border-0 py-3" rows="5" name="message" placeholder="Message"></textarea>
                         </div>
                         <button type="submit" class="btn custom-color text-white py-3 px-4 w-100">
                             Send Message
@@ -102,3 +105,58 @@
         </div>
     </div>
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $('#contactForm').submit(function(e) {
+        e.preventDefault();
+
+        let $btn = $(this).find('button[type="submit"]');
+        $btn.prop('disabled', true).text('Please wait...');
+
+        $.ajax({
+            url: "{{ route('contact.store') }}",
+            method: "POST",
+            data: $(this).serialize(),
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Message sent successfully!',
+                    confirmButtonText: 'OK'
+                });
+
+                $('#contactForm')[0].reset();
+                $btn.prop('disabled', false).text('Send Message');
+            },
+            error: function(xhr) {
+                let errors = xhr.responseJSON.errors;
+                let errorMessages = '';
+
+                if (errors) {
+                    Object.values(errors).forEach(function(msgArr) {
+                        errorMessages += `• ${msgArr[0]}<br>`;
+                    });
+                } else {
+                    errorMessages = 'Something went wrong. Please try again.';
+                }
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    html: errorMessages
+                });
+
+                $btn.prop('disabled', false).text('Send Message');
+            }
+        });
+    });
+</script>
+
