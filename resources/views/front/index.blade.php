@@ -209,13 +209,13 @@
 <!-- Projects End -->
 
 
-      
+
 
         <!-- Testimonials Start -->
 <div class="container-xxl py-5 bg-light">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h5 class="text-primary">Testimonials</h5>
+            <h5 class="text-dark">Testimonials</h5>
             <h1 class="display-6 mb-4">What Our Clients Say!</h1>
             <p class="text-muted">Real stories from real people. See how our service is making an impact.</p>
         </div>

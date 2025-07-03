@@ -25,7 +25,7 @@
     <link href="{{asset('front-asset/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('front-asset/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
- 
+
 <!-- Your custom style -->
 <style>
     .testimonial-item {

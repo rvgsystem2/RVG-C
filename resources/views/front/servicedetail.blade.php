@@ -26,7 +26,7 @@
                 @endphp
                 <!-- Banner Image -->
                 <div class="position-relative mb-4">
-                    <img src="{{ asset('storage/' . ($firstDetail->image ?? 'default.jpg')) }}" class="img-fluid rounded shadow" alt="{{ $firstDetail->image_alt ?? 'Service Image' }}">
+                    <img src="{{ asset('storage/' . ($firstDetail->image ?? 'default.jpg')) }}" class="img-fluid-service rounded shadow" alt="{{ $firstDetail->image_alt ?? 'Service Image' }}">
                     <span class="position-absolute top-0 end-0 custom-color text-white px-4 py-2 rounded-bottom-start">
                         {{ $service->name }}
                     </span>
