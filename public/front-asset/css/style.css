@@ -4,12 +4,13 @@
     --secondary: #544f4f;
     --light: #f9f4f4;
     --dark: #04000B;
-    --custom: linear-gradient(135deg, #ab0303, #0a0101);
-
+    /* --custom: linear-gradient(135deg, #ab0303, #0a0101); */
+    --custom: #ed011b;
 }
 
 .custom-color {
-    background: linear-gradient(135deg, #ab0303, #0a0101);
+    /* background: linear-gradient(135deg, #ab0303, #0a0101); */
+    background: #ed011b;
 }
 
 
@@ -133,13 +134,13 @@ h6,
 .navbar-light .navbar-nav .nav-link {
     position: relative;
     margin-right: 25px;
-    padding: 35px 0;
+    padding: 30px 0;
     font-family: 'Jost', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--dark) !important;
     outline: none;
-    transition: .5s;
+
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
@@ -448,6 +449,18 @@ h6,
     height: 100px;
 
 }
+.img-fluid-service{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.blog{
+    box-shadow:  0 0 10px rgb(6, 0, 0);
+    border-radius: 10px;
+}
+
 
 /*** Project Portfolio ***/
 #portfolio-flters li {
