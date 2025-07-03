@@ -244,18 +244,18 @@
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
 
           <div>
-            <a href="tel:+918299012292" class="btn contact py-3 px-4 rounded-pill">
+            <a href="tel:+918299012292" class="btn btn-success py-3 px-4 rounded-pill">
                 <i class="fa fa-phone-alt me-3"></i> Call Now
             </a>
           </div>
             <div>
-                <a href="https://wa.me/+918299012292" target="_blank" class="btn contact py-3 px-4 rounded-pill">
+                <a href="https://wa.me/+918299012292" target="_blank" class="btn btn-success py-3 px-4 rounded-pill">
                     <i class="fab fa-whatsapp me-3"></i> WhatsApp
                  </a>
                 </div>
 
             <div>
-                <a href="mailto:realvictorygroups@gmail.com" class="btn contact py-3 px-4 rounded-pill">
+                <a href="mailto:realvictorygroups@gmail.com" class="btn btn-success py-3 px-4 rounded-pill">
                     <i class="fa fa-envelope  me-3"> </i> Email
                 </a>
             </div>
