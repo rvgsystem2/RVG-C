@@ -230,38 +230,37 @@
         {{-- start contact us --}}
 
 
-{{-- connect on call --}}
 <div class="container-fluid py-5">
-    <div class="container bg-light py-5 px-4 rounded shadow justify-content-center align-items-center text-center text-lg-center gap-4">
-
+    <div class="container bg-light py-5 px-4 px-lg-5 rounded shadow text-center">
         <!-- Text Content -->
-        <div class="flex-grow-1">
-            <h2 class="mb-3">Have a project in mind? Let's talk now.</h2>
-            <p class="mb-0">Sure, let’s discuss your project idea in detail. What’s next?</p>
+        <div class="mb-4">
+            <h2 class="fw-bold mb-3">Have a project in mind? Let's talk now.</h2>
+            <p class="text-muted mb-0">Sure, let’s discuss your project idea in detail. What’s next?</p>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
-
-          <div>
-            <a href="tel:+918299012292" class="btn btn-success py-3 px-4 rounded-pill">
-                <i class="fa fa-phone-alt me-3"></i> Call Now
-            </a>
-          </div>
-            <div>
-                <a href="https://wa.me/+918299012292" target="_blank" class="btn btn-success py-3 px-4 rounded-pill">
-                    <i class="fab fa-whatsapp me-3"></i> WhatsApp
-                 </a>
-                </div>
-
-            <div>
-                <a href="mailto:realvictorygroups@gmail.com" class="btn btn-success py-3 px-4 rounded-pill">
-                    <i class="fa fa-envelope  me-3"> </i> Email
+        <!-- Buttons Row -->
+        <div class="row justify-content-center g-3 mb-3">
+            <div class="col-md-auto">
+                <a href="tel:+918299012292" class="btn btn-success px-4 py-3 rounded-pill shadow-sm">
+                    <i class="fa fa-phone-alt me-2"></i> Call Now
+                </a>
+            </div>
+            <div class="col-md-auto">
+                <a href="https://wa.me/+918299012292" target="_blank" class="btn btn-success px-4 py-3 rounded-pill shadow-sm">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
                 </a>
             </div>
         </div>
+
+        <!-- Optional: Full-width WhatsApp Button -->
+        <div class="d-grid">
+            <a href="https://wa.me/+918299012292" target="_blank" class="btn btn-success py-3 rounded-pill fw-semibold shadow">
+                <i class="fab fa-whatsapp me-2"></i> Let's Chat on WhatsApp
+            </a>
+        </div>
     </div>
 </div>
+
 
 
 
