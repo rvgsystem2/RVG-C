@@ -169,11 +169,11 @@
     <div class="py-5 bg-white shadow px-3 px-sm-4 px-md-5">
 
       <!-- Heading -->
-      <ul class="list-unstyled mb-4">
-        <li class="h5 fw-bold text-dark mb-3">
-          • Graphic, IT And Promotion Service for Jewellery Business
-        </li>
-      </ul>
+      <div class="list-unstyled mb-4">
+        <h1 class=" fw-bold text-dark text-center mb-3">
+           Graphic, IT And Promotion Service for Jewellery Business
+        </h1>
+    </div>
 
       <!-- Services table -->
       <div class="table-responsive">
