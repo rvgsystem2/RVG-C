@@ -1,7 +1,7 @@
 @extends('component.main')
 @section('content')
     <!-- Page Header Start -->
-    <div class="container-fluid custom-color py-5">
+    <div class="container-fluid custom-color lg:py-5 md:py-4 sm:py-3 py-2">
         <div class="container text-center py-5">
             <h1 class="display-2 text-white mb-4 animated slideInDown">Privacy Policy</h1>
             <nav aria-label="breadcrumb animated slideInDown">
@@ -16,7 +16,7 @@
     <!-- Page Header End -->
 
     <!-- Privacy Policy Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
         <div class="row">
             <h1 class="mb-4 text-center">Privacy Policy</h1>
             <div class="col-lg-12 px-5">

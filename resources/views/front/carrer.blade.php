@@ -2,8 +2,8 @@
 
 @section('content')
        <!-- Page Header Start -->
-       <div class="container-fluid custom-color py-5">
-        <div class="container text-center py-5">
+       <div class="container-fluid custom-color lg:py-5 md:py-4 sm:py-3 py-2">
+        <div class="container text-center lg:py-5 md:py-4 sm:py-3 py-2">
             <h1 class="display-2 text-white mb-4 animated slideInDown">Join Our Team</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">

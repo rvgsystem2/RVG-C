@@ -1,6 +1,6 @@
 
 <!-- PRODUCT Start -->
-<div class="container-fluid py-5 bg-light">
+<div class="container-fluid lg:py-5 md:py-4 sm:-py-3 py-2 bg-light">
     <div class="container py-5 px-lg-5">
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <h1 class="display-6">Our Products</h1>

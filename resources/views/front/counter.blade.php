@@ -1,6 +1,6 @@
      <!-- Facts Start -->
-     <div class="container-fluid custom-color py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 px-lg-5">
+     <div class="container-fluid custom-color lg:py-5 md:py-4 py-2 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container lg:py-5 md:py-4 sm:py-3 py-2 px-lg-5">
             <div class="row g-4">
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-certificate fa-3x mb-3 text-dark"></i>

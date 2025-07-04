@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Page Header -->
-<div class="container-fluid custom-color py-5">
+<div class="container-fluid custom-color lg:py-5 md:py-4 sm:py-3 py-2">
     <div class="container text-center py-5">
         <h1 class="display-3 text-white mb-3 animated slideInDown">Projects</h1>
         <nav aria-label="breadcrumb" class="animated slideInDown">
@@ -18,7 +18,7 @@
 
 
         <!-- Projects Start -->
-        <div class="container-flued py-5">
+        <div class="container-flued lg:py-5 md:py-4 sm:py-3 py-2">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title justify-content-center"><span></span>Our Projects<span></span></p>

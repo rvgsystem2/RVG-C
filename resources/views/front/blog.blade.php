@@ -20,9 +20,9 @@
 
 
    <!-- Blog Start -->
-   <div class="container-fluid py-5 mb-5">
+   <div class="container-fluid lg:py-5 md:py-4 sm:py-2 mb-5">
     <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+        <div class="text-center mx-auto pb-5 wow fadeIn py-5" data-wow-delay=".3s" style="max-width: 600px;">
             <h5 class="text-dark">Our Blog</h5>
             <h1>Latest Blog & News</h1>
         </div>
