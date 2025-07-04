@@ -130,6 +130,12 @@
                 <i class="fas fa-blog mr-1"></i> Blogs
             </x-nav-link>
         @endcan
+
+        @can('view seo')
+            <x-nav-link :href="route('seo.index')" :active="request()->routeIs('seo.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-search mr-1"></i> SEO
+            </x-nav-link>
+        @endcan
     </div>
 </div>
 

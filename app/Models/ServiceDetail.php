@@ -14,4 +14,9 @@ class ServiceDetail extends Model
     {
         return $this->belongsTo(ServiceCategory::class, 'category_id');
     }
+
+    public function seo()
+    {
+        return $this->hasOne(Seo::class);
+    }
 }

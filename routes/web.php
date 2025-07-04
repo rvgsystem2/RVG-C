@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SeoController;
 use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\TeamController;
@@ -172,5 +173,14 @@ Route::prefix('blog')->group(function () {
 
 Route::get('/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
 Route::get('/contact/delete/{id}', [App\Http\Controllers\ContactController::class, 'destroy'])->name('contact.delete');
+
+
+// SEO Routes
+Route::get('seo/index', [SeoController::class, 'index'])->name('seo.index');
+Route::get('seo/create', [SeoController::class, 'create'])->name('seo.create');
+Route::post('seo/store', [SeoController::class, 'store'])->name('seo.store');
+Route::get('seo/edit/{seo}', [SeoController::class, 'edit'])->name('seo.edit');
+Route::post('seo/update/{seo}', [SeoController::class, 'update'])->name('seo.update');
+Route::get('seo/delete/{seo}', [SeoController::class, 'delete'])->name('seo.delete');
 
 require __DIR__.'/auth.php';

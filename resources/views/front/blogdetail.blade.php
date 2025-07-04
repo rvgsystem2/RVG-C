@@ -1,4 +1,4 @@
-@extends('component.main')
+@extends('component.main', ['seos' => $seos ?? null])
 @section('content')
 
 <!-- Page Header Start -->

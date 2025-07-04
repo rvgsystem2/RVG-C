@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Product;
 use App\Models\Project;
+use App\Models\Seo;
 use App\Models\ServiceCategory;
 use App\Models\ServiceDetail;
 use App\Models\Team;
@@ -27,32 +28,47 @@ public function index()
    $banners =Banner::where('status', 'active')->get();
    $products = Product::where('status', 'active')->get();
    $testimonials = Testimonial::where('status', 'active')->get();
-    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners', 'products', 'testimonials'));
+   $seos = Seo::where('page_type', 'home')->first();
+    return view('front.index', compact('projects', 'categories', 'serviceCategories', 'abouts', 'banners', 'products', 'testimonials', 'seos'));
 }
-
-
-public function servicedetail($slug)
-{
-    $service = ServiceCategory::with('serviceDetails')->where('slug', $slug)->firstOrFail();
-
-    return view('front.servicedetail', compact('service'));
-}
-
 
     public function about(){
          $abouts=About::where('status', 'active')->get();
           $products = Product::where('status', 'active')->get();
           $teams=Team::where('status', 'active')->get();
-        return view('front.about', compact('abouts', 'products','teams'));
+          $seos = Seo::where('page_type', 'about')->first();
+        return view('front.about', compact('abouts', 'products','teams', 'seos'));
     }
+
+
+
 
     public function service(){
         $serviceCategories = ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
           $projects = Project::latest()->get();
     $categories = $projects->pluck('project_category_name')->unique();
     $testimonials = Testimonial::where('status', 'active')->get();
-        return view('front.service' , compact('serviceCategories', 'projects', 'categories', 'testimonials'));
+       $seos = Seo::where('page_type', 'service')->first();
+        return view('front.service' , compact('serviceCategories', 'projects', 'categories', 'testimonials', 'seos'));
     }
+
+public function servicedetail($slug)
+{
+    $category = ServiceCategory::with('serviceDetails')->where('slug', $slug)->firstOrFail();
+
+    $firstService = $category->serviceDetails->first();
+    $seos = $firstService
+        ? Seo::where('service_id', $firstService->id)->first()
+        : null;
+
+    return view('front.servicedetail', [
+        'service' => $category,
+        'firstService' => $firstService,
+        'seos' => $seos,
+    ]);
+}
+
+
 
     // public function team(){
     //     return view('front.team');
@@ -63,7 +79,8 @@ public function servicedetail($slug)
     // }
 
     public function contact(){
-        return view('front.contact');
+        $seos = Seo::where('page_type', 'contact')->first();
+        return view('front.contact', compact('seos'));
     }
 
     public function notFound(){
@@ -74,36 +91,44 @@ public function servicedetail($slug)
 
     // Extract unique categories for filters
     $categories = $projects->pluck('project_category_name')->unique();
-        return view('front.project' , compact('projects', 'categories'));
+        $seos = Seo::where('page_type', 'project')->first();
+        return view('front.project' , compact('projects', 'categories', 'seos'));
+
     }
 
 public function blog()
 {
     $blogs = Blog::with('category')->latest()->paginate(6); // pagination added
-    return view('front.blog', compact('blogs'));
+    $seos = Seo::where('page_type', 'blog')->first();
+    return view('front.blog', compact('blogs', 'seos'));
 }
 
 public function blogdetail($slug)
 {
     $blog = Blog::with('category')->where('slug', $slug)->firstOrFail();
-    return view('front.blogdetail', compact('blog'));
+    $seos = Seo::where('blog_id', $blog->id)->first();
+    return view('front.blogdetail', compact('blog', 'seos'));
 }
 
 
 
     public function privacy(){
-        return view('front.privacy');
+        $seos = Seo::where('page_type', 'privacy_policy')->first();
+        return view('front.privacy', compact('seos'));
     }
 
     public function term(){
-        return view('front.term');
+        $seos = Seo::where('page_type', 'term_and_condition')->first();
+        return view('front.term', compact('seos'));
     }
 
     public function refund_policy(){
-        return view('front.refund_policy');
+        $seos = Seo::where('page_type', 'refund_policy')->first();
+        return view('front.refund_policy', compact('seos'));
     }
 
     public function carrer(){
-        return view('front.carrer');
+        $seos = Seo::where('page_type', 'career')->first();
+        return view('front.carrer', compact('seos'));
     }
 }
