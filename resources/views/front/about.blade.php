@@ -1,12 +1,12 @@
 @extends('component.main' , ['seos' => $seos])
 @section('content')
     <!-- Page Header -->
-    <div class="container-fluid custom-color py-5">
-        <div class="container text-center py-5">
+    <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
+        <div class="container text-center py-5 ">
             <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
             <nav aria-label="breadcrumb" class="animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
                 </ol>
             </nav>
@@ -17,10 +17,10 @@
     @include('front.product')
 
     <!-- About Section -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
         @forelse ($abouts as $about)
             <div class="container py-5 px-lg-5">
-                <p class="section-title ">{{ $about->title }}<span></span></p>
+                <p class="section-title px-4 py-4 sm:px-4 sm:py-4 md:px-8 md:py-8">{{ $about->title }}<span></span></p>
                 <div class="row g-5 align-items-center">
 
                     <!-- Image Column: Order-1 on mobile, Order-2 on large screens -->
@@ -52,8 +52,9 @@
     <!-- Facts End -->
 
    <!-- Team Start -->
-<div class="container-fluid py-5 bg-light">
-    <div class="container py-5">
+<div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light">
+    <div class="container py-5 ">
+        {{-- <p class="section-title text-dark"><span></span>Our Team<span></span></p> --}}
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-dark"><span></span>Our Team<span></span></p> --}}
             <h1 class="display-6">Meet Our Experts</h1>

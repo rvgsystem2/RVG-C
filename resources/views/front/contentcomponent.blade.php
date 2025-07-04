@@ -1,10 +1,10 @@
-<div class="container-fluid py-5 position-relative overflow-hidden">
+<div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 position-relative overflow-hidden">
     <!-- Background Image -->
     <img src="{{ asset('asset/img/image1.jpg') }}" alt="Contact Background"
         class="position-absolute w-100 h-100 top-0 start-0 z-n1"
         style="object-fit: cover; opacity: 0.8;">
 
-    <div class="container py-5 position-relative z-1">
+    <div class="container py-5  position-relative z-1">
         <!-- Heading -->
         <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
             <h5 class="text-dark">Get In Touch</h5>

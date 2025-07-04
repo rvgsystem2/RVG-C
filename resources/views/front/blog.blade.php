@@ -2,14 +2,14 @@
 @section('content')
 
  <!-- Page Header Start -->
- <div class="container-fluid custom-color py-5">
+ <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
     <div class="container text-center py-5">
         <h1 class="display-2 text-white mb-4 animated slideInDown">Our Blog</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
 
-                <li class="breadcrumb-item" aria-current="page">Blog</li>
+                <li class="breadcrumb-item" aria-current="page"><a href="">Blog</a></li>
             </ol>
         </nav>
     </div>
@@ -20,9 +20,9 @@
 
 
    <!-- Blog Start -->
-   <div class="container-fluid py-5 mb-5">
+   <div class="container-fluid lg:py-5 md:py-4 sm:py-2 mb-5">
     <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+        <div class="text-center mx-auto pb-5 wow fadeIn py-5" data-wow-delay=".3s" style="max-width: 600px;">
             <h5 class="text-dark">Our Blog</h5>
             <h1>Latest Blog & News</h1>
         </div>

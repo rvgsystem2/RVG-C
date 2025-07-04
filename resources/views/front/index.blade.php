@@ -38,10 +38,10 @@
         <!-- Navbar & Hero End -->
 
         <!-- About Start -->
-        <div class="container-fluid py-5">
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
             @forelse ($abouts as $about)
                 <div class="container py-5 px-lg-5">
-                    <p class="section-title ">{{ $about->title }}<span></span></p>
+                    <p class="section-title text-center align-items-center">{{ $about->title }}</p>
                     <div class="row g-5 align-items-center">
 
                         <!-- Image Column: Order-1 on mobile, Order-2 on large screens -->
@@ -82,8 +82,8 @@
 
 
         <!-- Service Start -->
-        <div class="container-fluid py-5 bg-light">
-            <div class="container py-5 px-lg-5">
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 bg-light">
+            <div class="container py-3 px-lg-5">
                 <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-dark justify-content-center"><span></span>Our Services<span></span></p>
                     <h1 class="display-6">What Solutions We Provide</h1>
@@ -105,7 +105,7 @@
                                     <div class="d-flex justify-content-center gap-3">
                                         <a href="{{ route('servicedetail', $category->slug) }}"
                                             class="btn btn-success btn-sm px-4">Read More</a>
-                                        <a href="#contact" class="btn btn-custom btn-sm px-4">Contact Us</a>
+                                        <a href="{{route('contact')}}" class="btn btn-custom btn-sm px-4">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
         <!-- Service End -->
 
         <!-- Projects Start -->
-        <div class="container-fluid py-5 bg-light">
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-py-3 py-2 bg-light">
             <div class="container py-5 px-lg-5">
                 <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-dark justify-content-center"><span></span>Our Projects<span></span></p>
@@ -196,7 +196,7 @@
 
 
         <!-- Testimonials Start -->
-        <div class="container-fluid py-5 bg-light">
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light">
             <div class="container">
                 <div class="text-center mx-auto mb-5" style="max-width: 600px;">
                     <h5 class="text-dark">Testimonials</h5>
@@ -241,7 +241,7 @@
         {{-- start contact us --}}
 
 
-        <div class="container-fluid py-5">
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light" >
             <div class="container bg-light py-5 px-4 px-lg-5 rounded shadow text-center">
                 <!-- Text Content -->
                 <div class="mb-4">
