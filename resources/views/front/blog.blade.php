@@ -2,7 +2,7 @@
 @section('content')
 
  <!-- Page Header Start -->
- <div class="container-fluid custom-color py-5">
+ <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
     <div class="container text-center py-5">
         <h1 class="display-2 text-white mb-4 animated slideInDown">Our Blog</h1>
         <nav aria-label="breadcrumb animated slideInDown">

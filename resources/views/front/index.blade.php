@@ -105,7 +105,7 @@
                                     <div class="d-flex justify-content-center gap-3">
                                         <a href="{{ route('servicedetail', $category->slug) }}"
                                             class="btn btn-success btn-sm px-4">Read More</a>
-                                        <a href="#contact" class="btn btn-custom btn-sm px-4">Contact Us</a>
+                                        <a href="{{route('contact')}}" class="btn btn-custom btn-sm px-4">Contact Us</a>
                                     </div>
                                 </div>
                             </div>

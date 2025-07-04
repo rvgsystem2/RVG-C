@@ -1,14 +1,14 @@
 @extends('component.main')
 @section('content')
     <!-- Page Header Start -->
-    <div class="container-fluid custom-color lg:py-5 md:py-4 sm:py-3 py-2">
+    <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Privacy Policy</h1>
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Terms And Condition</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
 
-                    <li class="breadcrumb-item" aria-current="page"><a href="">Privacy Policy</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="">Terms and Condition</a></li>
                 </ol>
             </nav>
         </div>
@@ -18,7 +18,7 @@
     <!-- Privacy Policy Start -->
     <div class="container-fluid py-5 py-2">
         <div class="row">
-            <h1 class="mb-4 text-center">Privacy Policy</h1>
+            <h1 class="mb-4 text-center">Terms and Condition</h1>
             <div class="col-lg-12 px-5">
                 <h3 class="mb-2">Last updated on 29-11-2024 18:46:21</h3>
                 <p class="mb-4">

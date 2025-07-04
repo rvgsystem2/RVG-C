@@ -1,8 +1,8 @@
 @extends('component.main')
 @section('content')
         <!-- Page Header Start -->
-        <div class="container-fluid custom-color lg:py-5 md:py-4 sm:py-3 py-2">
-            <div class="container text-center lg:py-5 md:py-4 sm:py-3 py-2">
+        <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
+            <div class="container text-center py-5">
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Cancellation & Refund Policy</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
@@ -17,7 +17,7 @@
 
         <!-- Privacy Policy Start -->
 <div>
-    <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
+    <div class="container-fluid  my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="row">
             <h1 class="mb-4 text-center">Cancellation & Refund Policy</h1>
             <div class="col-lg-12 px-5">
