@@ -77,6 +77,8 @@
                             @if ($team->company)
                                 <p class="text-muted small fst-italic">{{ $team->company }}</p>
                             @endif
+
+                             <p class="text-muted small mb-3">{{ $team->message }}</p>
                         </div>
                         <div class="d-flex justify-content-center mb-4 mt-auto">
                             @if ($team->facebook)
