@@ -21,7 +21,7 @@
     <div class="container-fluid py-5 ">
         <div class="row">
             <h1 class="mb-4 text-center">Privacy Policy</h1>
-            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
+            <div class="col-lg-12 lg:px-5 md:px-4">
                 <h3 class="mb-2">Effective Date: 10-oct-2024</h3>
                 <p class="p-2">
                     Welcome to www.realvictorygroups.com (the “Site”). Real Victory Groups (“we,” “us,” or “our”)
