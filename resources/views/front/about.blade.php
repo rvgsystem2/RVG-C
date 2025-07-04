@@ -74,10 +74,11 @@
                         <div class="p-4">
                             <h5 class="mb-1">{{ $team->name }}</h5>
                             <p class="text-muted small mb-2">{{ $team->designation }}</p>
-                            <p class="text-muted small mb-3">{{ $team->message }}</p>
                             @if ($team->company)
                                 <p class="text-muted small fst-italic">{{ $team->company }}</p>
                             @endif
+
+                             <p class="text-muted small mb-3">{{ $team->message }}</p>
                         </div>
                         <div class="d-flex justify-content-center mb-4 mt-auto">
                             @if ($team->facebook)
