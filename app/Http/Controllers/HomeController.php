@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Career;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Seo;
@@ -127,9 +128,10 @@ public function blogdetail($slug)
         return view('front.refund_policy', compact('seos'));
     }
 
-    public function carrer(){
+    public function career(){
         $seos = Seo::where('page_type', 'career')->first();
-        return view('front.carrer', compact('seos'));
+         $jobs = Career::where('status', 'active')->orderBy('valid_through', 'desc')->get();
+        return view('front.carrer', compact('seos', 'jobs'));
     }
 
 

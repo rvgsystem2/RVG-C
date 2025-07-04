@@ -1,6 +1,37 @@
 @extends('component.main', ['seos' => $seos])
 
 @section('content')
+
+@foreach ($jobs as $job)
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "{{ $job->title }}",
+  "description": "{{ strip_tags($job->description) }}",
+  "datePosted": "{{ \Carbon\Carbon::parse($job->created_at)->toDateString() }}",
+  "employmentType": "{{ strtoupper(str_replace(' ', '_', $job->type)) }}",
+  "validThrough": "{{ \Carbon\Carbon::parse($job->valid_through ?? now()->addMonths(1))->endOfDay()->toIso8601String() }}",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Real Victory Groups",
+    "sameAs": "https://www.realvictorygroups.com",
+    "logo": "https://www.realvictorygroups.com/images/logo.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ $job->location ?? 'Kanpur' }}",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "208024",
+      "addressCountry": "IN"
+    }
+  }
+}
+</script>
+@endforeach
+
        <!-- Page Header Start -->
        <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="container text-center py-5">
@@ -16,49 +47,50 @@
     </div>
     <!-- Page Header End -->
 
-<!-- Job Openings -->
+<!-- Job Openings Section -->
 <div class="container my-5">
-    <div class="text-center mb-4">
+    <div class="text-center mb-5">
         <h2 class="fw-bold">Current Openings</h2>
-        <p class="text-muted">We are always looking for talented individuals to join our team</p>
+        <p class="text-muted">We are always looking for talented individuals to join our team.</p>
     </div>
 
     <div class="row g-4">
-        <!-- Job Card Example -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Web Developer</h5>
-                    <p class="card-text text-muted">We are looking for a skilled developer with experience in Laravel and modern front-end frameworks.</p>
-                    <ul class="list-unstyled">
-                        <li><strong>Location:</strong> Remote</li>
-                        <li><strong>Experience:</strong> 2+ years</li>
-                        <li><strong>Type:</strong> Full Time</li>
-                    </ul>
-                    <a href="#applyForm" class="btn btn-dark mt-2">Apply Now</a>
+        @forelse($jobs as $job)
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm transition-scale">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">{{ $job->title }}</h5>
+                        <p class="card-text text-muted flex-grow-1">{{ Str::limit($job->description, 120) }}</p>
+                        <ul class="list-unstyled small text-muted mb-3">
+                            <li><strong>📍 Location:</strong> {{ $job->location ?? 'Kanpur' }}</li>
+                            <li><strong>💼 Experience:</strong> {{ $job->experience ?? '0' }}+ years</li>
+                            <li><strong>🕒 Type:</strong> {{ $job->type ?? 'Full Time' }}</li>
+                            @if($job->valid_through)
+                                <li><strong>📅 Apply By:</strong> {{ \Carbon\Carbon::parse($job->valid_through)->format('M d, Y') }}</li>
+                            @endif
+                        </ul>
+                        <a href="#applyForm" class="btn btn-outline-dark mt-auto w-100">Apply Now</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Repeat for more jobs -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Graphic Designer</h5>
-                    <p class="card-text text-muted">Looking for creative designers with Adobe Suite experience and branding skills.</p>
-                    <ul class="list-unstyled">
-                        <li><strong>Location:</strong> Mumbai</li>
-                        <li><strong>Experience:</strong> 1+ years</li>
-                        <li><strong>Type:</strong> Part Time</li>
-                    </ul>
-                    <a href="#applyForm" class="btn btn-dark mt-2">Apply Now</a>
-                </div>
+        @empty
+            <div class="col-12 text-center">
+                <p class="text-muted">No openings currently available. Please check back later.</p>
             </div>
-        </div>
-
-        <!-- Add more job cards as needed -->
+        @endforelse
     </div>
 </div>
+
+<style>
+.transition-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transition-scale:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+</style>
+
 
 <!-- Application Form -->
 <div class="container my-5" id="applyForm">

@@ -142,6 +142,12 @@
                 <i class="fas fa-envelope mr-1"></i> Contact Messages
             </x-nav-link>
         @endcan
+
+        @can('view careers')
+            <x-nav-link :href="route('careers.index')" :active="request()->routeIs('careers.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-briefcase mr-1"></i> Careers
+            </x-nav-link>
+        @endcan
     </div>
 </div>
 

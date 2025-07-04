@@ -5,6 +5,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogCategoryControlloer;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductController;
@@ -47,7 +48,7 @@ Route::get('/service/{slug}', [HomeController::class, 'servicedetail'])->name('s
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 Route::get('/term', [HomeController::class, 'term'])->name('term');
 Route::get('/refund', [HomeController::class, 'refund_policy'])->name('refund_policy');
-Route::get('/carrer', [HomeController::class, 'carrer'])->name('carrer');
+Route::get('/career', [HomeController::class, 'career'])->name('career');
 
 Route::get('/application', [HomeController::class, 'application'])->name('application');
 
@@ -187,5 +188,13 @@ Route::post('seo/store', [SeoController::class, 'store'])->name('seo.store');
 Route::get('seo/edit/{seo}', [SeoController::class, 'edit'])->name('seo.edit');
 Route::post('seo/update/{seo}', [SeoController::class, 'update'])->name('seo.update');
 Route::get('seo/delete/{seo}', [SeoController::class, 'delete'])->name('seo.delete');
+
+// Career Routes
+Route::get('career/index', [CareerController::class, 'index'])->name('careers.index');
+Route::get('career/create', [CareerController::class, 'create'])->name('careers.create');
+Route::post('career/store', [CareerController::class, 'store'])->name('careers.store');
+Route::get('career/edit/{career}', [CareerController::class, 'edit'])->name('careers.edit');
+Route::post('career/update/{career}', [CareerController::class, 'update'])->name('careers.update');
+Route::get('career/delete/{career}', [CareerController::class, 'destroy'])->name('careers.delete');
 
 require __DIR__.'/auth.php';

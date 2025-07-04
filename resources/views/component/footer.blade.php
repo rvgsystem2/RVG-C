@@ -33,7 +33,7 @@
                     <a class="btn btn-link text-light text-start" href="{{ route('privacy') }}">Privacy Policy</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('term') }}">Terms & Conditions</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('refund_policy') }}">Return Policy</a>
-                    <a class="btn btn-link text-light text-start" href="{{ route('carrer') }}">Career</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('career') }}">Career</a>
                 </div>
             </div>
 
