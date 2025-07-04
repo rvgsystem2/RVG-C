@@ -21,9 +21,9 @@
     <div class="container-fluid py-5 ">
         <div class="row">
             <h1 class="mb-4 text-center">Privacy Policy</h1>
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4">
                 <h3 class="mb-2">Effective Date: 10-oct-2024</h3>
-                <p>
+                <p class="p-2">
                     Welcome to www.realvictorygroups.com (the “Site”). Real Victory Groups (“we,” “us,” or “our”)
                     respects your privacy and is committed to protecting the personal information you share with us. This
                     Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit
@@ -31,7 +31,7 @@
                     Privacy Policy, please do not access the site.
                 </p>
             </div>
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">1. Information We Collect</h4>
                 <p>We may collect information about you in various ways, including:</p>
                 <ul>
@@ -53,7 +53,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">2. How We Use Your Information</h4>
                 <p>We use the information we collect to:</p>
                 <ul>
@@ -66,7 +66,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2"> 3. Disclosure of Your Information</h4>
                 <p>We may share your information in the following situations:</p>
                 <ul>
@@ -82,7 +82,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">4. Security of Your Information</h4>
                 <p>We use administrative, technical, and physical security measures to help protect your personal
                     information. While we have taken reasonable steps to secure the personal information you provide to us,
@@ -90,7 +90,7 @@
                     secure.</p>
             </div>
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">5. Third-Party Websites</h4>
                 <p>The Site may contain links to third-party websites and services. We are not responsible for the
                     privacy practices or content of these websites. Please review their privacy policies if you visit
@@ -98,7 +98,7 @@
                 </p>
             </div>
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">6. Your Privacy Rights</h4>
                 <p>Depending on your location, you may have certain rights regarding your personal information,
                     including:
@@ -114,7 +114,7 @@
             </div>
 
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">7. Changes to This Privacy Policy</h4>
                 <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating
                     the “Effective Date” at the top of this policy. You are encouraged to review this Privacy Policy
@@ -122,7 +122,7 @@
             </div>
 
 
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h4 class="mb-2">8. Contact Us</h4>
                 <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
 

@@ -3,7 +3,7 @@
     <div class="container-fluid bg-white p-0">
 
         <!-- Page Header Start -->
-        <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
+        <div class="container-fluid custom-color  mt-lg-5 py-md-4 py-sm-3 py-2">
             <div class="container text-center py-5">
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Our Service</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
@@ -21,7 +21,7 @@
 
 
             <!-- Service Start -->
-<div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light">
+<div class="container-fluid  md:py-4 sm:py-3 py-2 bg-light">
     <div class="container py-5 px-lg-5">
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-dark justify-content-center"><span></span>Our Services<span></span></p>

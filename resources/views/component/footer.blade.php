@@ -8,7 +8,7 @@
                 <h5 class="text-white mb-4">Address</h5>
                 <p><i class="fa fa-map-marker-alt me-3"></i>73 Basement, Ekta Enclave Society, Lakhanpur, Khyora, Kanpur,
                     UP 208024</p>
-                <p><a href="tel:+91 82990 12292"><i class="fa fa-phone-alt me-3"></i>+91 82990 12292</p></a>
+                <p><a href="tel:+918299012292"><i class="fa fa-phone-alt me-3"></i>+918299012292</p></a>
                 <p><a href="mailto:realvictorygroups@gmail.com"><i
                             class="fa fa-envelope me-3"></i>realvictorygroups@gmail.com</p></a>
                 <div class="d-flex pt-3">
