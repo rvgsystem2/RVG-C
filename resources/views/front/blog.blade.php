@@ -28,7 +28,7 @@
         </div>
      <div class="row g-5 gap-5 justify-content-center">
     @foreach($blogs as $blog)
-    <div class="col-lg-6 col-xl-3 wow fadeIn blog py-5" data-wow-delay=".3s">
+    <div class="col-lg-6 col-xl-3 col-md-4 wow fadeIn blog py-5" data-wow-delay=".3s">
         <div class="blog-item position-relative bg-light rounded ">
             <img src="{{ asset('storage/' . $blog->thumbnail_img) }}" class="img-fluid w-100 rounded-top" alt="{{ $blog->thumbnail_img_alt }}">
             <span class="position-absolute px-4 py-2 custom-color text-white rounded" style="top: -28px; right: 20px;">
