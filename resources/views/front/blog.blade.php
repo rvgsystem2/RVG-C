@@ -9,7 +9,7 @@
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
 
-                <li class="breadcrumb-item" aria-current="page">Blog</li>
+                <li class="breadcrumb-item" aria-current="page"><a href="">Blog</a></li>
             </ol>
         </nav>
     </div>

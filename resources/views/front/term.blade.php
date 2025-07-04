@@ -8,7 +8,7 @@
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
 
-                    <li class="breadcrumb-item" aria-current="page">Privacy Policy</li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="">Privacy Policy</a></li>
                 </ol>
             </nav>
         </div>
@@ -16,7 +16,7 @@
     <!-- Page Header End -->
 
     <!-- Privacy Policy Start -->
-    <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
+    <div class="container-fluid py-5 py-2">
         <div class="row">
             <h1 class="mb-4 text-center">Privacy Policy</h1>
             <div class="col-lg-12 px-5">
