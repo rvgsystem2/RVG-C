@@ -38,15 +38,19 @@
             </div>
 
             <!-- Our Services -->
+            @php
+
+   $serviceCategories = App\Models\ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
+            @endphp
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Our Services</h5>
                 <div class="d-flex flex-column">
-                    <a class="btn btn-link text-light text-start" href="#">Digital Marketing</a>
-                    <a class="btn btn-link text-light text-start" href="#">Social Media Handling</a>
-                    <a class="btn btn-link text-light text-start" href="#">Web Development</a>
-                    <a class="btn btn-link text-light text-start" href="#">App Development</a>
-                    <a class="btn btn-link text-light text-start" href="#">Graphics Designing</a>
-                    <a class="btn btn-link text-light text-start" href="#">Seo Services</a>
+                    @foreach ($serviceCategories as $serviceCategory)
+                        <a class="btn btn-link text-light text-start"
+                            href="{{ route('servicedetail', $serviceCategory->slug) }}">{{ $serviceCategory->name }}</a>
+                    @endforeach
+                  
+                   
                 </div>
             </div>
 
