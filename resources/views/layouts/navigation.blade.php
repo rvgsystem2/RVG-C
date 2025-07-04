@@ -136,6 +136,12 @@
                 <i class="fas fa-search mr-1"></i> SEO
             </x-nav-link>
         @endcan
+
+        @can('view contact')
+            <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.*')" class="block px-4 py-2 text-left">
+                <i class="fas fa-envelope mr-1"></i> Contact Messages
+            </x-nav-link>
+        @endcan
     </div>
 </div>
 
