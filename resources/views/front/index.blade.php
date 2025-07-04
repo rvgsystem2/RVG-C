@@ -1,4 +1,4 @@
-@extends('component.main',['seos' => $seos])
+@extends('component.main', ['seos' => $seos])
 @section('content')
 
 
@@ -105,7 +105,7 @@
                                     <div class="d-flex justify-content-center gap-3">
                                         <a href="{{ route('servicedetail', $category->slug) }}"
                                             class="btn btn-success btn-sm px-4">Read More</a>
-                                        <a href="{{route('contact')}}" class="btn btn-custom btn-sm px-4">Contact Us</a>
+                                        <a href="{{ route('contact') }}" class="btn btn-custom btn-sm px-4">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +241,7 @@
         {{-- start contact us --}}
 
 
-        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light" >
+        <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2 bg-light">
             <div class="container bg-light py-5 px-4 px-lg-5 rounded shadow text-center">
                 <!-- Text Content -->
                 <div class="mb-4">
@@ -250,27 +250,28 @@
                 </div>
 
                 <!-- Buttons Row -->
-                <div class="row justify-content-center g-3 mb-3">
-                    <div class="col-md-auto">
-                        <a href="tel:+918299012292" class="btn btn-success px-4 py-3 rounded-pill shadow-sm">
-                            <i class="fa fa-phone-alt me-2"></i> Call Now
-                        </a>
-                    </div>
-                    <div class="col-md-auto">
-                        <a href="https://wa.me/+918299012292" target="_blank"
-                            class="btn btn-success px-4 py-3 rounded-pill shadow-sm">
-                            <i class="fab fa-whatsapp me-2"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
+                <div class="container">
+                    <div class="row justify-content-center g-3 mb-3 text-center">
 
-                <!-- Optional: Full-width WhatsApp Button -->
-                <div class="d-grid">
-                    <a href="https://wa.me/+918299012292" target="_blank"
-                        class="btn btn-success py-3 rounded-pill fw-semibold shadow">
-                        <i class="fab fa-whatsapp me-2"></i> Let's Chat on WhatsApp
-                    </a>
-                </div>
+                      <!-- Call Now Button -->
+                      <div class="col-12 col-md-auto">
+                        <a href="tel:+918299012292" class="btn btn-success w-100 px-4 py-3 rounded-pill shadow-sm">
+                          <i class="fa fa-phone-alt me-2"></i> Call Now
+                        </a>
+                      </div>
+
+                      <!-- WhatsApp Button -->
+                      <div class="col-12 col-md-auto">
+                        <a href="https://wa.me/+918299012292" target="_blank"
+                          class="btn btn-success w-100 px-4 py-3 rounded-pill fw-semibold shadow-sm">
+                          <i class="fab fa-whatsapp me-2"></i> Let's Chat on WhatsApp
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+
             </div>
         </div>
 
