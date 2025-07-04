@@ -94,7 +94,7 @@
     <div class="container px-lg-5 border-top border-light pt-4 mt-4">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="text-white fw-bold" href="https://realvictorygroups.">2025 Real Victory Groups</a>. All
+                &copy; <a class="text-white fw-bold" href="https://realvictorygroups.com/">2025 Real Victory Groups</a>. All
                 Rights Reserved.
             </div>
 
