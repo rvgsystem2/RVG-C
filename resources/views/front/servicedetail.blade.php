@@ -16,7 +16,7 @@
 <!-- Page Header End -->
 
 <!-- Service Detail Page -->
-<section class="mt-lg-5 py-md-4 py-sm-3 py-2 bg-light">
+<section class="container-fluid mt-lg-5 py-md-4 py-sm-3 py-2 bg-light">
     <div class="container mt-5">
         <div class="row g-5">
             <!-- Main Service Detail Content -->

@@ -19,7 +19,7 @@
     <div class="container-fluid py-5 py-2">
         <div class="row">
             <h1 class="mb-4 text-center">Terms and Condition</h1>
-            <div class="col-lg-12 px-5">
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h3 class="mb-2">Last updated on 29-11-2024 18:46:21</h3>
                 <p class="mb-4">
                     These Terms and Conditions, along with privacy policy or other terms (“Terms”) constitute a binding

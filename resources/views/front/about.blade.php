@@ -17,7 +17,7 @@
     @include('front.product')
 
     <!-- About Section -->
-    <div class="container-fluid lg:py-5 md:py-4 sm:py-3 py-2">
+    <div class="container-fluid bg-white lg:py-5 md:py-4 sm:py-3 py-2">
         @forelse ($abouts as $about)
             <div class="container py-5 px-lg-5">
                 <p class="section-title px-4 py-4 sm:px-4 sm:py-4 md:px-8 md:py-8">{{ $about->title }}<span></span></p>
