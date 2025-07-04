@@ -40,7 +40,9 @@
             <!-- Our Services -->
             @php
 
-   $serviceCategories = App\Models\ServiceCategory::with('serviceDetails')->where('status', 'active')->get();
+                $serviceCategories = App\Models\ServiceCategory::with('serviceDetails')
+                    ->where('status', 'active')
+                    ->get();
             @endphp
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Our Services</h5>
@@ -49,8 +51,8 @@
                         <a class="btn btn-link text-light text-start"
                             href="{{ route('servicedetail', $serviceCategory->slug) }}">{{ $serviceCategory->name }}</a>
                     @endforeach
-                  
-                   
+
+
                 </div>
             </div>
 
@@ -74,8 +76,7 @@
                         </div>
                     </a>
 
-                    <a href="https://play.google.com/store/apps/details?id=com.rvg.chat_real_victory&pcampaignid=web_share
-"
+                    <a href="https://play.google.com/store/apps/details?id=com.rvg.chat_real_victory&pcampaignid=web_share"
                         class="d-flex align-items-center bg-dark text-white rounded px-3 py-2 shadow-sm text-decoration-none hover-opacity">
                         <i class="fab fa-google-play fa-2x me-3"></i>
                         <div class="text-start">

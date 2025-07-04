@@ -4,22 +4,22 @@
             <div class="row g-4">
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-certificate fa-3x mb-3 text-dark"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">12</h1>
                     <p class="text-white mb-0">Years Experience</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-users-cog fa-3x  mb-3 text-dark"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">30</h1>
                     <p class="text-white mb-0">Team Members</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users fa-3x  mb-3 text-dark"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">2000</h1>
                     <p class="text-white mb-0">Satisfied Clients</p>
                 </div>
                 <div class="col-6 col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-check fa-3x  mb-3 text-dark"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">2500</h1>
                     <p class="text-white mb-0">Complete Projects</p>
                 </div>
             </div>

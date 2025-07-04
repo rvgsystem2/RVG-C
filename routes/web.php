@@ -49,6 +49,11 @@ Route::get('/term', [HomeController::class, 'term'])->name('term');
 Route::get('/refund', [HomeController::class, 'refund_policy'])->name('refund_policy');
 Route::get('/carrer', [HomeController::class, 'carrer'])->name('carrer');
 
+Route::get('/application', [HomeController::class, 'application'])->name('application');
+
+
+
+
 Route::post('/contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 

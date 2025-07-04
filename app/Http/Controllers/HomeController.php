@@ -131,4 +131,9 @@ public function blogdetail($slug)
         $seos = Seo::where('page_type', 'career')->first();
         return view('front.carrer', compact('seos'));
     }
+
+
+    public function application(){
+        return view('front.application');
+    }
 }
