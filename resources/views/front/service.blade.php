@@ -8,9 +8,9 @@
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Our Service</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
 
-                        <li class="breadcrumb-item" aria-current="page"><a href="#">service</a></li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="{{route('contact')}}">service</a></li>
                     </ol>
                 </nav>
             </div>
