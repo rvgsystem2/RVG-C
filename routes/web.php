@@ -197,4 +197,5 @@ Route::get('career/edit/{career}', [CareerController::class, 'edit'])->name('car
 Route::post('career/update/{career}', [CareerController::class, 'update'])->name('careers.update');
 Route::get('career/delete/{career}', [CareerController::class, 'destroy'])->name('careers.delete');
 
+
 require __DIR__.'/auth.php';

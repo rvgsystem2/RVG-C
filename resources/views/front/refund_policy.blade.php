@@ -17,9 +17,9 @@
 
         <!-- Privacy Policy Start -->
 <div>
-    <div class="container-fluid  lg:px-5 md:px-4 px-3">
-        <div class="row">
-            <h1 class="mb-4 text-center my-4">Cancellation & Refund Policy</h1>
+    <div class="container-fluid my-lg-5">
+        <div class="row lg:my-5 lg:mx-5 my-3 mx-3 shadow-lg py-2 px-2">
+            <h1 class="text-center my-2">Cancellation & Refund Policy</h1>
             <div class="col-lg-12 lg:px-5 md:px-4 px-3">
                 <h3 class="mb-4">Last updated on 29-11-2024 18:47:03</h3>
                 <p>Real Victory Groups believes in helping its customers as far as possible, and has therefore a liberal

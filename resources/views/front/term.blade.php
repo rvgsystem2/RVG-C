@@ -16,9 +16,9 @@
     <!-- Page Header End -->
 
     <!-- Privacy Policy Start -->
-    <div class="container-fluid py-5 py-2">
-        <div class="row">
-            <h1 class="mb-4 text-center">Terms and Condition</h1>
+    <div class="container-fluid mb-lg-5">
+        <div class="row lg:my-5 lg:mx-5 my-3 mx-3 shadow-lg py-2 px-2">
+            <h1 class="my-2  text-center">Terms and Condition</h1>
             <div class="col-lg-12 lg:px-5 md:px-4 px-4">
                 <h3 class="mb-2">Last updated on 29-11-2024 18:46:21</h3>
                 <p class="mb-4">
