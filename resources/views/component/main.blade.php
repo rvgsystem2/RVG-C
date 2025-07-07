@@ -165,8 +165,10 @@
     <link href="{{asset('front-asset/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('front-asset/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<style>
+
+    <style>
     .testimonial-item {
         transition: all 0.3s ease-in-out;
     }
@@ -239,6 +241,29 @@
     @yield('content')
 
     @include('component.footer')
+
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                confirmButtonColor: '#3085d6'
+            });
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ session('error') }}",
+                confirmButtonColor: '#d33'
+            });
+        </script>
+    @endif
+
 
 
     <!-- JavaScript Libraries -->

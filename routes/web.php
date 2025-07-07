@@ -51,6 +51,7 @@ Route::get('/refund', [HomeController::class, 'refund_policy'])->name('refund_po
 Route::get('/career', [HomeController::class, 'career'])->name('career');
 
 Route::get('/application', [HomeController::class, 'application'])->name('application');
+Route::post('/application/store', [\App\Http\Controllers\JobApplicationController::class, 'store'])->name('application.store');
 
 
 
@@ -196,6 +197,13 @@ Route::post('career/store', [CareerController::class, 'store'])->name('careers.s
 Route::get('career/edit/{career}', [CareerController::class, 'edit'])->name('careers.edit');
 Route::post('career/update/{career}', [CareerController::class, 'update'])->name('careers.update');
 Route::get('career/delete/{career}', [CareerController::class, 'destroy'])->name('careers.delete');
+
+
+Route::controller(\App\Http\Controllers\JobApplicationController::class)->name('applications.')->prefix('applications')->group(function(){
+   Route::get('/', 'index')->name('index');
+   Route::get('show/{application}', 'show')->name('show');
+   Route::post('delete/{application}', 'delete')->name('delete');
+});
 
 
 require __DIR__.'/auth.php';
