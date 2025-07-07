@@ -66,4 +66,6 @@ class CareerController extends Controller
         $career->delete();
         return redirect()->route('careers.index')->with('success', 'Job deleted.');
     }
+
+   
 }

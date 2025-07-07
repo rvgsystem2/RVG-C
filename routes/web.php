@@ -198,10 +198,12 @@ Route::get('career/edit/{career}', [CareerController::class, 'edit'])->name('car
 Route::post('career/update/{career}', [CareerController::class, 'update'])->name('careers.update');
 Route::get('career/delete/{career}', [CareerController::class, 'destroy'])->name('careers.delete');
 
+
 Route::controller(\App\Http\Controllers\JobApplicationController::class)->name('applications.')->prefix('applications')->group(function(){
    Route::get('/', 'index')->name('index');
    Route::get('show/{application}', 'show')->name('show');
    Route::post('delete/{application}', 'delete')->name('delete');
 });
+
 
 require __DIR__.'/auth.php';

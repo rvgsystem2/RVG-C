@@ -18,9 +18,9 @@
 
 
     <!-- Privacy Policy Start -->
-    <div class="container-fluid py-5 ">
-        <div class="row">
-            <h1 class="mb-4 text-center">Privacy Policy</h1>
+    <div class="container-fluid mb-lg-5">
+        <div class="row lg:my-5 lg:mx-5 my-3 mx-3 shadow-lg py-2 px-2">
+            <h1 class="my-2 text-center ">Privacy Policy</h1>
             <div class="col-lg-12 lg:px-5 md:px-4">
                 <h3 class="mb-2">Effective Date: 10-oct-2024</h3>
                 <p class="p-2">
