@@ -56,6 +56,10 @@
                         </div>
                     </div>
 
+                    <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">
+                        <i class="fas fa-tachometer-alt mr-1"></i> Applications
+                    </x-nav-link>
+
                    <!-- Dropdown for Site Content -->
 <div x-data="{ open: false }" class="relative">
     <button @click="open = !open"

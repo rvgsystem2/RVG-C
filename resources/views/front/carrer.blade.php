@@ -69,7 +69,8 @@
                                 <li><strong>📅 Apply By:</strong> {{ \Carbon\Carbon::parse($job->valid_through)->format('M d, Y') }}</li>
                             @endif
                         </ul>
-                        <a href="#applyForm" class="btn btn-outline-dark mt-auto w-100">Apply Now</a>
+                        <a href="#applyForm" class="btn btn-outline-dark mt-auto w-100 apply-btn" data-career-id="{{ $job->id }}"
+                           data-position="{{ $job->title }}">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +102,7 @@
                     <h4 class="mb-0 text-light">Apply Now</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="#" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('application.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -116,15 +117,18 @@
                                 <label for="phone" class="form-label">Phone *</label>
                                 <input type="text" name="phone" id="phone" class="form-control" required>
                             </div>
-                            <div class="col-md-6">
+
+                            <input type="hidden" name="career_id" id="career_id">
+                            <div class="col-md-6" id="positionField">
                                 <label for="position" class="form-label">Position Applied For *</label>
-                                <select name="position" id="position" class="form-select" required>
+                                <select name="position" id="position" class="form-select">
                                     <option selected disabled value="">Choose a position</option>
                                     <option>Web Developer</option>
                                     <option>Graphic Designer</option>
                                     <option>Digital Marketing Executive</option>
                                 </select>
                             </div>
+
                             <div class="col-12">
                                 <label for="message" class="form-label">Message (Optional)</label>
                                 <textarea name="message" id="message" rows="4" class="form-control"></textarea>
@@ -143,4 +147,24 @@
         </div>
     </div>
 </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const applyButtons = document.querySelectorAll('.apply-btn');
+
+            applyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const careerId = this.getAttribute('data-career-id');
+                    const position = this.getAttribute('data-position');
+
+                    document.getElementById('career_id').value = careerId;
+                    document.getElementById('position').value = position;
+
+                    // Hide the position dropdown
+                    document.getElementById('positionField').style.display = 'none';
+                });
+            });
+        });
+    </script>
+
 @endsection
