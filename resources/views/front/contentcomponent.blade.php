@@ -88,6 +88,9 @@
                             <input type="text" name="name" class="form-control border-0 py-3" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
+                            <input type="number" name="number" class="form-control border-0 py-3" placeholder="Your Number" required>
+                        </div>
+                        <div class="mb-3">
                             <input type="email" name="email" class="form-control border-0 py-3" placeholder="Your Email (optional)">
                         </div>
                         <div class="mb-3">
