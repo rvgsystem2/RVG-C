@@ -25,7 +25,7 @@
     <div class="container py-5 px-lg-5">
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-dark justify-content-center"><span></span>Our Services<span></span></p>
-            <h1 class="display-6">What Solutions We Provide</h1>
+            <h2 class="display-6">What Solutions We Provide</h2>
             <p class="text-muted">Discover the wide range of digital, creative, and strategic solutions we offer to elevate your business.</p>
         </div>
 
@@ -61,7 +61,7 @@
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title justify-content-center"><span></span>Our Projects<span></span></p>
-                    <h1 class="text-center mb-5">Recently Completed Projects</h1>
+                    <h2 class="text-center mb-5">Recently Completed Pr2jects</h2>
                 </div>
 
                 <!-- Dynamic Filter Buttons -->
@@ -131,7 +131,7 @@
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h5 class="text-dark">Testimonials</h5>
-            <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+            <h2 class="display-6 mb-4">What Our Clients Say!</h2>
             <p class="text-muted">Real stories from real people. See how our service is making an impact.</p>
         </div>
 
@@ -170,9 +170,9 @@
 
       <!-- Heading -->
       <div class="list-unstyled mb-4">
-        <h1 class=" fw-bold text-dark text-center mb-3">
-           Graphic, IT And Promotion Service for Jewellery Business
-        </h1>
+        <h2 class=" fw-bold text-dark text-center mb-3">
+2         Graphic, IT And Promotion Service for Jewellery Business
+        </h2>
     </div>
 
       <!-- Services table -->

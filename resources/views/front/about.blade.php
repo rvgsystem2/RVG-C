@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="container text-center py-5 ">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+            <h2 class="display-3 text-white mb-3 animated slideInDown">About Us</h2>
             <nav aria-label="breadcrumb" class="animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
@@ -33,7 +33,7 @@
                     <!-- Content Column: Order-2 on mobile, Order-1 on large screens -->
                     <div class="col-lg-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.1s">
 
-                        <h1 class="mb-5">{{ $about->subtitle }}</h1>
+                        <h2 class="mb-5">{{ $about->subtitle }}</h2>
                         <p class="mb-4">{!! $about->description !!}</p>
 
 
@@ -57,7 +57,7 @@
         {{-- <p class="section-title text-dark"><span></span>Our Team<span></span></p> --}}
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-dark"><span></span>Our Team<span></span></p> --}}
-            <h1 class="display-6">Meet Our Experts</h1>
+            <h2 class="display-6">Meet Our Experts</h2>
             <p class="text-muted">Our dedicated team members who turn vision into reality.</p>
         </div>
 
