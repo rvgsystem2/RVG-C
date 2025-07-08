@@ -30,7 +30,7 @@
                 <div class="d-flex flex-column">
                     <a class="btn btn-link text-light text-start" href="{{ route('about') }}">About Us</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('contact') }}">Contact Us</a>
-                    <a class="btn btn-link text-light text-start" href="{{ route('privacy') }}">Privacy Policy</a>
+                    <a class="btn btn-link text-light text-start" href="{{ route('privacy-policy') }}">Privacy Policy</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('term') }}">Terms & Conditions</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('refund_policy') }}">Return Policy</a>
                     <a class="btn btn-link text-light text-start" href="{{ route('career') }}">Career</a>
