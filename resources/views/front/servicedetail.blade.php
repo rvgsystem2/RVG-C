@@ -33,7 +33,7 @@
                 </div>
 
                 <!-- Title & Meta -->
-                <h1 class="mb-3 fw-bold">{{ $service->name }}</h1>
+                <h2 class="mb-3 fw-bold">{{ $service->name }}</h2>
                 <p class="text-muted mb-4"><i class="fa fa-calendar-alt me-2"></i>Last Updated: {{ $firstDetail->updated_at->format('d M Y') }}</p>
 
                 <!-- Service Description -->

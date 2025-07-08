@@ -14,7 +14,7 @@
                     @forelse ($banners as $banner)
                         <div class="row g-5 align-items-end">
                             <div class="col-lg-6 text-center text-lg-start">
-                                <h1 class="text-white mb-4 animated slideInDown">{{ $banner->title }}</h1>
+                                <h2 class="text-white mb-4 animated slideInDown">{{ $banner->title }}</h2>
                                 <p class="text-white pb-3 animated slideInDown">{{ $banner->subtitle }}</p>
                                 <a href="{{ url('about') }}"
                                     class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read
@@ -54,7 +54,7 @@
                         <!-- Content Column: Order-2 on mobile, Order-1 on large screens -->
                         <div class="col-lg-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.1s">
 
-                            <h1 class="mb-5">{{ $about->subtitle }}</h1>
+                            <h2 class="mb-5">{{ $about->subtitle }}</h2>
                             <p class="mb-4">{!! $about->description !!}</p>
 
 
@@ -86,7 +86,7 @@
             <div class="container py-3 px-lg-5">
                 <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-dark justify-content-center"><span></span>Our Services<span></span></p>
-                    <h1 class="display-6">What Solutions We Provide</h1>
+                    <h2 class="display-6">What Solutions We Provide</h2>
                     <p class="text-muted">Discover the wide range of digital, creative, and strategic solutions we offer to
                         elevate your business.</p>
                 </div>
@@ -128,7 +128,7 @@
             <div class="container py-5 px-lg-5">
                 <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-dark justify-content-center"><span></span>Our Projects<span></span></p>
-                    <h1 class="display-6">Recently Completed Projects</h1>
+                    <h2 class="display-6">Recently Completed Projects</h2>
                     <p class="text-muted">Explore a few of our successful project deployments for different clients.</p>
                 </div>
 
@@ -200,7 +200,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5" style="max-width: 600px;">
                     <h5 class="text-dark">Testimonials</h5>
-                    <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+                    <h2 class="display-6 mb-4">What Our Clients Say!</h2>
                     <p class="text-muted">Real stories from real people. See how our service is making an impact.</p>
                 </div>
 

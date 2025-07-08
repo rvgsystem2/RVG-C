@@ -30,7 +30,7 @@
 
                 <!-- Blog Title & Meta -->
                 <div class="mb-4">
-                    <h1 class="fw-bold display-6">{{ $blog->title }}</h1>
+                    <h2 class="fw-bold display-6">{{ $blog->title }}</h2>
                     <p class="text-muted">
                         By <strong class="text-dark">{{ $blog->author ?? 'Admin' }}</strong> |
                         <i class="far fa-calendar-alt me-1"></i> {{ $blog->created_at->format('d M Y') }}

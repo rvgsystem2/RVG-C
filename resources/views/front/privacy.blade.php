@@ -3,7 +3,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Privacy Policy</h1>
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Privacy Policy</h2>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
