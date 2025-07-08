@@ -53,10 +53,16 @@ Route::get('/career', [HomeController::class, 'career'])->name('career');
 Route::get('/application', [HomeController::class, 'application'])->name('application');
 Route::post('/application/store', [\App\Http\Controllers\JobApplicationController::class, 'store'])->name('application.store');
 
-
-
-
 Route::post('/contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
+// SITEMAPS URLS
+Route::get('/sitemap.xml', function(){
+    return response()->view('sitemap')->header('Content-Type', 'application/xml');
+});
+
+Route::get('/blog-sitemap.xml', function(){
+    return response()->view('blog-sitemap')->header('Content-Type', 'application/xml');
+});
 
 
 
