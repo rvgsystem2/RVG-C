@@ -33,7 +33,7 @@
                                     <td class="px-4 py-2">{{ $contact->email }}</td>
                                     <td class="px-4 py-2">{{ $contact->phone ?? '-' }}</td>
                                     <td class="px-4 py-2">{{ $contact->subject ?? '-' }}</td>
-                                    <td class="px-4 py-2">{{ Str::limit($contact->message, 50) }}</td>
+                                    <td class="px-4 py-2">{{ Str::limit($contact->message, 1000) }}</td>
                                     <td class="px-4 py-2">{{ $contact->created_at->format('d M Y, h:i A') }}</td>
                                     <td class="px-4 py-2">
                                         <form action="{{ route('contact.delete', $contact->id) }}" method="get" class="inline">
