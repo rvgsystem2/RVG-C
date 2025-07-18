@@ -25,7 +25,7 @@ class CareerController extends Controller
             'description' => 'nullable',
             'location' => 'nullable',
             'type' => 'required',
-            'experience' => 'nullable|numeric',
+            'experience' => 'nullable',
             'valid_through' => 'nullable|date',
             'status' => 'required'
         ]);
@@ -46,7 +46,7 @@ class CareerController extends Controller
             'description' => 'nullable',
             'location' => 'nullable',
             'type' => 'required',
-            'experience' => 'nullable|numeric',
+            'experience' => 'nullable',
             'valid_through' => 'nullable|date',
             'status' => 'required'
         ]);
