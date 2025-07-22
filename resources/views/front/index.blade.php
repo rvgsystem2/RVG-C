@@ -147,9 +147,16 @@
                 <div class="row g-4 portfolio-container">
                     @foreach ($projects as $project)
                         @php
+                            $projectImages = json_decode($project->project_images, true) ?? [];
+
+                            // Ensure thumb_image is shown first, then rest of project_images (excluding duplicate of thumb)
+                            $images = array_unique(array_merge([$project->thumb_image], $projectImages));
+                            $firstImage = $images[0];
+                        @endphp
+                        {{-- @php
                             $images = json_decode($project->project_images, true) ?? [];
                             $firstImage = $images[0] ?? $project->thumb_image;
-                        @endphp
+                        @endphp --}}
                         <div class="col-lg-4 col-md-6 portfolio-item {{ Str::slug($project->project_category_name) }} wow fadeInUp"
                             data-wow-delay="0.1s">
                             <div class="card shadow-sm border-0 h-100 project-card overflow-hidden rounded-4">
@@ -253,23 +260,23 @@
                 <div class="container">
                     <div class="row justify-content-center g-3 mb-3 text-center">
 
-                      <!-- Call Now Button -->
-                      <div class="col-12 col-md-auto">
-                        <a href="tel:+918299012292" class="btn btn-success w-100 px-4 py-3 rounded-pill shadow-sm">
-                          <i class="fa fa-phone-alt me-2"></i> Call Now
-                        </a>
-                      </div>
+                        <!-- Call Now Button -->
+                        <div class="col-12 col-md-auto">
+                            <a href="tel:+918299012292" class="btn btn-success w-100 px-4 py-3 rounded-pill shadow-sm">
+                                <i class="fa fa-phone-alt me-2"></i> Call Now
+                            </a>
+                        </div>
 
-                      <!-- WhatsApp Button -->
-                      <div class="col-12 col-md-auto">
-                        <a href="https://wa.me/+918299012292" target="_blank"
-                          class="btn btn-success w-100 px-4 py-3 rounded-pill fw-semibold shadow-sm">
-                          <i class="fab fa-whatsapp me-2"></i> Let's Chat on WhatsApp
-                        </a>
-                      </div>
+                        <!-- WhatsApp Button -->
+                        <div class="col-12 col-md-auto">
+                            <a href="https://wa.me/+918299012292" target="_blank"
+                                class="btn btn-success w-100 px-4 py-3 rounded-pill fw-semibold shadow-sm">
+                                <i class="fab fa-whatsapp me-2"></i> Let's Chat on WhatsApp
+                            </a>
+                        </div>
 
                     </div>
-                  </div>
+                </div>
 
 
             </div>
