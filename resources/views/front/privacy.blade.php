@@ -4,13 +4,13 @@
     <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
         <div class="container text-center py-5">
             <h1 class="display-2 text-white mb-4 animated slideInDown">Privacy Policy</h2>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
 
-                    <li class="breadcrumb-item" aria-current="page"><a href="#">Privacy Policy</a></li>
-                </ol>
-            </nav>
+                        <li class="breadcrumb-item" aria-current="page"><a href="#">Privacy Policy</a></li>
+                    </ol>
+                </nav>
         </div>
     </div>
     <!-- Page Header End -->
@@ -121,9 +121,42 @@
                     periodically to stay informed about how we are protecting your information.</p>
             </div>
 
+                <div class="col-lg-12 lg:px-5 md:px-4 px-4 ">
+                  <h4 class="fw-bold text-black mb-4">8. Content Usage Disclaimer</h4>
 
-            <div class="col-lg-12 lg:px-5 md:px-4 px-4">
-                <h4 class="mb-2">8. Contact Us</h4>
+                  <p>
+                    At <strong>Real Victory Groups</strong>, we are committed to providing high-quality design content to support your business promotion. However, please take note of the following important points regarding the usage of daily creative materials:
+                  </p>
+
+                  <h6 class="fw-semibold mt-4">Third-Party Assets</h6>
+                  <p>
+                    Some of the visual elements (such as images, icons, or backgrounds) used in our designs may be sourced from publicly available platforms on the internet that are assumed to be royalty-free or under open-use licenses at the time of creation.
+                  </p>
+
+                  <h6 class="fw-semibold mt-4">No Ownership Guarantee</h6>
+                  <p>
+                    We do not claim ownership over all such third-party content. While we make reasonable efforts to avoid copyrighted material, we cannot guarantee that every visual asset is free from copyright restrictions.
+                  </p>
+
+                  <h6 class="fw-semibold mt-4">Client Responsibility</h6>
+                  <p>
+                    By using our creative content, you agree to use it at your own discretion. If you have strict copyright requirements, we recommend verifying the content independently before publishing it on official or paid platforms.
+                  </p>
+
+                  <h6 class="fw-semibold mt-4">Takedown in Case of Claims</h6>
+                  <p>
+                    In the unlikely event of a copyright claim or infringement notice, you agree to remove the concerned post immediately upon request. Real Victory Groups will not be held liable for any legal disputes, penalties, or damages arising from the usage of such content.
+                  </p>
+
+                  <h6 class="fw-semibold mt-4">Custom Content Option</h6>
+                  <p class="mb-0">
+                    If you prefer fully licensed or original assets, we offer premium/custom design services where all materials used are guaranteed to be royalty-free or commercially licensed specifically for your brand.
+                  </p>
+                </div>
+
+
+            <div class="col-lg-12 lg:px-5 md:px-4 px-4 my-2">
+                <h4 class="mb-2">9. Contact Us</h4>
                 <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
 
                 <p>Real Victory Groups</p>
@@ -137,5 +170,4 @@
         </div>
     </div>
     <!-- Privacy Policy End -->
-
 @endsection
