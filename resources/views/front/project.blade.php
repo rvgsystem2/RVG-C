@@ -1,18 +1,18 @@
 @extends('component.main', ['seos' => $seos])
 @section('content')
-
-<!-- Page Header -->
-<div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
-    <div class="container text-center py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">Projects</h1>
-        <nav aria-label="breadcrumb" class="animated slideInDown">
-            <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page"><a href="{{route('contact')}}">Projects</a></li>
-            </ol>
-        </nav>
+    <!-- Page Header -->
+    <div class="container-fluid custom-color  my-lg-5 py-md-4 py-sm-3 py-2">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Projects</h1>
+            <nav aria-label="breadcrumb" class="animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page"><a
+                            href="{{ route('contact') }}">Projects</a></li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
 
     <div class="container-fluid bg-white p-0">
 
@@ -41,9 +41,16 @@
                 <div class="row g-4 portfolio-container">
                     @foreach ($projects as $project)
                         @php
+                            $projectImages = json_decode($project->project_images, true) ?? [];
+
+                            // Ensure thumb_image is shown first, then rest of project_images (excluding duplicate of thumb)
+                            $images = array_unique(array_merge([$project->thumb_image], $projectImages));
+                            $firstImage = $images[0];
+                        @endphp
+                        {{-- @php
                             $images = json_decode($project->project_images, true) ?? [];
                             $firstImage = $images[0] ?? $project->thumb_image;
-                        @endphp
+                        @endphp --}}
                         <div class="col-lg-4 col-md-6 portfolio-item {{ Str::slug($project->project_category_name) }} wow fadeInUp"
                             data-wow-delay="0.1s">
                             <div class="rounded overflow-hidden">

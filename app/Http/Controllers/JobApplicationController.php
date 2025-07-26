@@ -14,7 +14,7 @@ class JobApplicationController extends Controller
             'email' => 'required|email',
             'phone' => 'required',
             'position' => 'nullable|string',
-            'resume' => 'required|file|mimes:pdf,doc,docx|max:2048', // Accept only docs up to 2MB
+            'resume' => 'required|file|mimes:pdf,doc,docx|max:5048', // Accept only docs up to 5MB
             'career_id' => 'nullable|exists:careers,id',
         ]);
 
