@@ -4,54 +4,60 @@
 
 @foreach ($jobs as $job)
 @php
-  $isRemote = Str::contains(Str::lower($job->location ?? ''), 'remote');
+  $isRemote = !empty($job->is_remote);
 
-  $payload = [
-    '@context' => 'https://schema.org',
-    '@type' => 'JobPosting',
-    'title' => $job->title,
-    'description' => strip_tags($job->description ?? ''),
-    'datePosted' => \Carbon\Carbon::parse($job->created_at)->toDateString(),
-    'employmentType' => strtoupper(str_replace(' ', '_', $job->type)),
-    // validThrough: अगर null है तो +1 month 23:59:59
-    'validThrough' => \Carbon\Carbon::parse($job->valid_through ?? now()->addMonth())
-        ->endOfDay()->toAtomString(),
+  // helper: remove खाली values ("" / null)
+  $clean = function(array $a){
+    return array_filter($a, fn($v) => !is_null($v) && $v !== '' && $v !== []);
+  };
+
+  $address = $clean([
+    '@type'            => 'PostalAddress',
+    'streetAddress'    => $job->street_address ?: '73 Basement, Ekta Enclave Society, Lakhanpur, Khyora',
+    'addressLocality'  => $job->location       ?: 'Kanpur',
+    'addressRegion'    => $job->region         ?: 'Uttar Pradesh',
+    'postalCode'       => $job->postal_code    ?: '208024',
+    // हमेशा Country object दें (Text के बजाय)
+    'addressCountry'   => $clean(['@type' => 'Country', 'name' => ($job->country ?: 'India')]),
+  ]);
+
+  $payload = $clean([
+    '@context'        => 'https://schema.org',
+    '@type'           => 'JobPosting',
+    'title'           => $job->title,
+    'description'     => strip_tags($job->description ?? ''),
+    'datePosted'      => \Carbon\Carbon::parse($job->created_at ?? now())->toDateString(),
+    'employmentType'  => strtoupper(str_replace(' ', '_', $job->type ?? 'Full Time')), // FULL_TIME etc.
+    'validThrough'    => \Carbon\Carbon::parse($job->valid_through ?? now()->addMonth())->endOfDay()->toAtomString(),
     'hiringOrganization' => [
       '@type' => 'Organization',
       'name'  => 'Real Victory Groups',
       'sameAs'=> 'https://www.realvictorygroups.com',
       'logo'  => 'https://www.realvictorygroups.com/images/logo.png',
     ],
-  ];
+  ]);
 
-  // baseSalary (केवल तभी बनाएं जब min/max मौजूद हों)
-  if (!is_null($job->salary_min) || !is_null($job->salary_max)) {
-      $payload['baseSalary'] = [
-          '@type' => 'MonetaryAmount',
-          'currency' => $job->salary_currency ?? 'INR',
-          'value' => array_filter([
-              '@type' => 'QuantitativeValue',
-              'minValue' => $job->salary_min,
-              'maxValue' => $job->salary_max,
-              'unitText' => $job->salary_unit ?? 'MONTH',
-          ]),
-      ];
-  }
-
-  // Location
+  // Remote vs Onsite
   if ($isRemote) {
       $payload['jobLocationType'] = 'TELECOMMUTE';
   } else {
       $payload['jobLocation'] = [
           '@type' => 'Place',
-          'address' => [
-              '@type' => 'PostalAddress',
-              'streetAddress'  => $job->street_address ?? '73 Basement, Ekta Enclave Society, Lakhanpur, Khyora',
-              'addressLocality'=> $job->location ?? 'Kanpur',
-              'addressRegion'  => $job->region ?? 'Uttar Pradesh',
-              'postalCode'     => $job->postal_code ?? '208024',
-              'addressCountry' => $job->country ?? 'IN',
-          ],
+          'address' => $address,
+      ];
+  }
+
+  // baseSalary केवल तभी जोड़ें जब कोई वैल्यू हो
+  if (!is_null($job->salary_min) || !is_null($job->salary_max)) {
+      $payload['baseSalary'] = [
+          '@type' => 'MonetaryAmount',
+          'currency' => $job->salary_currency ?: 'INR',
+          'value' => $clean([
+              '@type'    => 'QuantitativeValue',
+              'minValue' => $job->salary_min,
+              'maxValue' => $job->salary_max,
+              'unitText' => strtoupper($job->salary_unit ?: 'MONTH'),
+          ]),
       ];
   }
 @endphp
@@ -60,6 +66,7 @@
 {!! json_encode($payload, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
 </script>
 @endforeach
+
 
 
 <!-- Page Header Start -->
