@@ -138,7 +138,8 @@ public function store(Request $request, User $user)
     // include attachments for realtime payload
     $msg->load('attachments');
 
-    broadcast(new DirectMessageSent($msg))->toOthers();
+    // broadcast(new DirectMessageSent($msg))->toOthers();
+    broadcast(new DirectMessageSent($msg->load('sender','attachments')))->toOthers();
 
     return response()->json(['ok'=>true,'message'=>$msg]);
 }
