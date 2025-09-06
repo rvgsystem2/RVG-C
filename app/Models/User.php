@@ -48,9 +48,10 @@ class User extends Authenticatable
         ];
     }
 
-    public function businesses()
-{
-    return $this->hasMany(Business::class);
+   public function dmAllowedPeers() {
+  return $this->belongsToMany(User::class, 'dm_alloweds', 'user_id', 'peer_id')
+              ->withTimestamps();
 }
+
 
 }

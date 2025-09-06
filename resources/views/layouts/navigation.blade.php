@@ -7,9 +7,11 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="h-9 w-auto text-gray-800" />
+                        <x-application-logo class="h-9 w-3 text-gray-800" />
                     </a>
                 </div>
+
+
 
                 <!-- Navigation -->
                 <div class="hidden sm:flex sm:items-center sm:ms-10 text-sm font-medium text-gray-700 space-x-6"
@@ -19,6 +21,26 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
                     </x-nav-link>
+
+                    <x-nav-link :href="route('dm.admin')" :active="request()->routeIs('dm.admin')">
+                        <i class="fas fa-tachometer-alt mr-1"></i> support chat
+                    </x-nav-link>
+
+
+                    @can('chat-anyone')
+                        <x-nav-link :href="route('dm.people')" :active="request()->routeIs('dm.people')">
+                            👥 People
+                        </x-nav-link>
+                    @endcan
+
+                    @can('inbox-access')
+                        <x-nav-link :href="route('dm.inbox')" :active="request()->routeIs('dm.inbox')">
+                            ✉️ Inbox
+                        </x-nav-link>
+                    @endcan
+
+
+
 
                     <!-- Dropdown for Roles, Permissions, Users -->
                     <div class="relative">
@@ -56,104 +78,106 @@
                         </div>
                     </div>
 
-                    <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">
-                        <i class="fas fa-tachometer-alt mr-1"></i> Applications
-                    </x-nav-link>
 
-                   <!-- Dropdown for Site Content -->
-<div x-data="{ open: false }" class="relative">
-    <button @click="open = !open"
-        class="flex items-center space-x-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">
-        <i class="fas fa-tools text-gray-600"></i>
-        <span>Site Content</span>
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-    </button>
 
-    <div x-show="open" @click.away="open = false" x-cloak
-        class="absolute z-50 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
+                    <!-- Dropdown for Site Content -->
+                    <div x-data="{ open: false }" class="relative">
+                        <button @click="open = !open"
+                            class="flex items-center space-x-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md">
+                            <i class="fas fa-tools text-gray-600"></i>
+                            <span>Site Content</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
 
-        @can('view banners')
-            <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-image mr-1"></i> Banners
-            </x-nav-link>
-        @endcan
+                        <div x-show="open" @click.away="open = false" x-cloak
+                            class="absolute z-50 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
 
-        @can('view about')
-            <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-info-circle mr-1"></i> About
-            </x-nav-link>
-        @endcan
+                            @can('view banners')
+                                <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-image mr-1"></i> Banners
+                                </x-nav-link>
+                            @endcan
 
-        @can('view ServiceCategory')
-            <x-nav-link :href="route('service-category.index')" :active="request()->routeIs('service-category.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-th-list mr-1"></i> Service Categories
-            </x-nav-link>
-        @endcan
+                            <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">
+                                <i class="fas fa-tachometer-alt mr-1"></i> Applications
+                            </x-nav-link>
 
-        @can('view serviceDetails')
-            <x-nav-link :href="route('service-detail.index')" :active="request()->routeIs('service-detail.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-concierge-bell mr-1"></i> Service Details
-            </x-nav-link>
-        @endcan
+                            @can('view about')
+                                <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-info-circle mr-1"></i> About
+                                </x-nav-link>
+                            @endcan
 
-        @can('view projects')
-            <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-project-diagram mr-1"></i> Projects
-            </x-nav-link>
-        @endcan
+                            @can('view ServiceCategory')
+                                <x-nav-link :href="route('service-category.index')" :active="request()->routeIs('service-category.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-th-list mr-1"></i> Service Categories
+                                </x-nav-link>
+                            @endcan
 
-        @can('view testimonials')
-            <x-nav-link :href="route('testimonials.index')" :active="request()->routeIs('testimonials.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-comments mr-1"></i> Testimonials
-            </x-nav-link>
-        @endcan
+                            @can('view serviceDetails')
+                                <x-nav-link :href="route('service-detail.index')" :active="request()->routeIs('service-detail.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-concierge-bell mr-1"></i> Service Details
+                                </x-nav-link>
+                            @endcan
 
-        @can('view teams')
-            <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-users mr-1"></i> Teams
-            </x-nav-link>
+                            @can('view projects')
+                                <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-project-diagram mr-1"></i> Projects
+                                </x-nav-link>
+                            @endcan
 
-        @endcan
+                            @can('view testimonials')
+                                <x-nav-link :href="route('testimonials.index')" :active="request()->routeIs('testimonials.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-comments mr-1"></i> Testimonials
+                                </x-nav-link>
+                            @endcan
 
-        @can('view products')
-            <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-box mr-1"></i> Products
-            </x-nav-link>
-        @endcan
+                            @can('view teams')
+                                <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-users mr-1"></i> Teams
+                                </x-nav-link>
+                            @endcan
 
-        @can('view blogcategory')
-            <x-nav-link :href="route('blog-category.index')" :active="request()->routeIs('blog-category.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-list-alt mr-1"></i> Blog Categories
-            </x-nav-link>
-        @endcan
+                            @can('view products')
+                                <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-box mr-1"></i> Products
+                                </x-nav-link>
+                            @endcan
 
-        @can('view blog')
-            <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-blog mr-1"></i> Blogs
-            </x-nav-link>
-        @endcan
+                            @can('view blogcategory')
+                                <x-nav-link :href="route('blog-category.index')" :active="request()->routeIs('blog-category.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-list-alt mr-1"></i> Blog Categories
+                                </x-nav-link>
+                            @endcan
 
-        @can('view seo')
-            <x-nav-link :href="route('seo.index')" :active="request()->routeIs('seo.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-search mr-1"></i> SEO
-            </x-nav-link>
-        @endcan
+                            @can('view blog')
+                                <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-blog mr-1"></i> Blogs
+                                </x-nav-link>
+                            @endcan
 
-        @can('view contact')
-            <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-envelope mr-1"></i> Contact Messages
-            </x-nav-link>
-        @endcan
+                            @can('view seo')
+                                <x-nav-link :href="route('seo.index')" :active="request()->routeIs('seo.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-search mr-1"></i> SEO
+                                </x-nav-link>
+                            @endcan
 
-        @can('view careers')
-            <x-nav-link :href="route('careers.index')" :active="request()->routeIs('careers.*')" class="block px-4 py-2 text-left">
-                <i class="fas fa-briefcase mr-1"></i> Careers
-            </x-nav-link>
-        @endcan
-    </div>
-</div>
+                            @can('view contact')
+                                <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-envelope mr-1"></i> Contact Messages
+                                </x-nav-link>
+                            @endcan
+
+                            @can('view careers')
+                                <x-nav-link :href="route('careers.index')" :active="request()->routeIs('careers.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-briefcase mr-1"></i> Careers
+                                </x-nav-link>
+                            @endcan
+                        </div>
+                    </div>
 
 
                 </div>

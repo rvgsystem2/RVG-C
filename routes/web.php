@@ -6,7 +6,10 @@ use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogCategoryControlloer;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\DirectMessageController;
+use App\Http\Controllers\DmAccessController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InboxController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +21,7 @@ use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
-
+use App\Models\User;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
@@ -73,7 +76,37 @@ Route::get('/blog-sitemap.xml', function(){
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth','verified'])->name('dashboard');
 
 
+// Route::middleware('auth')->group(function () {
+//     Route::get('/dm/{user}',  [DirectMessageController::class, 'show'])->name('dm.show');
+//     Route::post('/dm/{user}', [DirectMessageController::class, 'store'])->name('dm.store');
+// });
 
+Route::middleware(['auth','role:Super Admin'])->group(function () {
+  Route::get('/admin/users/{user}/dm-access', [DmAccessController::class,'edit'])->name('admin.dm.edit');
+  Route::post('/admin/users/{user}/dm-access', [DmAccessController::class,'update'])->name('admin.dm.update');
+  // NEW: people directory to start a chat with anyone
+    
+});
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dm/{user}',  [DirectMessageController::class, 'show'])->name('dm.show');
+    Route::post('/dm/{user}', [DirectMessageController::class, 'store'])->name('dm.store');
+    // NEW: people directory to start a chat with anyone
+
+     Route::get('/people', [DmAccessController::class, 'index'])
+        ->middleware('permission:chat-anyone')
+        ->name('dm.people');
+
+          Route::get('/messages', [DirectMessageController::class, 'index'])->name('dm.inbox'); // for everyone
+
+    Route::get('/support-chat', function () {
+        $adminId = (int) env('CHAT_SUPER_ADMIN_ID', 1);
+        $admin   = User::findOrFail($adminId);
+        return redirect()->route('dm.show', $admin->id);
+    })->name('dm.admin');
+});
 
 // Routes that require authentication
 Route::middleware('auth')->group(function () {

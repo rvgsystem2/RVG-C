@@ -46,10 +46,10 @@ class PermissionsTableSeeder extends Seeder
             'view projects',
             'edit projects',
             'delete projects',
-            'create projects',  
+            'create projects',
             'view testimonials',
             'edit testimonials',
-            'delete testimonials',  
+            'delete testimonials',
             'create testimonials',
             'view teams',
             'edit teams',
@@ -71,13 +71,27 @@ class PermissionsTableSeeder extends Seeder
             'edit testimonials',
             'delete testimonials',
             'create testimonials',
-
+            'chat-anyone',
+            'inbox-access',
+            'view contact',
+            'delete contact',
+            'view seo',
+            'edit seo',
+            'delete seo',
+            'create seo',
+            'vview careers',
+            'edit careers',
+            'delete careers',
+            'create careers',
             
+
+        
+
+
         ];
 
         foreach ($permissions as $permission) {
             Permission::firstOrCreate(['name' => $permission]);
         }
     }
-    
 }
