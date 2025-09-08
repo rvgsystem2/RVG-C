@@ -167,6 +167,7 @@
                                 <option value="home" {{ old('page_type', $seo->page_type ?? '') == 'home' ? 'selected' : '' }}>Home</option>
                                 <option value="about" {{ old('page_type', $seo->page_type ?? '') == 'about' ? 'selected' : '' }}>About</option>
                                 <option value="service" {{ old('page_type', $seo->page_type ?? '') == 'service' ? 'selected' : '' }}>Service</option>
+                                <option value="packages" {{ old('page_type', $seo->page_type ?? '') == 'packages' ? 'selected' : '' }}>Packages</option>
 
                                 <option value="blog" {{ old('page_type', $seo->page_type ?? '') == 'blog' ? 'selected' : '' }}>Blog</option>
 

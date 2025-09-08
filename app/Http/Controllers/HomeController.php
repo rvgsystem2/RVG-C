@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Career;
+use App\Models\Package;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Seo;
@@ -88,7 +89,7 @@ public function servicedetail($slug)
         return view('front.404');
     }
     public function project(){
-        $projects = \App\Models\Project::latest()->get();
+        $projects = Project::latest()->get();
 
     // Extract unique categories for filters
     $categories = $projects->pluck('project_category_name')->unique();
@@ -134,6 +135,12 @@ public function blogdetail($slug)
         return view('front.carrer', compact('seos', 'jobs'));
     }
 
+
+     public function packages(){
+        $seos = Seo::where('page_type', 'packages')->first();
+        $packages = Package::where('status', 'active')->get();
+        return view('front.packages', compact('seos', 'packages'));
+    }
 
     public function application(){
         return view('front.application');

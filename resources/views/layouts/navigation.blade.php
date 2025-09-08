@@ -101,6 +101,13 @@
                                 </x-nav-link>
                             @endcan
 
+                            @can('view packages')
+                                <x-nav-link :href="route('package.index')" :active="request()->routeIs('package.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-box mr-1"></i> Packages
+                                </x-nav-link>
+                            @endcan
+
+
                             <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">
                                 <i class="fas fa-tachometer-alt mr-1"></i> Applications
                             </x-nav-link>
