@@ -65,7 +65,7 @@
                     <div class="card border-0 shadow-sm h-100 pricing-card">
                         @if ($pkg->image)
                             <img src="{{ asset('storage/' . $pkg->image) }}" alt="{{ $pkg->image_alt ?? $pkg->name }}"
-                                class="card-img-top" style="height:190px;object-fit:cover">
+                                class="card-img-top" style="height:auto;object-fit:cover">
                         @endif
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">

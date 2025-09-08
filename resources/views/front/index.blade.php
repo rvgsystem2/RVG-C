@@ -16,9 +16,9 @@
                             <div class="col-lg-6 text-center text-lg-start">
                                 <h2 class="text-white mb-4 animated slideInDown">{{ $banner->title }}</h2>
                                 <p class="text-white pb-3 animated slideInDown">{{ $banner->subtitle }}</p>
-                                <a href="{{ url('about') }}"
-                                    class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read
-                                    More</a>
+                                <a href="{{ url('packages') }}"
+                                    class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Buy More Packages
+                                    </a>
                                 <a href="{{ url('contact') }}"
                                     class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">Contact
                                     Us</a>
