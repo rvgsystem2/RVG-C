@@ -96,6 +96,10 @@ Route::middleware(['auth','role:Super Admin'])->group(function () {
 });
 
 
+Route::get('/admin/purchases', [CheckoutController::class, 'index'])->name('purchases.index');
+Route::get('/admin/purchases/{po}', [CheckoutController::class, 'showed'])->name('purchases.show');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/dm/{user}',  [DirectMessageController::class, 'show'])->name('dm.show');

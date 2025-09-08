@@ -12,4 +12,11 @@ class PaymentOrder extends Model
     ];
 
     protected $casts = ['meta' => 'array'];
+
+
+
+    public function package()
+{
+    return $this->belongsTo(\App\Models\Package::class);
+}
 }

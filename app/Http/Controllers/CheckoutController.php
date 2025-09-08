@@ -11,6 +11,51 @@ use Illuminate\Support\Str;
 
 class CheckoutController extends Controller
 {
+
+  public function index(Request $r)
+    {
+        $status = $r->query('status');             // created | paid | failed
+        $q      = trim((string)$r->query('q'));    // search
+        $from   = $r->query('from');               // YYYY-MM-DD
+        $to     = $r->query('to');                 // YYYY-MM-DD
+        $sort   = in_array($r->query('sort'), ['created_at','amount','status']) ? $r->query('sort') : 'created_at';
+        $dir    = $r->query('dir') === 'asc' ? 'asc' : 'desc';
+
+        $orders = PaymentOrder::with('package')
+            ->when($status, fn($q2) => $q2->where('status', $status))
+            ->when($q, function($q2) use ($q) {
+                $q2->where(function($w) use ($q) {
+                    $w->where('name', 'like', "%$q%")
+                      ->orWhere('phone', 'like', "%$q%")
+                      ->orWhere('business_name', 'like', "%$q%")
+                      ->orWhere('razorpay_order_id', 'like', "%$q%")
+                      ->orWhere('razorpay_payment_id', 'like', "%$q%");
+                });
+            })
+            ->when($from, fn($q2) => $q2->whereDate('created_at', '>=', $from))
+            ->when($to,   fn($q2) => $q2->whereDate('created_at', '<=', $to))
+            ->orderBy($sort, $dir)
+            ->paginate(20)
+            ->withQueryString();
+
+        // quick stats
+        $stats = [
+            'total' => PaymentOrder::count(),
+            'paid'  => PaymentOrder::where('status','paid')->count(),
+            'failed'=> PaymentOrder::where('status','failed')->count(),
+            'created'=>PaymentOrder::where('status','created')->count(),
+            'revenue'=> PaymentOrder::where('status','paid')->sum('amount'),
+        ];
+
+        return view('backend.purchases.index', compact('orders','stats','status','q','from','to','sort','dir'));
+    }
+
+    public function showed(PaymentOrder $po)
+    {
+        $po->load('package');
+        return view('backend.purchases.show', compact('po'));
+    }
+
     public function show(Package $package)
     {
         return view('front.packagebuy', compact('package'));
