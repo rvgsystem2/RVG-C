@@ -156,11 +156,21 @@ class CheckoutController extends Controller
                 ]);
                 // You can choose to fail here if strict matching required.
             }
-
+   $po->load('package');
             $po->update([
                 'razorpay_payment_id' => $payload['razorpay_payment_id'],
                 'razorpay_signature'  => $payload['razorpay_signature'],
                 'status'              => 'paid',
+            ]);
+
+             // ⭐ Thank-you page के लिए session में details
+            $r->session()->put('thankyou', [
+                'package_name' => $po->package->name ?? 'Package',
+                'payment_id'   => $payload['razorpay_payment_id'],
+                'order_id'     => $payload['razorpay_order_id'],
+                'amount'       => $po->amount,
+                'currency'     => $po->currency,
+                'paid_at'      => now()->format('d M Y, h:i A'),
             ]);
 
             return response()->json(['ok' => true, 'redirect' => url('/thank-you')]);

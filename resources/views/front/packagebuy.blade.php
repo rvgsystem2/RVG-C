@@ -117,49 +117,70 @@
       return;
     }
 
-    const fd = new FormData(form);
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
 
-    const resp = await fetch(`{{ route('checkout.order') }}`, {
-      method: 'POST',
-      headers: {'X-CSRF-TOKEN': csrf},
-      body: fd
-    });
-    const data = await resp.json();
-    if(!resp.ok){
-      alert(data.message || 'Unable to start payment.');
-      return;
-    }
+    try {
+      const fd = new FormData(form);
 
-    const rzp = new Razorpay({
-      key: data.key,
-      amount: data.amount,          // paise
-      currency: data.currency,
-      name: data.merchant_name,
-      description: data.description,
-      order_id: data.order_id,
-      prefill: data.prefill,
-      theme: { color: '#2563eb' },
-      handler: async function (response) {
-        const verify = await fetch(`{{ route('checkout.verify') }}`, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json','X-CSRF-TOKEN': csrf},
-          body: JSON.stringify(response)
-        });
-        const v = await verify.json();
-        if(verify.ok){
-          window.location.href = v.redirect ?? '{{ url("/thank-you") }}';
-        }else{
-          alert(v.message || 'Payment verification failed.');
-        }
+      const resp = await fetch(`{{ route('checkout.order') }}`, {
+        method: 'POST',
+        headers: {
+          'X-CSRF-TOKEN': csrf,
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json'
+        },
+        body: fd
+      });
+      const data = await resp.json();
+      if(!resp.ok){
+        alert(data.message || 'Unable to start payment.');
+        btn.disabled = false;
+        return;
       }
-    });
 
-    rzp.on('payment.failed', function (res) {
-      alert(res.error?.description || 'Payment failed.');
-    });
+      const rzp = new Razorpay({
+        key: data.key,
+        amount: data.amount,
+        currency: data.currency,
+        name: data.merchant_name,
+        description: data.description,
+        order_id: data.order_id,
+        prefill: data.prefill,
+        theme: { color: '#2563eb' },
+        handler: async function (response) {
+          const verify = await fetch(`{{ route('checkout.verify') }}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type':'application/json',
+              'X-CSRF-TOKEN': csrf,
+              'X-Requested-With': 'XMLHttpRequest',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(response)
+          });
+          const v = await verify.json();
+          if(verify.ok){
+            window.location.href = v.redirect ?? '{{ url("/thank-you") }}';
+          } else {
+            alert(v.message || 'Payment verification failed.');
+            btn.disabled = false;
+          }
+        }
+      });
 
-    rzp.open();
+      rzp.on('payment.failed', function (res) {
+        alert(res.error?.description || 'Payment failed.');
+        btn.disabled = false;
+      });
+
+      rzp.open();
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+    }
   });
 })();
 </script>
+
 @endsection

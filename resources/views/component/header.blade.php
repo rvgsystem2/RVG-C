@@ -16,7 +16,7 @@
             <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active ' : '' }}">
                 Home
             </a>
-             <a href="/" class="nav-item nav-link {{ request()->is('packages') ? 'active ' : '' }}">
+             <a href="{{ route('packages') }}" class="nav-item nav-link {{ request()->is('packages') ? 'active ' : '' }}">
                 Packages
             </a>
             <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active ' : '' }}">

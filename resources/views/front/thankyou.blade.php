@@ -21,8 +21,16 @@
 </div>
 
 @php
-  $orderId = request('order');   // Optional: ?order=123
-  $payId   = request('pay');     // Optional: ?pay=pay_xxx
+  // Pull session details set in CheckoutController@verify (and clear them)
+  $tk = session()->pull('thankyou');
+
+  // Fallbacks from query string if someone hits this page directly
+  $orderId   = $tk['order_id']     ?? request('order');
+  $payId     = $tk['payment_id']   ?? request('pay');
+  $pkgName   = $tk['package_name'] ?? request('pkg');
+  $amount    = $tk['amount']       ?? null;
+  $currency  = $tk['currency']     ?? 'INR';
+  $paidAt    = $tk['paid_at']      ?? now()->format('d M Y, h:i A');
 @endphp
 
 <div class="container my-5">
@@ -34,17 +42,20 @@
             <i class="bi bi-check2-circle tick"></i>
           </div>
           <h2 class="fw-bold mb-2">Payment Successful!</h2>
-          <p class="text-muted mb-4">Thank you for choosing us. Your order is being processed and you’ll receive onboarding details shortly on your registered contact.</p>
+          <p class="text-muted mb-4">
+            Thank you for choosing us. Your order is being processed and you’ll receive onboarding details shortly on your registered contact.
+          </p>
 
           <div class="row g-3 justify-content-center mb-4">
-            @if($orderId)
+            @if($pkgName)
               <div class="col-md-4">
                 <div class="p-3 rounded bg-light border h-100">
-                  <div class="text-muted small">Order Reference</div>
-                  <div class="fw-semibold">{{ $orderId }}</div>
+                  <div class="text-muted small">Package</div>
+                  <div class="fw-semibold">{{ $pkgName }}</div>
                 </div>
               </div>
             @endif
+
             @if($payId)
               <div class="col-md-4">
                 <div class="p-3 rounded bg-light border h-100">
@@ -53,13 +64,55 @@
                 </div>
               </div>
             @endif
+
+            @if($orderId)
+              <div class="col-md-4">
+                <div class="p-3 rounded bg-light border h-100">
+                  <div class="text-muted small">Order ID</div>
+                  <div class="fw-semibold">{{ $orderId }}</div>
+                </div>
+              </div>
+            @endif
+
+            @if(!is_null($amount))
+              <div class="col-md-4">
+                <div class="p-3 rounded bg-light border h-100">
+                  <div class="text-muted small">Amount</div>
+                  <div class="fw-semibold">₹ {{ number_format((float)$amount, 2) }} {{ $currency }}</div>
+                </div>
+              </div>
+            @endif
+
+            @if($paidAt)
+              <div class="col-md-4">
+                <div class="p-3 rounded bg-light border h-100">
+                  <div class="text-muted small">Paid At</div>
+                  <div class="fw-semibold">{{ $paidAt }}</div>
+                </div>
+              </div>
+            @endif
           </div>
 
+          @if(!$payId && !$orderId && !$pkgName)
+            <div class="alert alert-warning text-start mx-auto" style="max-width:560px">
+              We couldn’t find the transaction details. If the amount is deducted, please contact support with your registered phone number.
+            </div>
+          @endif
+
           <div class="d-flex gap-2 justify-content-center">
-            <a href="{{ url('/packages') }}" class="btn btn-grad text-white px-4">Browse More Packages</a>
-            <a href="{{ url('/') }}" class="btn btn-secondary px-4">Go to Home</a>
-            <a href="{{ url('/contact') }}" class="btn btn-success px-4">Need Help?</a>
-          </div>
+  <a href="{{ url('/packages') }}" class="btn btn-grad text-white px-4">Browse More Packages</a>
+  <a href="{{ url('/') }}" class="btn btn-secondary px-4">Go to Home</a>
+  <a href="{{ url('/contact') }}" class="btn btn-success px-4">Need Help?</a>
+
+  {{-- NEW: Call & WhatsApp --}}
+  <a href="tel:+917800378002" class="btn btn-outline-dark px-4">
+    <i class="bi bi-telephone me-1"></i> Call
+  </a>
+  <a href="https://wa.me/+917800378002" target="_blank" class="btn btn-success px-4">
+    <i class="bi bi-whatsapp me-1"></i> WhatsApp
+  </a>
+</div>
+
 
           <p class="small text-muted mt-4 mb-0">
             Tip: Please don’t refresh this page continuously. If the amount is deducted but the status is not updated, contact support with your Payment ID.
