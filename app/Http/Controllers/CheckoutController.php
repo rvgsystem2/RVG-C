@@ -62,65 +62,77 @@ class CheckoutController extends Controller
         return view('front.packagebuy', compact('package'));
     }
 
-    public function createOrder(Request $r)
+   public function createOrder(Request $r)
     {
         $data = $r->validate([
             'package_id'    => 'required|exists:packages,id',
             'name'          => 'nullable|string|max:120',
-            'phone'         => 'required|digits_between:8,14',
+            'phone'         => 'required|digits_between:10,14',   // allow 10-14 digit phone
             'business_name' => 'nullable|string|max:160',
-            'amount'        => 'required|numeric|min:1',
+            // DO NOT accept amount from client; we compute it on the server
         ]);
 
         try {
             $package = Package::findOrFail($data['package_id']);
 
-            // ALWAYS read from config (which reads from .env)
-            $key    = env('RAZORPAY_KEY');
-            $secret = env('RAZORPAY_SECRET');
+            // Prefer config/services.php; fallback to env if not set
+            $key    = config('services.razorpay.key', env('RAZORPAY_KEY'));
+            $secret = config('services.razorpay.secret', env('RAZORPAY_SECRET'));
 
             if (empty($key) || empty($secret)) {
                 \Log::error('Razorpay keys missing', ['key' => (bool)$key, 'secret' => (bool)$secret]);
                 return response()->json(['message' => 'Payment gateway not configured.'], 500);
             }
 
-            $amountPaise = (int) round($data['amount'] * 100);
+            // ===== Final amount (GST already included in your prices) =====
+            $mrp  = (float) $package->price;                                   // inclusive MRP
+            $sale = $package->sale_price !== null ? (float) $package->sale_price : null; // inclusive sale price
+            $final = ($sale !== null && $sale > 0 && $sale < $mrp) ? $sale : $mrp;
+            if ($final < 1) {
+                return response()->json(['message' => 'Invalid amount.'], 422);
+            }
+
+            $amountPaise = (int) round($final * 100);
 
             $api   = new Api($key, $secret);
             $order = $api->order->create([
-                'receipt'  => 'rcpt_'.Str::random(10),
-                'amount'   => $amountPaise,
+                'receipt'  => 'rcpt_' . Str::random(10),
+                'amount'   => $amountPaise,  // paise, GST included
                 'currency' => 'INR',
             ]);
 
+            // Persist our expectation for verify()
             $po = PaymentOrder::create([
                 'package_id'        => $package->id,
                 'name'              => $data['name'] ?? null,
                 'phone'             => $data['phone'],
                 'business_name'     => $data['business_name'] ?? null,
-                'amount'            => $data['amount'],
+                'amount'            => $final,        // store GST-inclusive total
                 'currency'          => 'INR',
                 'razorpay_order_id' => $order['id'],
                 'status'            => 'created',
+                // Optional: if you have columns, you may also store breakdown:
+                // 'subtotal' => $mrp, 'tax_rate' => 18, 'tax_amount' => $mrp - ($mrp / 1.18), etc.
             ]);
 
             return response()->json([
                 'order_id'      => $order['id'],
-                'amount'        => $amountPaise, // paise
                 'currency'      => 'INR',
                 'key'           => $key,
                 'merchant_name' => config('app.name', 'Real Victory Groups'),
-                'description'   => $package->name.' — Package Purchase',
+                'description'   => $package->name . ' — Package Purchase',
                 'prefill'       => [
                     'name'    => $po->name,
                     'contact' => $po->phone,
                 ],
             ]);
+
         } catch (\Throwable $e) {
             \Log::error('Razorpay order create failed', ['err' => $e->getMessage()]);
             return response()->json(['message' => 'Unable to start payment.'], 500);
         }
     }
+
 
     public function verify(Request $r)
     {
