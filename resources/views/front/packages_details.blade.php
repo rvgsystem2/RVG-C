@@ -113,7 +113,7 @@
               @elseif($m->type==='video' && $m->path)
                 <video src="{{ asset('storage/'.$m->path) }}" controls muted playsinline></video>
               @elseif($m->type==='pdf' && $m->path)
-                <a href="{{ asset('storage/'.$m->path) }}" target="_blank" class="d-flex align-items-center justify-content-center" style="height:160px">
+                <a href="{{ asset('storage/'.$m->path) }}" target="_blank" class="d-flex align-items-center justify-content-center" style="height:auto;">
                   <span class="text-primary text-decoration-underline">Open PDF</span>
                 </a>
               @endif
@@ -130,7 +130,7 @@
               @elseif($m->type==='video' && $m->path)
                 <video src="{{ asset('storage/'.$m->path) }}" controls muted playsinline></video>
               @elseif($m->type==='pdf' && $m->path)
-                <a href="{{ asset('storage/'.$m->path) }}" target="_blank" class="d-flex align-items-center justify-content-center" style="height:160px">
+                <a href="{{ asset('storage/'.$m->path) }}" target="_blank" class="d-flex align-items-center justify-content-center" style="height:auto;">
                   <span class="text-primary text-decoration-underline">Open PDF</span>
                 </a>
               @endif
