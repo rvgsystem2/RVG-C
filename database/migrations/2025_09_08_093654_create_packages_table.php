@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('label');                 
             $table->string('name');
+              $table->string('short_description', 300)->nullable();
             $table->text('description')->nullable();
             $table->string('price');
             $table->string('image')->nullable();
             $table->string('image_alt')->nullable();
+            $table->unsignedInteger('duration_days')->nullable(); // validity
+            $table->decimal('sale_price', 10, 2)->nullable();
+            $table->string('thumbnail')->nullable(); // image path
             $table->enum('status', ['active', 'inactive', 'draft'])->default('active');
             $table->timestamps();
         });

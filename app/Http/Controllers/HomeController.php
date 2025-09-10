@@ -142,6 +142,17 @@ public function blogdetail($slug)
         return view('front.packages', compact('seos', 'packages'));
     }
 
+    public function packagesDetails($package){
+        $package = Package::with([
+            'media' => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+            'faqs'  => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+        ])
+        ->where('status','active')
+        ->findOrFail($package);
+        $seos = Seo::where('page_type', 'packages')->first();
+        return view('front.packages_details', compact('seos', 'package'));
+    }
+
     public function application(){
         return view('front.application');
     }

@@ -13,47 +13,90 @@ class PackageController extends Controller
     return view('packages.index', compact('packages'));
 }
 
-public function store(Request $r) {
-    $data = $r->validate([
-        'name' => 'required|string|max:255',
-        'description' => 'nullable|string',
-        'price' => 'required', // consider numeric/decimal in DB
-        'image' => 'nullable|image|max:2048',
-        'image_alt' => 'nullable|string|max:255',
-        'status' => 'required|in:active,inactive,draft',
-    ]);
-    if ($r->hasFile('image')) {
-        $data['image'] = $r->file('image')->store('packages', 'public');
-    }
-    Package::create($data);
-    return back()->with('success', 'Package created.');
+public function create() {
+    return view('packages.form');
 }
 
-public function update(Request $r, $id) {
-    $pkg = Package::findOrFail($id);
-    $data = $r->validate([
-        'name' => 'required|string|max:255',
-        'description' => 'nullable|string',
-        'price' => 'required',
-        'image' => 'nullable|image|max:2048',
-        'image_alt' => 'nullable|string|max:255',
-        'status' => 'required|in:active,inactive,draft',
-    ]);
-    if ($r->hasFile('image')) {
-        $data['image'] = $r->file('image')->store('packages', 'public');
-    }
-    $pkg->update($data);
-    return back()->with('success', 'Package updated.');
+
+public function show($package) {
+      $package = Package::with([
+                'media' => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+                'faqs'  => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+            ])
+            ->where('status','active')
+            ->findOrFail($package);
+    return view('packages.show', compact('package'));
 }
 
-    public function delete(Package $package)
-    {
-        if ($package->image) {
-            Storage::disk('public')->delete($package->image);
+ public function store(Request $r) {
+        $data = $r->validate([
+            'label' => 'required|string|max:255',
+            'name'  => 'required|string|max:255',
+            'short_description' => 'nullable|string|max:300',
+            'description' => 'nullable|string',
+            'price' => 'required|string|max:50',      // aap string chaahte ho
+            'sale_price' => 'nullable|numeric',
+            'duration_days' => 'nullable|integer|min:1',
+            'status' => 'required|in:active,inactive,draft',
+            'image' => 'nullable|image|max:2048',
+            'image_alt' => 'nullable|string|max:255',
+            'thumbnail' => 'nullable|image|max:1024',
+        ]);
+
+        if ($r->hasFile('image')) {
+            $data['image'] = $r->file('image')->store('packages', 'public');
+        }
+        if ($r->hasFile('thumbnail')) {
+            $data['thumbnail'] = $r->file('thumbnail')->store('packages/thumbs', 'public');
         }
 
+        Package::create($data);
+
+        return redirect()->route('package.index')->with('success', 'Package created.');
+    }
+
+
+ public function edit($package) {
+    $package = Package::findOrFail($package);
+    return view('packages.form', compact('package'));
+ }
+
+
+ public function update(Request $r, Package $package) {
+        $data = $r->validate([
+            'label' => 'required|string|max:255',
+            'name'  => 'required|string|max:255',
+            'short_description' => 'nullable|string|max:300',
+            'description' => 'nullable|string',
+            'price' => 'required|string|max:50',
+            'sale_price' => 'nullable|numeric',
+            'duration_days' => 'nullable|integer|min:1',
+            'status' => 'required|in:active,inactive,draft',
+            'image' => 'nullable|image|max:2048',
+            'image_alt' => 'nullable|string|max:255',
+            'thumbnail' => 'nullable|image|max:1024',
+        ]);
+
+        if ($r->hasFile('image')) {
+            if ($package->image) Storage::disk('public')->delete($package->image);
+            $data['image'] = $r->file('image')->store('packages', 'public');
+        }
+        if ($r->hasFile('thumbnail')) {
+            if ($package->thumbnail) Storage::disk('public')->delete($package->thumbnail);
+            $data['thumbnail'] = $r->file('thumbnail')->store('packages/thumbs', 'public');
+        }
+
+        $package->update($data);
+
+        return redirect()->route('package.index')->with('success', 'Package updated.');
+    }
+
+
+    public function destroy(Package $package) {
+        if ($package->image) Storage::disk('public')->delete($package->image);
+        if ($package->thumbnail) Storage::disk('public')->delete($package->thumbnail);
         $package->delete();
-        return redirect()->back()->with('success', 'Package deleted successfully.');
+        return back()->with('success', 'Package deleted.');
     }
 
     private function validateRequest(Request $request)

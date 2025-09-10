@@ -2,6 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="font-bold text-2xl text-gray-800">Customer Purchases</h2>
+        
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <div class="bg-green-50 text-green-700 rounded-lg px-3 py-2 text-sm">Paid: <b>{{ $stats['paid'] }}</b></div>
                 <div class="bg-yellow-50 text-yellow-700 rounded-lg px-3 py-2 text-sm">Created: <b>{{ $stats['created'] }}</b></div>

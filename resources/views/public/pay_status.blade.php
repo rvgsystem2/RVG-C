@@ -2,7 +2,6 @@
   'meta_title' => 'Payment Successful | Thank You',
   'meta_description' => 'Your payment was successful. Thank you for your purchase!'
 ]])
-
 @section('content')
 <style>
   .tick-wrap{width:110px;height:110px;border-radius:50%;background:#e9f8ef;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
@@ -21,16 +20,13 @@
 </div>
 
 @php
-  // Pull session details set in CheckoutController@verify (and clear them)
-  $tk = session()->pull('thankyou');
-
-  // Fallbacks from query string if someone hits this page directly
-  $orderId   = $tk['order_id']     ?? request('order');
-  $payId     = $tk['payment_id']   ?? request('pay');
-  $pkgName   = $tk['package_name'] ?? request('pkg');
-  $amount    = $tk['amount']       ?? null;
-  $currency  = $tk['currency']     ?? 'INR';
-  $paidAt    = $tk['paid_at']      ?? now()->format('d M Y, h:i A');
+  // Data passed from controller (object)
+  $orderId   = $data->order_id   ?? null;
+  $payId     = $data->payment_id ?? null;
+  $pkgName   = $data->package_name ?? 'Package';
+  $amount    = $data->amount     ?? null;
+  $currency  = $data->currency   ?? 'INR';
+  $paidAt    = $data->paid_at    ?? null;
 @endphp
 
 <div class="container my-5">
@@ -38,9 +34,7 @@
     <div class="col-lg-8">
       <div class="card shadow-sm border-0 thank-card">
         <div class="card-body p-4 p-md-5 text-center">
-          <div class="tick-wrap">
-            <i class="bi bi-check2-circle tick"></i>
-          </div>
+          <div class="tick-wrap"><i class="bi bi-check2-circle tick"></i></div>
           <h2 class="fw-bold mb-2">Payment Successful!</h2>
           <p class="text-muted mb-4">
             Thank you for choosing us. Your order is being processed and you’ll receive onboarding details shortly on your registered contact.
@@ -100,19 +94,13 @@
           @endif
 
           <div class="d-flex gap-2 justify-content-center">
-  <a href="{{ url('/packages') }}" class="btn btn-grad text-white px-4">Browse More Packages</a>
-  <a href="{{ url('/') }}" class="btn btn-secondary px-4">Go to Home</a>
-  <a href="{{ url('/contact') }}" class="btn btn-success px-4">Need Help?</a>
-
-  {{-- NEW: Call & WhatsApp --}}
-  <a href="tel:+917800378002" class="btn btn-dark px-4">
-    <i class="bi bi-telephone me-1"></i> Call
-  </a>
-  <a href="https://wa.me/+917800378002" target="_blank" class="btn btn-success px-4">
-    <i class="bi bi-whatsapp me-1"></i> WhatsApp
-  </a>
-</div>
-
+            <a href="{{ url('/packages') }}" class="btn btn-grad text-white px-4">Browse More Packages</a>
+            <a href="{{ url('/') }}" class="btn btn-secondary px-4">Go to Home</a>
+            <a href="{{ url('/contact') }}" class="btn btn-success px-4">Need Help?</a>
+            {{-- Call & WhatsApp (no '+' in wa.me link) --}}
+            <a href="tel:+917800378002" class="btn btn-outline-dark px-4"><i class="bi bi-telephone me-1"></i> Call</a>
+            <a href="https://wa.me/917800378002" target="_blank" class="btn btn-success px-4"><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+          </div>
 
           <p class="small text-muted mt-4 mb-0">
             Tip: Please don’t refresh this page continuously. If the amount is deducted but the status is not updated, contact support with your Payment ID.

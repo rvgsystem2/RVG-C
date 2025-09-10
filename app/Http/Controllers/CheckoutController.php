@@ -56,6 +56,7 @@ class CheckoutController extends Controller
         return view('backend.purchases.show', compact('po'));
     }
 
+    
     public function show(Package $package)
     {
         return view('front.packagebuy', compact('package'));
