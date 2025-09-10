@@ -16,7 +16,16 @@
     .media-wrap { overflow:hidden; border-radius: 16px; border:1px solid #e5e7eb; }
     .media-track { display:flex; gap:12px; padding:12px 12px; }
     .media-card { width: 260px; flex: 0 0 auto; border-radius: 12px; overflow: hidden; border:1px solid #e5e7eb; background:#fff; box-shadow: 0 6px 16px rgba(0,0,0,.05) }
-    .media-card img, .media-card video { height:160px; width:100%; object-fit:cover }
+    
+    /* ✅ Image/Video ko auto height-width me bada dikhane ke liye */
+    .media-card img, 
+    .media-card video { 
+      width: 100%; 
+      height: auto; 
+      object-fit: contain; 
+      max-height: 450px; /* optional limit, hata sakte ho */
+    }
+
     /* infinite auto-scroll */
     .auto-scroll { animation: scrollX 30s linear infinite }
     .paused { animation-play-state: paused !important }
@@ -95,7 +104,7 @@
       </div>
     </div>
 
-    {{-- Media: infinite auto-scroll (hover to pause, drag not needed for Bootstrap) --}}
+    {{-- Media: infinite auto-scroll --}}
     @if($package->media->count())
     <div class="mt-5">
       <div class="d-flex justify-content-between align-items-center mb-2">
