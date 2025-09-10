@@ -99,7 +99,7 @@
       @if ($package->image)
         <img src="{{ asset('storage/' . $package->image) }}"
              alt="{{ $package->image_alt ?? $package->name }}"
-             class="rounded me-3" style="width:auto;height:auto;object-fit:cover">
+             class="rounded me-3" style="width:72px;height:72px;object-fit:cover">
       @endif
       <div>
         <div class="fw-semibold">{{ $package->name }}</div>
