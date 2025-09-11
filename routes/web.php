@@ -44,6 +44,8 @@ Route::post('/checkout/order',  [CheckoutController::class,'createOrder'])->name
 Route::post('/checkout/verify', [CheckoutController::class,'verify'])->name('checkout.verify');
 
 Route::post('/interest', [HomeController::class, 'interestStore'])->name('interest.store');
+Route::get('/admin/leads', [HomeController::class, 'leadIndex'])->middleware(['auth'])->name('leads.index');
+Route::get('/admin/leads/delete/{lead}', [HomeController::class, 'destroy'])->middleware(['auth'])->name('admin.leads.destroy');
 Route::prefix('paylink')->name('paylink.')->group(function () {
     Route::get('/', [PaymentLinkController::class, 'index'])->name('index');
     Route::get('/create', [PaymentLinkController::class, 'create'])->name('create');

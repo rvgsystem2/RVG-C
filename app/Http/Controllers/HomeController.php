@@ -239,4 +239,18 @@ public function interestStore(Request $r) {
     return back()->with('success','Thanks! Our team will call/WhatsApp you shortly.');
 }
 
+
+public function leadIndex()
+{
+    $leads = InterestedLead::with('package')->latest()->paginate(20);
+    return view('admin.leads.index', compact('leads'));
+
+}
+
+public function destroy(InterestedLead $lead)
+{
+    $lead->delete();
+    return back()->with('success', 'Lead deleted.');
+}
+
 }

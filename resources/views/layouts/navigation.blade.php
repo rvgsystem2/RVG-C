@@ -92,6 +92,8 @@
                             </svg>
                         </button>
 
+
+
                         <div x-show="open" @click.away="open = false" x-cloak
                             class="absolute z-50 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
 
@@ -122,6 +124,13 @@
                                 <x-nav-link :href="route('paylink.index')" :active="request()->routeIs('paylink.*')" class="block px-4 py-2 text-left">
                                     <i class="fas fa-box mr-1"></i> Payment Links
                                 </x-nav-link>
+                            @endcan
+
+                            @can('view leads')
+                                <x-nav-link :href="route('leads.index')" :active="request()->routeIs('leads.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-address-book mr-1"></i> Interested Leads
+                                </x-nav-link>  
+                                
                             @endcan
 
                             <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">
