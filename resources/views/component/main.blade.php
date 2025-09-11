@@ -139,16 +139,16 @@
     @endif
 
     <!-- Additional Custom Meta Tags -->
-    @if(!empty($seo?->meta_tags))
-        {!! $seo->meta_tags !!}
-    @endif
+     @if(!empty($seo?->meta_tags))
+    @php $safeMeta = preg_replace('/<(?!\/?(?:meta|link)\b)[^>]*>/i', '', $seo->meta_tags); @endphp
+    {!! $safeMeta !!}
+  @endif
 
-    <!-- JSON-LD Structured Data -->
-    @if(!empty($seo?->structured_data_json))
-        <script type="application/ld+json">
-            {!! $seo->structured_data_json !!}
-        </script>
-    @endif
+  {{-- JSON-LD: escape closing script --}}
+  @if(!empty($seo?->structured_data_json))
+    @php $jsonLd = str_replace('</script>', '<\/script>', $seo->structured_data_json); @endphp
+    <script type="application/ld+json">{!! $jsonLd !!}</script>
+  @endif
 
     <!-- Favicon -->
     <link href="{{asset('logo.png')}}" rel="icon">
