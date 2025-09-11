@@ -38,9 +38,9 @@ public function show($package) {
             'sale_price' => 'nullable|numeric',
             'duration_days' => 'nullable|integer|min:1',
             'status' => 'required|in:active,inactive,draft',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:5048',
             'image_alt' => 'nullable|string|max:255',
-            'thumbnail' => 'nullable|image|max:1024',
+            'thumbnail' => 'nullable|image|max:5024',
         ]);
 
         if ($r->hasFile('image')) {
@@ -72,9 +72,9 @@ public function show($package) {
             'sale_price' => 'nullable|numeric',
             'duration_days' => 'nullable|integer|min:1',
             'status' => 'required|in:active,inactive,draft',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:5048',
             'image_alt' => 'nullable|string|max:255',
-            'thumbnail' => 'nullable|image|max:1024',
+            'thumbnail' => 'nullable|image|max:5024',
         ]);
 
         if ($r->hasFile('image')) {
