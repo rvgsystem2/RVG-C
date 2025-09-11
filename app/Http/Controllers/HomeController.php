@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Package;
+use App\Models\PackageCategory;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Seo;
@@ -141,6 +142,31 @@ public function blogdetail($slug)
         $packages = Package::where('status', 'active')->get();
         return view('front.packages', compact('seos', 'packages'));
     }
+
+
+
+   public function packagesByCategory(PackageCategory $category)
+{
+    $seos = Seo::where('page_type', 'packagesCategory')->first();
+
+    $packages = Package::with('category')
+        ->where('status', 'active')
+        ->where('package_category_id', $category->id)
+        ->latest()
+        ->paginate(12)
+        ->withQueryString(); // keep ?page etc.
+
+    return view('front.packagescategory', [
+        'seos'       => $seos,
+        'packages'   => $packages,
+        'categories' => PackageCategory::where('status','active')->orderBy('name')->get(),
+        'activeCat'  => $category,
+    ]);
+}
+
+
+
+
 
     public function packagesDetails($package){
         $package = Package::with([

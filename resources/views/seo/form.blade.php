@@ -175,6 +175,7 @@
                                 <option value="contact" {{ old('page_type', $seo->page_type ?? '') == 'contact' ? 'selected' : '' }}>Contact</option>
 
                                 <option value="career" {{ old('page_type', $seo->page_type ?? '') == 'career' ? 'selected' : '' }}>Career</option>
+                                <option value="packagesCategory" {{ old('page_type', $seo->page_type ?? '') == 'packagesCategory' ? 'selected' : '' }}>Packages Category</option>
 
                                 <option value="term_and_condition" {{ old('page_type', $seo->page_type ?? '') == 'term_and_condition' ? 'selected' : '' }}>Term and Condition</option>
 

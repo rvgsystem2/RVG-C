@@ -31,6 +31,21 @@
 
                     {{-- Row 1: Label + Name --}}
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Category</label>
+                            <select name="package_category_id"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-200">
+                                <option value="">Select a category</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"
+                                        {{ old('package_category_id', $package->package_category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div>
                             <label class="block text-gray-700 font-medium mb-2">Label</label>
                             <input type="text" name="label" value="{{ old('label', $package->label ?? '') }}"

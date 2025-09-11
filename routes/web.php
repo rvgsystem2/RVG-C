@@ -11,6 +11,7 @@ use App\Http\Controllers\DirectMessageController;
 use App\Http\Controllers\DmAccessController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\PackageCategoryController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackageFaqController;
 use App\Http\Controllers\PackageMediaController;
@@ -80,6 +81,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/packages', [HomeController::class, 'packages'])->name('packages');
+
+Route::get('/packages/category/{category}', [HomeController::class, 'packagesByCategory'])
+     ->name('packages.byCategory');
+
 // Route::get('/team', [HomeController::class, 'team'])->name('team');
 // Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
@@ -106,8 +111,6 @@ Route::get('/sitemap.xml', function(){
 Route::get('/blog-sitemap.xml', function(){
     return response()->view('blog-sitemap')->header('Content-Type', 'application/xml');
 });
-
-
 
 
 
@@ -301,6 +304,17 @@ Route::prefix('package')->group(function () {
     Route::get('/{package}', [PackageController::class, 'show'])->name('packageshow');
 });
 
+
+// Package Category Routes
+
+Route::prefix('package-categories')->group(function () {
+    Route::get('/', [PackageCategoryController::class, 'index'])->name('package-categories.index');
+    Route::get('/create', [PackageCategoryController::class, 'create'])->name('package-categories.create');
+    Route::post('/store', [PackageCategoryController::class, 'store'])->name('package-categories.store');
+    Route::get('/edit/{category}', [PackageCategoryController::class, 'edit'])->name('package-categories.edit');
+    Route::post('/update/{category}', [PackageCategoryController::class, 'update'])->name('package-categories.update');
+    Route::get('/delete/{category}', [PackageCategoryController::class, 'destroy'])->name('package-categories.delete');
+});
 
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {

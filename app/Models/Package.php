@@ -33,5 +33,14 @@ class Package extends Model
         $base = (float) preg_replace('/[^\d.]/', '', (string)$this->price);
         if (!is_null($this->sale_price)) return (float)$this->sale_price;
         return $base;
+
 }
+
+
+public function category()
+{
+    return $this->belongsTo(\App\Models\PackageCategory::class, 'package_category_id');
+}
+
+
 }

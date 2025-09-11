@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\PackageCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -10,11 +11,14 @@ class PackageController extends Controller
 {
     public function index() {
     $packages = Package::latest()->paginate(20);
+
     return view('packages.index', compact('packages'));
 }
 
 public function create() {
-    return view('packages.form');
+    $categories = PackageCategory::all();
+    
+    return view('packages.form', compact('categories'));
 }
 
 
@@ -41,6 +45,7 @@ public function show($package) {
             'image' => 'nullable|image|max:5048',
             'image_alt' => 'nullable|string|max:255',
             'thumbnail' => 'nullable|image|max:5024',
+            'package_category_id' => 'nullable|exists:package_categories,id',
         ]);
 
         if ($r->hasFile('image')) {
@@ -58,7 +63,8 @@ public function show($package) {
 
  public function edit($package) {
     $package = Package::findOrFail($package);
-    return view('packages.form', compact('package'));
+    $categories = PackageCategory::all();
+    return view('packages.form', compact('package', 'categories'));
  }
 
 
@@ -75,6 +81,7 @@ public function show($package) {
             'image' => 'nullable|image|max:5048',
             'image_alt' => 'nullable|string|max:255',
             'thumbnail' => 'nullable|image|max:5024',
+            'package_category_id' => 'nullable|exists:package_categories,id',
         ]);
 
         if ($r->hasFile('image')) {
