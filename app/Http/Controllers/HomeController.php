@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\InterestedLeadMail;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Career;
+use App\Models\InterestedLead;
 use App\Models\Package;
 use App\Models\PackageCategory;
 use App\Models\Product;
@@ -16,6 +18,8 @@ use App\Models\ServiceDetail;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use PHPUnit\Event\Code\Test;
 
 class HomeController extends Controller
@@ -182,4 +186,57 @@ public function blogdetail($slug)
     public function application(){
         return view('front.application');
     }
+
+
+// public function interestStore(Request $r) {
+//     $data = $r->validate([
+//         'package_id' => 'required|exists:packages,id',
+//         'phone'      => ['required','regex:/^(\+?91[6-9]\d{9}|[6-9]\d{9})$/'],
+//     ]);
+
+//     \App\Models\InterestedLead::create([
+//         'package_id' => $data['package_id'],
+//         'phone'      => $data['phone'],
+//         'source'     => 'package-details',
+//     ]);
+
+//     return back()->with('success','Thanks! We will contact you shortly.');
+// }
+
+
+
+
+public function interestStore(Request $r) {
+    $data = $r->validate([
+        'package_id' => 'required|exists:packages,id',
+        'phone'      => ['required','regex:/^(\+?91[6-9]\d{9}|[6-9]\d{9})$/'],
+    ]);
+
+    $lead = InterestedLead::create([
+        'package_id' => $data['package_id'],
+        'phone'      => $data['phone'],
+        'source'     => 'package-details',
+    ]);
+
+    // Admin ko email
+    try {
+        $to = "realvictorygroups@gmail.com"; // Real Victory Groups
+        Mail::to($to)->send(new InterestedLeadMail($lead));
+        // Agar queue use karna ho: Mail::to($to)->queue(new InterestedLeadMail($lead));
+    } catch (\Throwable $e) {
+        Log::error('Lead email failed', ['error' => $e->getMessage()]);
+        // Email fail ho jaye to bhi user ko generic success de sakte ho,
+        // ya niche error dikhana hai to yahan se 500 json bhej do.
+    }
+
+    if ($r->expectsJson()) {
+        return response()->json([
+            'ok' => true,
+            'message' => 'Thanks! Our team will call/WhatsApp you shortly.',
+        ]);
+    }
+
+    return back()->with('success','Thanks! Our team will call/WhatsApp you shortly.');
+}
+
 }

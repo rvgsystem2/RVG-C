@@ -43,7 +43,7 @@ Route::get('/packages/details/{package}', [HomeController::class, 'packagesDetai
 Route::post('/checkout/order',  [CheckoutController::class,'createOrder'])->name('checkout.order');
 Route::post('/checkout/verify', [CheckoutController::class,'verify'])->name('checkout.verify');
 
-
+Route::post('/interest', [HomeController::class, 'interestStore'])->name('interest.store');
 Route::prefix('paylink')->name('paylink.')->group(function () {
     Route::get('/', [PaymentLinkController::class, 'index'])->name('index');
     Route::get('/create', [PaymentLinkController::class, 'create'])->name('create');

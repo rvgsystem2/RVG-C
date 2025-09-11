@@ -96,9 +96,15 @@
           </div>
 
           <div class="d-flex flex-wrap gap-2 mt-4">
-            <a href="{{ route('packages.buy', $package->id) }}" class="btn btn-primary btn-lg rounded-pill px-4">Buy Now</a>
-            <a href="{{ url('/packages') }}" class="btn btn-danger rounded-pill px-4">Back to Packages</a>
-          </div>
+  <a href="{{ route('packages.buy', $package->id) }}" class="btn btn-primary btn-lg rounded-pill px-4">Buy Now</a>
+
+  {{-- Interested → opens modal --}}
+  <button type="button" class="btn btn-danger rounded-pill px-4"
+          data-bs-toggle="modal" data-bs-target="#interestModal">
+    Interested
+  </button>
+</div>
+
         </div>
       </div>
     </div>
@@ -185,6 +191,177 @@
       </div>
     @endif
   </div>
+
+
+{{-- SweetAlert2 (if not loaded elsewhere) --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@php
+  $businessPhone = '7800378002'; // Real Victory Groups
+  $waPhone = '91' . $businessPhone; // WhatsApp format (country code without +)
+  $waText = urlencode("Hi, I'm interested in the package: {$package->name} (ID: {$package->id}).");
+@endphp
+
+<div class="modal fade" id="interestModal" tabindex="-1" aria-labelledby="interestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="interestModalLabel">Interested in {{ $package->name }}?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      {{-- Keep action as fallback; JS will intercept submit --}}
+      <form id="interestForm" action="{{ route('interest.store') }}" method="POST" novalidate>
+        @csrf
+        <input type="hidden" name="package_id" value="{{ $package->id }}">
+
+        <div class="modal-body">
+          {{-- Phone input --}}
+          <label class="form-label">Enter your number</label>
+          <input
+            type="tel"
+            name="phone"
+            class="form-control"
+            placeholder="enter your phone number"
+            inputmode="tel"
+            pattern="^(\+?91[6-9]\d{9}|[6-9]\d{9})$"
+            required>
+          {{-- Inline error holder --}}
+          <div id="phoneError" class="invalid-feedback d-block" style="display:none;"></div>
+
+          <div class="form-text">
+            Indian numbers only. Example: <b>9876543210</b> or <b>+919876543210</b>.
+          </div>
+
+          <hr class="my-4">
+
+          <div class="d-grid gap-2">
+            <a href="tel:+91{{ $businessPhone }}" class="btn btn-secondary">
+              📞 Call Us: +91 {{ $businessPhone }}
+            </a>
+            <a href="https://wa.me/{{ $waPhone }}?text={{ $waText }}" target="_blank" class="btn btn-success">
+              💬 WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="interestSubmit" type="submit" class="btn btn-primary">
+            Submit
+          </button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const form = document.getElementById('interestForm');
+  if(!form) return;
+
+  const submitBtn = document.getElementById('interestSubmit');
+  const csrf = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+
+  function setLoading(state){
+    if(!submitBtn) return;
+    if(state){
+      submitBtn.disabled = true;
+      submitBtn.dataset._t = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Submitting...';
+    } else {
+      submitBtn.disabled = false;
+      if(submitBtn.dataset._t){ submitBtn.innerHTML = submitBtn.dataset._t; }
+    }
+  }
+
+  function clearErrors(){
+    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+    const phoneError = document.getElementById('phoneError');
+    if(phoneError){ phoneError.style.display='none'; phoneError.textContent=''; }
+  }
+
+  function showErrors(errors){
+    if(errors?.phone){
+      const input = form.querySelector('[name="phone"]');
+      const holder = document.getElementById('phoneError');
+      if(input) input.classList.add('is-invalid');
+      if(holder){
+        holder.textContent = Array.isArray(errors.phone) ? errors.phone[0] : errors.phone;
+        holder.style.display = 'block';
+      }
+    }
+  }
+
+  async function submitAjax(e){
+    e.preventDefault();
+    clearErrors();
+
+    setLoading(true);
+    try{
+      const fd = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'X-CSRF-TOKEN': csrf || '',
+          'Accept': 'application/json'
+        },
+        body: fd
+      });
+
+      if(res.ok){
+        const data = await res.json().catch(()=>({}));
+        // Success alert
+        await Swal.fire({
+          icon: 'success',
+          title: 'Thank you!',
+          text: (data && data.message) ? data.message : 'We will contact you shortly.',
+          confirmButtonText: 'OK'
+        });
+
+        // Reset + close modal
+        form.reset();
+        clearErrors();
+
+        const modalEl = document.getElementById('interestModal');
+        if(window.bootstrap){
+          const instance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+          instance.hide();
+        } else {
+          // Fallback: manually hide if Bootstrap instance not found
+          modalEl.classList.remove('show'); modalEl.style.display='none';
+          document.body.classList.remove('modal-open');
+          document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+        }
+      } else if(res.status === 422){
+        const data = await res.json();
+        showErrors(data.errors || {});
+        Swal.fire({
+          icon: 'error',
+          title: 'Please fix the errors',
+          html: Object.values(data.errors || {}).flat().join('<br>')
+        });
+      } else {
+        const text = await res.text();
+        console.error(text);
+        Swal.fire({icon:'error', title:'Oops!', text:'Something went wrong. Please try again.'});
+      }
+    } catch(err){
+      console.error(err);
+      Swal.fire({icon:'error', title:'Network error', text:'Please check your connection and try again.'});
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  form.addEventListener('submit', submitAjax);
+})();
+</script>
+
+
 
   <script>
     // Pause/resume the marquee on hover
