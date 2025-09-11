@@ -47,13 +47,20 @@
               <div class="ribbon">{{ $pkg->label }}</div>
             @endif
 
-            <div class="ratio ratio-16x9 bg-light">
-              @if($thumb)
-                <img src="{{ asset('storage/'.$thumb) }}" alt="{{ $pkg->image_alt ?? $pkg->name }}" class="w-100 h-100 object-fit-cover">
-              @else
-                <div class="w-100 h-100 d-flex align-items-center justify-content-center text-muted">No Image</div>
-              @endif
-            </div>
+          <div class="bg-white rounded border d-flex align-items-center justify-content-center" style="min-height: 180px;">
+  @if($thumb)
+    <img
+      src="{{ asset('storage/'.$thumb) }}"
+      alt="{{ $pkg->image_alt ?? $pkg->name }}"
+      class="img-fluid d-block"
+      style="max-height:220px; object-fit:contain;"
+      loading="lazy">
+  @else
+    <div class="text-muted py-5">No Image</div>
+  @endif
+</div>
+
+
 
             <div class="card-body d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-2">
