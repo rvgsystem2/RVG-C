@@ -138,13 +138,13 @@
     @endif
 
 
-  @if(!empty($seo?->meta_tags))
+  {{-- @if(!empty($seo?->meta_tags))
     @php
       // Sirf meta/link allow; baaki strip so koi style/script ghuske content print na kare
       $safeMeta = preg_replace('/<(?!\/?(?:meta|link)\b)[^>]*>/i', '', $seo->meta_tags);
     @endphp
     {!! $safeMeta !!}
-@endif
+@endif --}}
 
     {{-- JSON-LD: escape closing script --}}
     @if (!empty($seo?->structured_data_json))
