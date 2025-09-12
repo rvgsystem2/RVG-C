@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+Route::post('/checkout/prefill', [CheckoutController::class, 'prefill'])->name('checkout.prefill');
 Route::get('/packages/{package}/buy', [CheckoutController::class,'show'])->name('packages.buy');
 Route::get('/packages/details/{package}', [HomeController::class, 'packagesDetails'])->name('packages.details');
 Route::post('/checkout/order',  [CheckoutController::class,'createOrder'])->name('checkout.order');
