@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PaymentSuccessAdmin;
 use App\Models\Package;
 use App\Models\PaymentOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 use Illuminate\Support\Str;
@@ -269,6 +271,22 @@ class CheckoutController extends Controller
                 'status'              => 'paid',
             ]);
 
+
+            try {
+    $to = "realvictorygroups@gmail.com";
+    Mail::to($to)->send(new PaymentSuccessAdmin(
+        $po,
+        $payload['razorpay_payment_id'],
+        $payload['razorpay_order_id']
+    ));
+    } catch (\Throwable $mailErr) {
+            \Log::warning('Payment success mail failed', [
+                'err'  => $mailErr->getMessage(),
+                'po_id'=> $po->id,
+            ]);
+        }
+
+
             $r->session()->put('thankyou', [
                 'package_name' => $po->package->name ?? 'Package',
                 'payment_id'   => $payload['razorpay_payment_id'],
@@ -280,6 +298,10 @@ class CheckoutController extends Controller
 
             return response()->json(['ok' => true, 'redirect' => route('thankyou')]);
 
+     
+                        // ✅ Admin Thank-you email (fire-and-forget)
+
+     
         } catch (SignatureVerificationError $e) {
             \Log::error('Razorpay signature verify failed', [
                 'msg' => $e->getMessage(),
@@ -435,3 +457,5 @@ class CheckoutController extends Controller
 //         }
 //     }
 }
+
+
