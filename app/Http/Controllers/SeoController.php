@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Package;
 use App\Models\Seo;
 use App\Models\ServiceDetail;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ class SeoController extends Controller
       public function create()
     {
         $blogs = Blog::select('id', 'title')->get();
+        $packages = Package::select('id', 'name')->get();
         // $services = ServiceDetail::select('id', 'title')->get();
         $services = ServiceDetail::with('category')->get();
 
@@ -28,6 +30,7 @@ class SeoController extends Controller
             'seo' => null,
             'blogs' => $blogs,
             'services' => $services,
+            'packages' => $packages,
         ]);
     }
 
@@ -89,6 +92,7 @@ class SeoController extends Controller
 
             'blog_id' => 'nullable|exists:blogs,id',
             'service_id' => 'nullable|exists:service_details,id',
+            'package_id' => 'nullable|exists:packages,id',
 
             // File validation
             'meta_image_file' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
@@ -120,11 +124,13 @@ class SeoController extends Controller
     {
         $blogs = Blog::select('id', 'title')->get();
         $services = ServiceDetail::with('category')->get();
+        $packages = Package::select('id', 'name')->get();
 
         return view('seo.form', [
             'seo' => $seo,
             'blogs' => $blogs,
             'services' => $services,
+            'packages' => $packages,
         ]);
     }
 
@@ -182,6 +188,8 @@ class SeoController extends Controller
 
             'blog_id' => 'nullable|exists:blogs,id',
             'service_id' => 'nullable|exists:service_details,id',
+            'package_id' => 'nullable|exists:packages,id',
+
 
             // File validation
             'meta_image_file' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',

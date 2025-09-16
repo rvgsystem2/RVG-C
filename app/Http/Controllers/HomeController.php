@@ -20,6 +20,7 @@ use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use PHPUnit\Event\Code\Test;
 
 class HomeController extends Controller
@@ -169,19 +170,41 @@ public function blogdetail($slug)
 }
 
 
+public function packagesDetails($name)
+{
+    $needle = Str::slug($name);
+
+    $found = Package::where('status','active')
+        ->get(['id','name'])
+        ->first(fn($p) => Str::slug($p->name) === $needle);
+
+    abort_if(!$found, 404);
+
+    $package = Package::with([
+        'media' => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+        'faqs'  => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+        'seo', // <-- seo relation bhi aayega
+    ])->findOrFail($found->id);
+
+    // agar seo specific package ka nahi mila to fallback lo
+    $seos = $package->seo ?? Seo::where('page_type', 'packages')->first();
+
+    return view('front.packages_details', compact('seos', 'package'));
+}
 
 
 
-    public function packagesDetails($package){
-        $package = Package::with([
-            'media' => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
-            'faqs'  => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
-        ])
-        ->where('status','active')
-        ->findOrFail($package);
-        $seos = Seo::where('page_type', 'packages')->first();
-        return view('front.packages_details', compact('seos', 'package'));
-    }
+
+    // public function packagesDetails($package){
+    //     $package = Package::with([
+    //         'media' => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+    //         'faqs'  => fn($q) => $q->where('status','active')->orderBy('created_at','desc'),
+    //     ])
+    //     ->where('status','active')
+    //     ->findOrFail($package);
+    //     $seos = Seo::where('page_type', 'packages')->first();
+    //     return view('front.packages_details', compact('seos', 'package'));
+    // }
 
     public function application(){
         return view('front.application');

@@ -224,6 +224,18 @@
                         </div>
 
                         <div>
+                            <label class="block font-medium">Link to Package</label>
+                            <select name="package_id" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="">None</option>
+                                @foreach ($packages as $package)
+                                    <option value="{{ $package->id }}"
+                                        {{ old('package_id', $seo->package_id ?? '') == $package->id ? 'selected' : '' }}>
+                                        {{ $package->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div>
                             <label class="block font-medium">Link to Service</label>
                             <select name="service_id" class="w-full px-4 py-2 border rounded-lg">
                                 <option value="">None</option>

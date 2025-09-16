@@ -19,4 +19,11 @@ class Seo extends Model
     {
         return $this->belongsTo(ServiceDetail::class);
     }
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
+
+    
 }

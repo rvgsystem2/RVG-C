@@ -42,5 +42,11 @@ public function category()
     return $this->belongsTo(\App\Models\PackageCategory::class, 'package_category_id');
 }
 
+public function seo()
+{
+    return $this->hasOne(Seo::class);
+}
+
+
 
 }
