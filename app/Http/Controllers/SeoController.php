@@ -13,7 +13,8 @@ class SeoController extends Controller
 {
      public function index()
     {
-        $seos = Seo::with(['blog', 'serviceDetail'])->latest()->paginate(20);
+        $seos = Seo::with(['blog', 'serviceDetail','package'])->latest()->paginate(20);
+    
         return view('seo.index', compact('seos'));
     }
 

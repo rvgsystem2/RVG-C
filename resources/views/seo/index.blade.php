@@ -5,7 +5,7 @@
                 {{ __('SEO Management') }}
             </h2>
             <a href="{{ route('seo.create') }}"
-               class="px-5 py-2 bg-gradient-to-r from-green-700 to-blue-800 text-white font-semibold rounded-lg shadow-md hover:from-blue-800 hover:to-green-700 transition">
+                class="px-5 py-2 bg-gradient-to-r from-green-700 to-blue-800 text-white font-semibold rounded-lg shadow-md hover:from-blue-800 hover:to-green-700 transition">
                 + Add SEO
             </a>
         </div>
@@ -29,10 +29,9 @@
                             <tr>
                                 <th class="px-6 py-4">ID</th>
                                 <th class="px-6 py-4">Title</th>
-                                <th class="px-6 py-4">Slug</th>
                                 <th class="px-6 py-4">Page Type</th>
-                                <th class="px-6 py-4">Status</th>
-                                <th class="px-6 py-4">Linked To</th>
+                                <th class="px-6 py-4">Blogs/Service</th>
+                                <th class="px-6 py-4">Packages</th>
                                 <th class="px-6 py-4 text-center">Actions</th>
                             </tr>
                         </thead>
@@ -41,13 +40,9 @@
                                 <tr>
                                     <td class="px-6 py-3 text-gray-800">{{ $seo->id }}</td>
                                     <td class="px-6 py-3">{{ $seo->meta_title ?? '-' }}</td>
-                                    <td class="px-6 py-3">{{ $seo->slug ?? '-' }}</td>
+                                    {{-- <td class="px-6 py-3">{{ $seo->slug ?? '-' }}</td> --}}
                                     <td class="px-6 py-3 capitalize">{{ $seo->page_type ?? '-' }}</td>
-                                    <td class="px-6 py-3">
-                                        <span class="inline-block px-2 py-1 rounded-full text-xs font-medium 
-                                            {{ $seo->status == 'active' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' }}">
-                                            {{ $seo->status }}
-                                        </span>
+
                                     </td>
                                     <td class="px-6 py-3">
                                         @if ($seo->blog)
@@ -58,17 +53,24 @@
                                             -
                                         @endif
                                     </td>
+
+                                    <td class="px-6 py-3">
+                                        {{ $seo->blog ? 'Blog: ' . $seo->blog->title : ($seo->serviceDetail ? 'Service: ' . $seo->serviceDetail->sort_description : ($seo->package ? 'Package: ' . $seo->package->name : '-')) }}
+                                    </td>
+
+
                                     <td class="px-6 py-3 text-center">
                                         <div class="flex justify-center gap-3">
                                             <a href="{{ route('seo.edit', $seo->id) }}"
-                                               class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition shadow">
+                                                class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition shadow">
                                                 ✏️ Edit
                                             </a>
-                                            <form action="{{ route('seo.delete', $seo->id) }}" method="get" onsubmit="return confirm('Are you sure?')">
+                                            <form action="{{ route('seo.delete', $seo->id) }}" method="get"
+                                                onsubmit="return confirm('Are you sure?')">
                                                 @csrf
                                                 {{-- @method('DELETE') --}}
                                                 <button type="submit"
-                                                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition shadow">
+                                                    class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition shadow">
                                                     🗑️ Delete
                                                 </button>
                                             </form>
