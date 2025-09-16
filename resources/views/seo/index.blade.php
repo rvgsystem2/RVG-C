@@ -45,14 +45,22 @@
 
                                     </td>
                                     <td class="px-6 py-3">
-                                        @if ($seo->blog)
-                                            Blog: {{ $seo->blog->title }}
-                                        @elseif ($seo->service)
-                                            Service: {{ $seo->service->title }}
-                                        @else
-                                            -
-                                        @endif
-                                    </td>
+    @if ($seo->blog)
+        Blog: {{ $seo->blog->title }}
+    @elseif ($seo->serviceDetail)
+        Service: {{ $seo->serviceDetail->title }}
+        @if($seo->serviceDetail->category)
+            <div class="text-xs text-gray-500">
+                (Category: {{ $seo->serviceDetail->category->name }})
+            </div>
+        @endif
+    @elseif ($seo->package)
+        Package: {{ $seo->package->name }}
+    @else
+        -
+    @endif
+</td>
+
 
                                     <td class="px-6 py-3">
                                         {{ $seo->blog ? 'Blog: ' . $seo->blog->title : ($seo->serviceDetail ? 'Service: ' . $seo->serviceDetail->sort_description : ($seo->package ? 'Package: ' . $seo->package->name : '-')) }}
