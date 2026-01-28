@@ -22,22 +22,22 @@
                         <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dm.admin')" :active="request()->routeIs('dm.admin')">
+                    {{-- <x-nav-link :href="route('dm.admin')" :active="request()->routeIs('dm.admin')">
                         <i class="fas fa-tachometer-alt mr-1"></i> support chat
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
 
-                    @can('chat-anyone')
+                    {{-- @can('chat-anyone')
                         <x-nav-link :href="route('dm.people')" :active="request()->routeIs('dm.people')">
                             👥 People
                         </x-nav-link>
-                    @endcan
+                    @endcan --}}
 
-                    @can('inbox-access')
+                    {{-- @can('inbox-access')
                         <x-nav-link :href="route('dm.inbox')" :active="request()->routeIs('dm.inbox')">
                             ✉️ Inbox
                         </x-nav-link>
-                    @endcan
+                    @endcan --}}
 
 
 
