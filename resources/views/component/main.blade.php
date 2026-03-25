@@ -238,6 +238,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('front-asset/css/style.css') }}" rel="stylesheet">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D28Z1KG941"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D28Z1KG941');
+</script>
 </head>
 
 <body>
