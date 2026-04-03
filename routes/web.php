@@ -96,6 +96,7 @@ Route::get('/blogs', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blogdetail/{slug}', [HomeController::class, 'blogdetail'])->name('blogdetail');
 Route::get('/services/{slug}', [HomeController::class, 'servicedetail'])->name('servicedetail');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
+Route::get('/privacy_policy', [HomeController::class, 'privacyPolicy']);
 Route::get('/terms-and-conditions', [HomeController::class, 'term'])->name('term');
 Route::get('/cancellation-refund-policy', [HomeController::class, 'refund_policy'])->name('refund_policy');
 Route::get('/career', [HomeController::class, 'career'])->name('career');

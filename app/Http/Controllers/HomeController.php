@@ -125,6 +125,18 @@ public function blogdetail($slug)
         return view('front.privacy', compact('seos'));
     }
 
+
+
+
+    
+
+
+     public function privacyPolicy(){
+        $seos = Seo::where('page_type', 'privacy_policy')->first();
+        return view('front.privacy_policy', compact('seos'));
+    }
+
+
     public function term(){
         $seos = Seo::where('page_type', 'term_and_condition')->first();
         return view('front.term', compact('seos'));
@@ -206,6 +218,7 @@ public function packagesDetails($name)
     //     return view('front.packages_details', compact('seos', 'package'));
     // }
 
+   
     public function application(){
         return view('front.application');
     }
