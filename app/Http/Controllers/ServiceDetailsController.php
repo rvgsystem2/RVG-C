@@ -45,17 +45,17 @@ class ServiceDetailsController extends Controller
     //     return redirect()->route('service-detail.index')->with('success', 'Service detail updated successfully.');
     // }
 
-    // public function destroy($id)
-    // {
-    //     $detail = ServiceDetail::findOrFail($id);
+    public function destroy($id)
+    {
+        $detail = ServiceDetail::findOrFail($id);
 
-    //     if ($detail->image) {
-    //         Storage::disk('public')->delete($detail->image);
-    //     }
+        if ($detail->image) {
+            Storage::disk('public')->delete($detail->image);
+        }
 
-    //     $detail->delete();
-    //     return redirect()->back()->with('success', 'Service detail deleted successfully.');
-    // }
+        $detail->delete();
+        return redirect()->back()->with('success', 'Service detail deleted successfully.');
+    }
 
     // private function validateRequest(Request $request)
     // {
@@ -158,25 +158,25 @@ class ServiceDetailsController extends Controller
         return redirect()->route('service-detail.index')->with('success', 'Service detail updated successfully.');
     }
 
-    public function destroy(Request $request, $id)
-    {
-        $detail = ServiceDetail::findOrFail($id);
+    // public function destroy(Request $request, $id)
+    // {
+    //     $detail = ServiceDetail::findOrFail($id);
 
-        if ($detail->image && Storage::disk('public')->exists($detail->image)) {
-            Storage::disk('public')->delete($detail->image);
-        }
+    //     if ($detail->image && Storage::disk('public')->exists($detail->image)) {
+    //         Storage::disk('public')->delete($detail->image);
+    //     }
 
-        $detail->delete();
+    //     $detail->delete();
 
-        if ($request->ajax()) {
-            return response()->json([
-                'status' => true,
-                'message' => 'Service detail deleted successfully.',
-            ]);
-        }
+    //     if ($request->ajax()) {
+    //         return response()->json([
+    //             'status' => true,
+    //             'message' => 'Service detail deleted successfully.',
+    //         ]);
+    //     }
 
-        return redirect()->back()->with('success', 'Service detail deleted successfully.');
-    }
+    //     return redirect()->back()->with('success', 'Service detail deleted successfully.');
+    // }
 
     private function validator(Request $request)
     {
