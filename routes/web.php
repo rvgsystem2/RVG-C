@@ -216,7 +216,14 @@ Route::middleware('auth')->group(function () {
 });
 
 
-service-detail.delete
+// Service Details Routes
+
+Route::prefix('service-detail')->group(function () {
+    Route::get('/', [ServiceDetailsController::class, 'index'])->name('service-detail.index');
+    Route::post('/store', [ServiceDetailsController::class, 'store'])->name('service-detail.store');
+    Route::post('/update/{id}', [ServiceDetailsController::class, 'update'])->name('service-detail.update');
+    Route::get('/delete/{id}', [ServiceDetailsController::class, 'destroy'])->name('service-detail.delete');
+});
 
 
 
