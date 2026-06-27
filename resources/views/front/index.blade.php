@@ -6,7 +6,8 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-flued position-relative p-0">
+
+        {{-- <div class="container-flued position-relative p-0">
 
 
             <div class="container-fluid pb-5 pt-5 custom-color" id="">
@@ -34,7 +35,112 @@
                     @endforelse
                 </div>
             </div>
+        </div> --}}
+
+        <!-- Navbar & Hero Start -->
+<div class="container-fluid position-relative p-0">
+
+    @forelse ($banners as $banner)
+        <div class="container-fluid hero-banner"
+            style="background-image:
+                linear-gradient(90deg, rgba(230,0,25,0.95) 0%, rgba(230,0,25,0.88) 42%, rgba(230,0,25,0.15) 100%),
+                url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');">
+
+            <div class="container px-lg-5">
+                <div class="row align-items-center min-vh-hero">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h2 class="text-white mb-4 animated slideInDown">
+                            {{ $banner->title }}
+                        </h2>
+
+                        <p class="text-white pb-3 animated slideInDown">
+                            {{ $banner->subtitle }}
+                        </p>
+
+                        <a href="{{ url('packages') }}"
+                            class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
+                            Buy More Packages
+                        </a>
+
+                        <a href="{{ url('contact') }}"
+                            class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+    @empty
+        <div class="container-fluid custom-color py-5">
+            <p class="text-white text-center mb-0">No banners available</p>
+        </div>
+    @endforelse
+
+</div>
+<!-- Navbar & Hero End -->
+
+<style>
+    .hero-banner {
+        min-height: 380px;
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+    }
+
+    .min-vh-hero {
+        min-height: 380px;
+    }
+
+    .hero-banner h2 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 1.25;
+    }
+
+    .hero-banner p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+        .hero-banner {
+            background-position: center;
+            min-height: 430px;
+        }
+
+        .min-vh-hero {
+            min-height: 430px;
+        }
+
+        .hero-banner h2 {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .hero-banner {
+            min-height: 420px;
+            background-image:
+                linear-gradient(rgba(230,0,25,0.88), rgba(230,0,25,0.88)),
+                var(--hero-img) !important;
+        }
+
+        .min-vh-hero {
+            min-height: 420px;
+        }
+
+        .hero-banner h2 {
+            font-size: 26px;
+        }
+
+        .hero-banner .btn {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
         <!-- Navbar & Hero End -->
 
         <!-- About Start -->
