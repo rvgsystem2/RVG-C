@@ -38,50 +38,46 @@
         </div> --}}
 
 
-          <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
+          <div class="container-fluid position-relative p-0">
 
         @forelse ($banners as $banner)
-            <div class="container-fluid hero-banner">
+            <div class="hero-banner"
+                style="
+                    background-image:
+                    linear-gradient(90deg, rgba(230, 0, 25, 0.88) 0%, rgba(230, 0, 25, 0.78) 35%, rgba(230, 0, 25, 0.35) 60%, rgba(230, 0, 25, 0.10) 100%),
+                    url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');
+                ">
+                
                 <div class="container px-lg-5">
-
                     <div class="row align-items-center hero-row">
+                        <div class="col-lg-6">
+                            <div class="hero-content text-center text-lg-start">
+                                <h1 class="text-white mb-4 animated slideInDown">
+                                    {{ $banner->title }}
+                                </h1>
 
-                        <div class="col-lg-5 text-center text-lg-start hero-content">
-                            <h2 class="text-white mb-4 animated slideInDown">
-                                {{ $banner->title }}
-                            </h2>
+                                <p class="text-white mb-4 animated slideInDown">
+                                    {{ $banner->subtitle }}
+                                </p>
 
-                            <p class="text-white pb-3 animated slideInDown">
-                                {{ $banner->subtitle }}
-                            </p>
+                                <div class="hero-btns">
+                                    <a href="{{ url('packages') }}"
+                                        class="btn btn-dark hero-btn rounded-pill animated slideInLeft">
+                                        Buy More Packages
+                                    </a>
 
-                            <div class="hero-buttons">
-                                <a href="{{ url('packages') }}"
-                                    class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
-                                    Buy More Packages
-                                </a>
-
-                                <a href="{{ url('contact') }}"
-                                    class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">
-                                    Contact Us
-                                </a>
+                                    <a href="{{ url('contact') }}"
+                                        class="btn btn-light hero-btn rounded-pill text-danger animated slideInRight">
+                                        Contact Us
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-7 text-center hero-image-col">
-                            <img
-                                src="{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}"
-                                alt="{{ $banner->img_alt_text ?? 'Banner Image' }}"
-                                class="hero-img animated zoomIn">
-                        </div>
-
                     </div>
-
                 </div>
             </div>
         @empty
-            <div class="container-fluid custom-color py-5">
+            <div class="container-fluid py-5 bg-danger">
                 <p class="text-white text-center mb-0">No banners available</p>
             </div>
         @endforelse
@@ -93,105 +89,116 @@
 
 <style>
     .hero-banner {
-        background: #e60019;
-        min-height: 430px;
+        min-height: 520px;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
         display: flex;
         align-items: center;
+        position: relative;
         overflow: hidden;
-        padding-top: 80px;
-        padding-bottom: 40px;
     }
 
     .hero-row {
-        min-height: 330px;
+        min-height: 520px;
     }
 
     .hero-content {
         position: relative;
         z-index: 2;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        max-width: 600px;
     }
 
-    .hero-banner h2 {
-        font-size: 36px;
+    .hero-content h1 {
+        font-size: 56px;
         font-weight: 800;
-        line-height: 1.25;
+        line-height: 1.15;
+        margin-bottom: 20px;
     }
 
-    .hero-banner p {
-        font-size: 16px;
+    .hero-content p {
+        font-size: 18px;
         font-weight: 500;
+        line-height: 1.6;
     }
 
-    .hero-buttons .btn {
-        min-width: 178px;
-    }
-
-    .hero-image-col {
+    .hero-btns {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-top: 25px;
     }
 
-    .hero-img {
-        width: 100%;
-        max-width: 650px;
-        height: auto;
-        object-fit: contain;
-        display: block;
+    .hero-btn {
+        min-width: 220px;
+        padding: 16px 28px;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
     }
 
     @media (max-width: 991px) {
         .hero-banner {
-            padding-top: 100px;
-            padding-bottom: 50px;
-            min-height: auto;
+            min-height: 460px;
+            background-position: center;
         }
 
         .hero-row {
-            min-height: auto;
+            min-height: 460px;
         }
 
-        .hero-banner h2 {
-            font-size: 30px;
-        }
-
-        .hero-image-col {
-            margin-top: 35px;
-        }
-
-        .hero-img {
+        .hero-content {
+            padding-top: 70px;
+            padding-bottom: 50px;
             max-width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
         }
     }
 
     @media (max-width: 575px) {
         .hero-banner {
-            padding-top: 95px;
+            min-height: 420px;
+            background-position: center;
+        }
+
+        .hero-row {
+            min-height: 420px;
+        }
+
+        .hero-content {
+            padding-top: 60px;
             padding-bottom: 40px;
         }
 
-        .hero-banner h2 {
-            font-size: 26px;
+        .hero-content h1 {
+            font-size: 32px;
+            line-height: 1.2;
         }
 
-        .hero-banner p {
+        .hero-content p {
             font-size: 15px;
         }
 
-        .hero-buttons {
-            display: flex;
+        .hero-btns {
             flex-direction: column;
             gap: 12px;
-            align-items: center;
         }
 
-        .hero-buttons .btn {
-            width: 220px;
-            margin-right: 0 !important;
-        }
-
-        .hero-image-col {
-            margin-top: 30px;
+        .hero-btn {
+            width: 100%;
+            min-width: auto;
+            font-size: 16px;
+            padding: 14px 20px;
         }
     }
 </style>
