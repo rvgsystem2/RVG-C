@@ -38,22 +38,16 @@
         </div> --}}
 
 
-         <!-- Navbar & Hero Start -->
+          <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
 
         @forelse ($banners as $banner)
-            <div class="container-fluid hero-banner"
-                style="
-                    --hero-img: url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');
-                    background-image:
-                        linear-gradient(90deg, rgba(230,0,25,0.95) 0%, rgba(230,0,25,0.88) 42%, rgba(230,0,25,0.20) 100%),
-                        url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');
-                ">
-
+            <div class="container-fluid hero-banner">
                 <div class="container px-lg-5">
-                    <div class="row align-items-center hero-row">
-                        <div class="col-lg-6 text-center text-lg-start hero-content">
 
+                    <div class="row align-items-center hero-row">
+
+                        <div class="col-lg-5 text-center text-lg-start hero-content">
                             <h2 class="text-white mb-4 animated slideInDown">
                                 {{ $banner->title }}
                             </h2>
@@ -73,11 +67,18 @@
                                     Contact Us
                                 </a>
                             </div>
-
                         </div>
-                    </div>
-                </div>
 
+                        <div class="col-lg-7 text-center hero-image-col">
+                            <img
+                                src="{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}"
+                                alt="{{ $banner->img_alt_text ?? 'Banner Image' }}"
+                                class="hero-img animated zoomIn">
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         @empty
             <div class="container-fluid custom-color py-5">
@@ -90,29 +91,24 @@
 
 </div>
 
-
 <style>
     .hero-banner {
-        width: 100%;
-        min-height: 380px;
-        background-color: #e60019;
-        background-size: contain;
-        background-position: center right;
-        background-repeat: no-repeat;
+        background: #e60019;
+        min-height: 430px;
         display: flex;
         align-items: center;
         overflow: hidden;
+        padding-top: 80px;
+        padding-bottom: 40px;
     }
 
     .hero-row {
-        min-height: 380px;
+        min-height: 330px;
     }
 
     .hero-content {
         position: relative;
         z-index: 2;
-        padding-top: 60px;
-        padding-bottom: 60px;
     }
 
     .hero-banner h2 {
@@ -130,46 +126,48 @@
         min-width: 178px;
     }
 
+    .hero-image-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-img {
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
     @media (max-width: 991px) {
         .hero-banner {
-            min-height: 520px;
-            background-size: contain;
-            background-position: center bottom;
-            align-items: flex-start;
+            padding-top: 100px;
+            padding-bottom: 50px;
+            min-height: auto;
         }
 
         .hero-row {
-            min-height: 520px;
-            align-items: flex-start !important;
-        }
-
-        .hero-content {
-            padding-top: 60px;
-            padding-bottom: 230px;
+            min-height: auto;
         }
 
         .hero-banner h2 {
             font-size: 30px;
         }
+
+        .hero-image-col {
+            margin-top: 35px;
+        }
+
+        .hero-img {
+            max-width: 100%;
+        }
     }
 
     @media (max-width: 575px) {
         .hero-banner {
-            min-height: 560px;
-            background-size: contain;
-            background-position: center bottom;
-            background-image:
-                linear-gradient(rgba(230,0,25,0.90), rgba(230,0,25,0.70)),
-                var(--hero-img) !important;
-        }
-
-        .hero-row {
-            min-height: 560px;
-        }
-
-        .hero-content {
-            padding-top: 55px;
-            padding-bottom: 220px;
+            padding-top: 95px;
+            padding-bottom: 40px;
         }
 
         .hero-banner h2 {
@@ -188,11 +186,16 @@
         }
 
         .hero-buttons .btn {
-            margin-right: 0 !important;
             width: 220px;
+            margin-right: 0 !important;
+        }
+
+        .hero-image-col {
+            margin-top: 30px;
         }
     }
 </style>
+        
  
         <!-- Navbar & Hero End -->
 
