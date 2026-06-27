@@ -38,7 +38,7 @@
         </div> --}}
 
 
-          <div class="container-fluid position-relative p-0">
+          <div class="container-fluid position-relative p-2">
 
         @forelse ($banners as $banner)
             <div class="hero-banner"
