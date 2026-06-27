@@ -37,60 +37,82 @@
             </div>
         </div> --}}
 
-        <!-- Navbar & Hero Start -->
-<div class="container-fluid position-relative p-0">
 
-    @forelse ($banners as $banner)
-        <div class="container-fluid hero-banner"
-            style="background-image:
-                linear-gradient(90deg, rgba(230,0,25,0.95) 0%, rgba(230,0,25,0.88) 42%, rgba(230,0,25,0.15) 100%),
-                url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');">
+         <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
 
-            <div class="container px-lg-5">
-                <div class="row align-items-center min-vh-hero">
-                    <div class="col-lg-6 text-center text-lg-start">
-                        <h2 class="text-white mb-4 animated slideInDown">
-                            {{ $banner->title }}
-                        </h2>
+        @forelse ($banners as $banner)
+            <div class="container-fluid hero-banner"
+                style="
+                    --hero-img: url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');
+                    background-image:
+                        linear-gradient(90deg, rgba(230,0,25,0.95) 0%, rgba(230,0,25,0.88) 42%, rgba(230,0,25,0.20) 100%),
+                        url('{{ asset('storage/' . ($banner->image ?? 'front-asset/img/hero.png')) }}');
+                ">
 
-                        <p class="text-white pb-3 animated slideInDown">
-                            {{ $banner->subtitle }}
-                        </p>
+                <div class="container px-lg-5">
+                    <div class="row align-items-center hero-row">
+                        <div class="col-lg-6 text-center text-lg-start hero-content">
 
-                        <a href="{{ url('packages') }}"
-                            class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
-                            Buy More Packages
-                        </a>
+                            <h2 class="text-white mb-4 animated slideInDown">
+                                {{ $banner->title }}
+                            </h2>
 
-                        <a href="{{ url('contact') }}"
-                            class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">
-                            Contact Us
-                        </a>
+                            <p class="text-white pb-3 animated slideInDown">
+                                {{ $banner->subtitle }}
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="{{ url('packages') }}"
+                                    class="btn btn-dark py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
+                                    Buy More Packages
+                                </a>
+
+                                <a href="{{ url('contact') }}"
+                                    class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight text-danger">
+                                    Contact Us
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
-    @empty
-        <div class="container-fluid custom-color py-5">
-            <p class="text-white text-center mb-0">No banners available</p>
-        </div>
-    @endforelse
+        @empty
+            <div class="container-fluid custom-color py-5">
+                <p class="text-white text-center mb-0">No banners available</p>
+            </div>
+        @endforelse
+
+    </div>
+    <!-- Navbar & Hero End -->
 
 </div>
-<!-- Navbar & Hero End -->
+
 
 <style>
     .hero-banner {
+        width: 100%;
         min-height: 380px;
-        background-size: cover;
+        background-color: #e60019;
+        background-size: contain;
         background-position: center right;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
+        overflow: hidden;
     }
 
-    .min-vh-hero {
+    .hero-row {
         min-height: 380px;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     .hero-banner h2 {
@@ -104,14 +126,26 @@
         font-weight: 500;
     }
 
+    .hero-buttons .btn {
+        min-width: 178px;
+    }
+
     @media (max-width: 991px) {
         .hero-banner {
-            background-position: center;
-            min-height: 430px;
+            min-height: 520px;
+            background-size: contain;
+            background-position: center bottom;
+            align-items: flex-start;
         }
 
-        .min-vh-hero {
-            min-height: 430px;
+        .hero-row {
+            min-height: 520px;
+            align-items: flex-start !important;
+        }
+
+        .hero-content {
+            padding-top: 60px;
+            padding-bottom: 230px;
         }
 
         .hero-banner h2 {
@@ -121,26 +155,45 @@
 
     @media (max-width: 575px) {
         .hero-banner {
-            min-height: 420px;
+            min-height: 560px;
+            background-size: contain;
+            background-position: center bottom;
             background-image:
-                linear-gradient(rgba(230,0,25,0.88), rgba(230,0,25,0.88)),
+                linear-gradient(rgba(230,0,25,0.90), rgba(230,0,25,0.70)),
                 var(--hero-img) !important;
         }
 
-        .min-vh-hero {
-            min-height: 420px;
+        .hero-row {
+            min-height: 560px;
+        }
+
+        .hero-content {
+            padding-top: 55px;
+            padding-bottom: 220px;
         }
 
         .hero-banner h2 {
             font-size: 26px;
         }
 
-        .hero-banner .btn {
-            margin-bottom: 10px;
+        .hero-banner p {
+            font-size: 15px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .hero-buttons .btn {
+            margin-right: 0 !important;
+            width: 220px;
         }
     }
 </style>
-
+ 
         <!-- Navbar & Hero End -->
 
         <!-- About Start -->
