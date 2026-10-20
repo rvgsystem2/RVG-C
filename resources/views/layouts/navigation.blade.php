@@ -22,22 +22,22 @@
                         <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dm.admin')" :active="request()->routeIs('dm.admin')">
+                    {{-- <x-nav-link :href="route('dm.admin')" :active="request()->routeIs('dm.admin')">
                         <i class="fas fa-tachometer-alt mr-1"></i> support chat
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
 
-                    @can('chat-anyone')
+                    {{-- @can('chat-anyone')
                         <x-nav-link :href="route('dm.people')" :active="request()->routeIs('dm.people')">
                             👥 People
                         </x-nav-link>
-                    @endcan
+                    @endcan --}}
 
-                    @can('inbox-access')
+                    {{-- @can('inbox-access')
                         <x-nav-link :href="route('dm.inbox')" :active="request()->routeIs('dm.inbox')">
                             ✉️ Inbox
                         </x-nav-link>
-                    @endcan
+                    @endcan --}}
 
 
 
@@ -92,6 +92,8 @@
                             </svg>
                         </button>
 
+
+
                         <div x-show="open" @click.away="open = false" x-cloak
                             class="absolute z-50 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
 
@@ -99,6 +101,36 @@
                                 <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')" class="block px-4 py-2 text-left">
                                     <i class="fas fa-image mr-1"></i> Banners
                                 </x-nav-link>
+                            @endcan
+
+                            @can('view packagecategory')
+                                <x-nav-link :href="route('package-categories.index')" :active="request()->routeIs('package-categories.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-list-alt mr-1"></i> Package Categories
+                                </x-nav-link>
+                            @endcan
+
+                            @can('view packages')
+                                <x-nav-link :href="route('package.index')" :active="request()->routeIs('package.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-box mr-1"></i> Packages
+                                </x-nav-link>
+                            @endcan
+                            @can('view payment')
+                                <x-nav-link :href="route('purchases.index')" :active="request()->routeIs('package.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-box mr-1"></i> PaymentDetials
+                                </x-nav-link>
+                            @endcan
+
+                              @can('view payment')
+                                <x-nav-link :href="route('paylink.index')" :active="request()->routeIs('paylink.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-box mr-1"></i> Payment Links
+                                </x-nav-link>
+                            @endcan
+
+                            @can('view leads')
+                                <x-nav-link :href="route('leads.index')" :active="request()->routeIs('leads.*')" class="block px-4 py-2 text-left">
+                                    <i class="fas fa-address-book mr-1"></i> Interested Leads
+                                </x-nav-link>  
+                                
                             @endcan
 
                             <x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')">

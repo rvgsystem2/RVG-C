@@ -15,8 +15,20 @@ class Seo extends Model
         return $this->belongsTo(Blog::class);
     }
 
+    public function serviceCategory()
+    {
+        return $this->belongsTo(ServiceCategory::class);
+    }
+
     public function serviceDetail()
     {
         return $this->belongsTo(ServiceDetail::class);
     }
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
+
+    
 }

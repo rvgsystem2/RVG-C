@@ -1,86 +1,138 @@
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-    <!--  Home Page  -->
-    <url>
-        <loc>https://www.realvictorygroups.com/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <!--  Core Pages  -->
-    <url>
-        <loc>https://www.realvictorygroups.com/about</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/contact</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/career</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/blogs</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/project</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <!--  Services Pages  -->
-    <url>
-        <loc>https://www.realvictorygroups.com/service</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/digital-marketing</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/seo-analytics</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/social-media-management</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/graphic-design</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/website-development</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/service/branding-consulting</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <!--  Legal Pages  -->
-    <url>
-        <loc>https://www.realvictorygroups.com/privacy</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/refund</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://www.realvictorygroups.com/term</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://www.realvictorygroups.com/</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/about</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/blogs</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/service</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/project</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/contact</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/application</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/graphic-design</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/website-development</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/digital-marketing</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/seo-analytics</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/social-media-management</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/services/branding-consulting</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/privacy-policy</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/terms-and-conditions</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/cancellation-refund-policy</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/career</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/details/basic-jewellery-package-365-days</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/2/buy</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/details/basic-jewellery-festival-package-365-days</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/3/buy</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/details/daily-goldsilver-rate-creative-package-365-days</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/packages/4/buy</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/blogdetail/digital-marketing-that-delivers-roi-not-just-clicks</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/blogdetail/build-websites-that-convert-why-function-meets-design-at-real-victory-groups</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.realvictorygroups.com/blogdetail/graphic-services-why-strong-design-builds-strong-brands</loc>
+<lastmod>2026-05-14T14:49:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>

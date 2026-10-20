@@ -6,10 +6,16 @@ use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogCategoryControlloer;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DirectMessageController;
 use App\Http\Controllers\DmAccessController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\PackageCategoryController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PackageFaqController;
+use App\Http\Controllers\PackageMediaController;
+use App\Http\Controllers\PaymentLinkController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -22,24 +28,65 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use Faker\Provider\ar_EG\Payment;
+use Illuminate\Database\Query\IndexHint;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 
 
 
-// Route::get('/', function () {
-//     return view('front.index');
-// });
-// Route::get('/contact', function () {
-//     return view('front.contact');
-// });
+Route::post('/checkout/prefill', [CheckoutController::class, 'prefill'])->name('checkout.prefill');
+Route::get('/packages/{package}/buy', [CheckoutController::class,'show'])->name('packages.buy');
+Route::get('/packages/details/{package}', [HomeController::class, 'packagesDetails'])->name('packages.details');
+Route::post('/checkout/order',  [CheckoutController::class,'createOrder'])->name('checkout.order');
+Route::post('/checkout/verify', [CheckoutController::class,'verify'])->name('checkout.verify');
 
+Route::post('/interest', [HomeController::class, 'interestStore'])->name('interest.store');
+Route::get('/admin/leads', [HomeController::class, 'leadIndex'])->middleware(['auth'])->name('leads.index');
+Route::get('/admin/leads/delete/{lead}', [HomeController::class, 'destroy'])->middleware(['auth'])->name('admin.leads.destroy');
+Route::prefix('paylink')->name('paylink.')->group(function () {
+    Route::get('/', [PaymentLinkController::class, 'index'])->name('index');
+    Route::get('/create', [PaymentLinkController::class, 'create'])->name('create');
+    Route::post('/', [PaymentLinkController::class, 'store'])->name('store');
+    Route::get('/{paymentLink}/edit', [PaymentLinkController::class, 'edit'])->name('edit');
+    Route::put('/{paymentLink}', [PaymentLinkController::class, 'update'])->name('update');
+    Route::get('/{paymentLink}', [PaymentLinkController::class, 'destroy'])->name('destroy');
+});
+
+// routes/web.php
+Route::post('/pay/verify', [PaymentLinkController::class,'verifyAjax'])
+    ->name('paylink.verify');
+
+// 2) Then the token-based routes (add constraints)
+Route::get('/pay/{token}', [PaymentLinkController::class,'phoneForm'])
+    ->where('token', '^(?!verify$)[A-Za-z0-9_-]{20,64}$')   // disallow "verify"
+    ->name('paylink.phone');
+
+Route::post('/pay/{token}/check', [PaymentLinkController::class,'checkPhone'])
+    ->where('token', '^(?!verify$)[A-Za-z0-9_-]{20,64}$')
+    ->name('paylink.check');
+
+Route::post('/pay/{token}', [PaymentLinkController::class,'initiate'])
+    ->where('token', '^(?!verify$)[A-Za-z0-9_-]{20,64}$')
+    ->name('paylink.initiate');
+
+Route::get('/payment-page/thank-you', [PaymentLinkController::class,'thankyoupage'])->name('paylink.thankyou');
+
+
+// Simple static view route
+Route::view('/thank-you', 'front.thankyou')->name('thankyou');
 
 // frontend routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
+Route::get('/packages', [HomeController::class, 'packages'])->name('packages');
+
+Route::get('/packages/category/{category}', [HomeController::class, 'packagesByCategory'])
+     ->name('packages.byCategory');
+
 // Route::get('/team', [HomeController::class, 'team'])->name('team');
 // Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
@@ -49,6 +96,7 @@ Route::get('/blogs', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blogdetail/{slug}', [HomeController::class, 'blogdetail'])->name('blogdetail');
 Route::get('/services/{slug}', [HomeController::class, 'servicedetail'])->name('servicedetail');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
+Route::get('/privacy_policy', [HomeController::class, 'privacyPolicy']);
 Route::get('/terms-and-conditions', [HomeController::class, 'term'])->name('term');
 Route::get('/cancellation-refund-policy', [HomeController::class, 'refund_policy'])->name('refund_policy');
 Route::get('/career', [HomeController::class, 'career'])->name('career');
@@ -70,7 +118,6 @@ Route::get('/blog-sitemap.xml', function(){
 
 
 
-
 // DAshboard route
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth','verified'])->name('dashboard');
@@ -87,6 +134,10 @@ Route::middleware(['auth','role:Super Admin'])->group(function () {
   // NEW: people directory to start a chat with anyone
 
 });
+
+
+Route::get('/admin/purchases', [CheckoutController::class, 'index'])->name('purchases.index');
+Route::get('/admin/purchases/{po}', [CheckoutController::class, 'showed'])->name('purchases.show');
 
 
 
@@ -165,13 +216,14 @@ Route::middleware('auth')->group(function () {
 });
 
 
+// Service Details Routes
+
 Route::prefix('service-detail')->group(function () {
     Route::get('/', [ServiceDetailsController::class, 'index'])->name('service-detail.index');
     Route::post('/store', [ServiceDetailsController::class, 'store'])->name('service-detail.store');
     Route::post('/update/{id}', [ServiceDetailsController::class, 'update'])->name('service-detail.update');
-    Route::get('/delete/{id}', [ServiceDetailsController::class, 'destroy'])->name('service-detail.delete');
+    Route::delete('/delete/{id}', [ServiceDetailsController::class, 'destroy'])->name('service-detail.delete');
 });
-
 
 
 
@@ -244,5 +296,49 @@ Route::controller(\App\Http\Controllers\JobApplicationController::class)->name('
    Route::post('delete/{application}', 'delete')->name('delete');
 });
 
+//paclkage routes
+
+Route::prefix('package')->group(function () {
+    Route::get('/', [PackageController::class, 'index'])->name('package.index');
+    Route::get('/create', [PackageController::class, 'create'])->name('package.create');
+    Route::post('/store', [PackageController::class, 'store'])->name('package.store');
+    Route::get('/edit/{package}', [PackageController::class, 'edit'])->name('package.edit');
+    Route::post('/update/{package}', [PackageController::class, 'update'])->name('package.update');
+    Route::get('/delete/{package}', [PackageController::class, 'delete'])->name('package.delete');
+    Route::get('/{package}', [PackageController::class, 'show'])->name('packageshow');
+});
+
+
+// Package Category Routes
+
+Route::prefix('package-categories')->group(function () {
+    Route::get('/', [PackageCategoryController::class, 'index'])->name('package-categories.index');
+    Route::get('/create', [PackageCategoryController::class, 'create'])->name('package-categories.create');
+    Route::post('/store', [PackageCategoryController::class, 'store'])->name('package-categories.store');
+    Route::get('/edit/{category}', [PackageCategoryController::class, 'edit'])->name('package-categories.edit');
+    Route::post('/update/{category}', [PackageCategoryController::class, 'update'])->name('package-categories.update');
+    Route::get('/delete/{category}', [PackageCategoryController::class, 'destroy'])->name('package-categories.delete');
+});
+
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('package-media', [PackageMediaController::class, 'index'])->name('package_media.index');
+    Route::get('package-media/create', [PackageMediaController::class, 'create'])->name('package_media.create');
+    Route::post('package-media', [PackageMediaController::class, 'store'])->name('package_media.store');
+    Route::get('package-media/{packageMedium}/edit', [PackageMediaController::class, 'edit'])->name('package_media.edit');
+    Route::put('package-media/{packageMedium}', [PackageMediaController::class, 'update'])->name('package_media.update');
+    Route::delete('package-media/{packageMedium}', [PackageMediaController::class, 'destroy'])->name('package_media.destroy');
+
+});
+
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('package-faqs',                 [PackageFaqController::class, 'index'])->name('package_faqs.index');
+    Route::get('package-faqs/create',          [PackageFaqController::class, 'create'])->name('package_faqs.create');
+    Route::post('package-faqs',                [PackageFaqController::class, 'store'])->name('package_faqs.store');
+    Route::get('package-faqs/{packageFaq}/edit',[PackageFaqController::class, 'edit'])->name('package_faqs.edit');
+    Route::put('package-faqs/{packageFaq}',    [PackageFaqController::class, 'update'])->name('package_faqs.update');
+    Route::delete('package-faqs/{packageFaq}', [PackageFaqController::class, 'destroy'])->name('package_faqs.destroy');
+});
 
 require __DIR__.'/auth.php';

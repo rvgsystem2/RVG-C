@@ -167,6 +167,7 @@
                                 <option value="home" {{ old('page_type', $seo->page_type ?? '') == 'home' ? 'selected' : '' }}>Home</option>
                                 <option value="about" {{ old('page_type', $seo->page_type ?? '') == 'about' ? 'selected' : '' }}>About</option>
                                 <option value="service" {{ old('page_type', $seo->page_type ?? '') == 'service' ? 'selected' : '' }}>Service</option>
+                                <option value="packages" {{ old('page_type', $seo->page_type ?? '') == 'packages' ? 'selected' : '' }}>Packages</option>
 
                                 <option value="blog" {{ old('page_type', $seo->page_type ?? '') == 'blog' ? 'selected' : '' }}>Blog</option>
 
@@ -174,6 +175,7 @@
                                 <option value="contact" {{ old('page_type', $seo->page_type ?? '') == 'contact' ? 'selected' : '' }}>Contact</option>
 
                                 <option value="career" {{ old('page_type', $seo->page_type ?? '') == 'career' ? 'selected' : '' }}>Career</option>
+                                <option value="packagesCategory" {{ old('page_type', $seo->page_type ?? '') == 'packagesCategory' ? 'selected' : '' }}>Packages Category</option>
 
                                 <option value="term_and_condition" {{ old('page_type', $seo->page_type ?? '') == 'term_and_condition' ? 'selected' : '' }}>Term and Condition</option>
 
@@ -217,6 +219,18 @@
                                     <option value="{{ $blog->id }}"
                                         {{ old('blog_id', $seo->blog_id ?? '') == $blog->id ? 'selected' : '' }}>
                                         {{ $blog->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-medium">Link to Package</label>
+                            <select name="package_id" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="">None</option>
+                                @foreach ($packages as $package)
+                                    <option value="{{ $package->id }}"
+                                        {{ old('package_id', $seo->package_id ?? '') == $package->id ? 'selected' : '' }}>
+                                        {{ $package->name }}</option>
                                 @endforeach
                             </select>
                         </div>
