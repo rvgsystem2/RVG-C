@@ -13,7 +13,7 @@
         </div>
     </x-slot>
 
-  
+
 
     <div class="py-6">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
@@ -150,16 +150,32 @@
         const sendBtn = form.querySelector('button[type="submit"]');
 
         // ---- Realtime listener (guarded) ----
+        // if (window.Echo) {
+        //     window.Echo
+        //         .private(`user.${myId}`)
+        //         .listen('.DirectMessageSent', (e) => {
+        //             // only render if it's from the peer we’re chatting with
+        //             if (e?.sender?.id === peerId) {
+        //                 append(false, e.sender.name, e.body, e.created_at, e.attachments || []);
+        //             }
+        //         });
+        // }
+
         if (window.Echo) {
             window.Echo
                 .private(`user.${myId}`)
-                .listen('.DirectMessageSent', (e) => {
-                    // only render if it's from the peer we’re chatting with
+                .listen('DirectMessageSent', (e) => {         // ❌ '.DirectMessageSent' नहीं
+                    // debug:
+                    // console.log('DM evt', e);
+
                     if (e?.sender?.id === peerId) {
                         append(false, e.sender.name, e.body, e.created_at, e.attachments || []);
                     }
                 });
         }
+
+
+
 
         // ---- Attachments: show chips ----
         fileEl.addEventListener('change', () => {
@@ -184,6 +200,42 @@
         });
 
         // ---- Submit (text / files) ----
+        // form.addEventListener('submit', async (ev) => {
+        //     ev.preventDefault();
+        //
+        //     const hasText = !!bodyEl.value.trim();
+        //     const hasFiles = fileEl.files && fileEl.files.length > 0;
+        //     if (!hasText && !hasFiles) return;
+        //
+        //     // optimistic UI (my bubble) happens after server ok to keep IDs in sync
+        //     setSending(true);
+        //
+        //     try {
+        //         const fd = new FormData(form); // includes _token + attachments[]
+        //         const res = await fetch(postUrl, {
+        //             method: 'POST',
+        //             body: fd
+        //         });
+        //         const data = await res.json();
+        //
+        //         if (!res.ok || !data?.message) {
+        //             throw new Error(data?.message || 'Send failed');
+        //         }
+        //
+        //         append(true, 'You', data.message.body, data.message.created_at, data.message.attachments || []);
+        //         bodyEl.value = '';
+        //         fileEl.value = '';
+        //         chipsEl.innerHTML = '';
+        //         scrollToBottom();
+        //     } catch (e) {
+        //         console.error(e);
+        //         alert('Message not sent. Please try again.');
+        //     } finally {
+        //         setSending(false);
+        //     }
+        // });
+
+
         form.addEventListener('submit', async (ev) => {
             ev.preventDefault();
 
@@ -191,29 +243,42 @@
             const hasFiles = fileEl.files && fileEl.files.length > 0;
             if (!hasText && !hasFiles) return;
 
-            // optimistic UI (my bubble) happens after server ok to keep IDs in sync
             setSending(true);
 
             try {
-                const fd = new FormData(form); // includes _token + attachments[]
-                const res = await fetch(postUrl, {
-                    method: 'POST',
-                    body: fd
-                });
-                const data = await res.json();
+                const fd = new FormData(form);
+                const res = await fetch(postUrl, { method: 'POST', body: fd });
 
-                if (!res.ok || !data?.message) {
-                    throw new Error(data?.message || 'Send failed');
+                // Try to parse JSON safely
+                let data = null;
+                const ct = res.headers.get('content-type') || '';
+                if (ct.includes('application/json')) {
+                    data = await res.json();
+                } else {
+                    // fallback (likely HTML error page)
+                    const txt = await res.text();
+                    throw new Error(`Unexpected response (${res.status}).`);
                 }
 
-                append(true, 'You', data.message.body, data.message.created_at, data.message.attachments || []);
+                if (!res.ok || !data?.ok) {
+                    const msg = data?.error || data?.message || `Failed (${res.status}).`;
+                    throw new Error(msg);
+                }
+
+                append(true, 'You', data.message.body, data.message.created_at, (data.message.attachments || []).map(att => ({
+                    url: `/storage/${att.path}`,
+                    mime: att.mime,
+                    name: att.original_name
+                })));
+
                 bodyEl.value = '';
                 fileEl.value = '';
                 chipsEl.innerHTML = '';
                 scrollToBottom();
+
             } catch (e) {
                 console.error(e);
-                alert('Message not sent. Please try again.');
+                alert(e.message || 'Message not sent. Please try again.');
             } finally {
                 setSending(false);
             }

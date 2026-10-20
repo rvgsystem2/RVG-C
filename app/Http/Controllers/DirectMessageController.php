@@ -7,6 +7,7 @@ use App\Models\MessageAttachment;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Throwable;
 
 class DirectMessageController extends Controller
 {
@@ -74,73 +75,149 @@ class DirectMessageController extends Controller
 
 
 
-  
 
-public function store(Request $request, User $user)
-{
-    abort_unless(Gate::allows('dm-start', $user->id), 403);
 
-    $data = $request->validate([
-        'body' => 'nullable|string|max:3000',
-        'attachments.*' => 'file|max:25600|mimetypes:image/jpeg,image/png,image/webp,image/gif,application/pdf,video/mp4,video/webm,video/quicktime',
-    ], [
-        'attachments.*.max' => 'Each file must be <= 25MB',
-    ]);
+//public function store(Request $request, User $user)
+//{
+//    abort_unless(Gate::allows('dm-start', $user->id), 403);
+//
+//    $data = $request->validate([
+//        'body' => 'nullable|string|max:3000',
+//        'attachments.*' => 'file|max:25600|mimetypes:image/jpeg,image/png,image/webp,image/gif,application/pdf,video/mp4,video/webm,video/quicktime',
+//    ], [
+//        'attachments.*.max' => 'Each file must be <= 25MB',
+//    ]);
+//
+//    if (!$request->hasFile('attachments') && blank($data['body'] ?? null)) {
+//        return response()->json(['ok'=>false,'message'=>'Nothing to send'], 422);
+//    }
+//
+//    $msg = Message::create([
+//        'sender_id'   => $request->user()->id,
+//        'receiver_id' => $user->id,
+//        'body'        => $data['body'] ?? '',
+//    ])->load('sender:id,name');
+//
+//    // save each attachment
+//    if ($request->hasFile('attachments')) {
+//        foreach ($request->file('attachments') as $file) {
+//            if (!$file->isValid()) continue;
+//            // SECURITY: disallow svg to avoid script injection
+//            if ($file->getClientOriginalExtension() === 'svg') continue;
+//
+//            $path = $file->store('chat', 'public');
+//            $mime = $file->getMimeType();
+//            $size = $file->getSize();
+//            $orig = $file->getClientOriginalName();
+//
+//            $width = $height = $duration = null;
+//
+//            if (str_starts_with($mime, 'image/')) {
+//                try {
+//                    [$width,$height] = getimagesize($file->getRealPath());
+//                } catch (\Throwable $e) {}
+//            }
+//            // (optional) if you want duration, install getid3 via composer and uncomment:
+//            // if (str_starts_with($mime, 'video/')) {
+//            //     $an = (new \getID3)->analyze($file->getRealPath());
+//            //     $duration = (int) round($an['playtime_seconds'] ?? 0);
+//            // }
+//
+//            MessageAttachment::create([
+//                'message_id'    => $msg->id,
+//                'path'          => $path,
+//                'mime'          => $mime,
+//                'size'          => $size,
+//                'original_name' => $orig,
+//                'width'         => $width,
+//                'height'        => $height,
+//                'duration'      => $duration,
+//            ]);
+//        }
+//    }
+//
+//    // include attachments for realtime payload
+//    $msg->load('attachments');
+//
+//    // broadcast(new DirectMessageSent($msg))->toOthers();
+//    broadcast(new DirectMessageSent($msg->load('sender','attachments')))->toOthers();
+//
+//    return response()->json(['ok'=>true,'message'=>$msg]);
+//}
 
-    if (!$request->hasFile('attachments') && blank($data['body'] ?? null)) {
-        return response()->json(['ok'=>false,'message'=>'Nothing to send'], 422);
-    }
 
-    $msg = Message::create([
-        'sender_id'   => $request->user()->id,
-        'receiver_id' => $user->id,
-        'body'        => $data['body'] ?? '',
-    ])->load('sender:id,name');
 
-    // save each attachment
-    if ($request->hasFile('attachments')) {
-        foreach ($request->file('attachments') as $file) {
-            if (!$file->isValid()) continue;
-            // SECURITY: disallow svg to avoid script injection
-            if ($file->getClientOriginalExtension() === 'svg') continue;
+// DirectMessageController@store
 
-            $path = $file->store('chat', 'public');
-            $mime = $file->getMimeType();
-            $size = $file->getSize();
-            $orig = $file->getClientOriginalName();
+    public function store(Request $request, User $user)
+    {
+        try {
+            abort_unless(Gate::allows('dm-start', $user->id), 403);
 
-            $width = $height = $duration = null;
-
-            if (str_starts_with($mime, 'image/')) {
-                try {
-                    [$width,$height] = getimagesize($file->getRealPath());
-                } catch (\Throwable $e) {}
-            }
-            // (optional) if you want duration, install getid3 via composer and uncomment:
-            // if (str_starts_with($mime, 'video/')) {
-            //     $an = (new \getID3)->analyze($file->getRealPath());
-            //     $duration = (int) round($an['playtime_seconds'] ?? 0);
-            // }
-
-            MessageAttachment::create([
-                'message_id'    => $msg->id,
-                'path'          => $path,
-                'mime'          => $mime,
-                'size'          => $size,
-                'original_name' => $orig,
-                'width'         => $width,
-                'height'        => $height,
-                'duration'      => $duration,
+            $data = $request->validate([
+                'body'          => 'nullable|string|max:3000',
+                'attachments.*' => 'file|max:25600|mimetypes:image/jpeg,image/png,image/webp,image/gif,application/pdf,video/mp4,video/webm,video/quicktime',
+            ], [
+                'attachments.*.max' => 'Each file must be <= 25MB',
             ]);
+
+            if (!$request->hasFile('attachments') && blank($data['body'] ?? null)) {
+                return response()->json(['ok'=>false,'error'=>'Nothing to send'], 422);
+            }
+
+            $msg = Message::create([
+                'sender_id'   => $request->user()->id,
+                'receiver_id' => $user->id,
+                'body'        => $data['body'] ?? '',
+            ])->load('sender:id,name');
+
+            if ($request->hasFile('attachments')) {
+                foreach ($request->file('attachments') as $file) {
+                    if (!$file->isValid()) continue;
+                    if (strtolower($file->getClientOriginalExtension()) === 'svg') continue;
+
+                    $path = $file->store('chat', 'public');
+                    $mime = $file->getMimeType();
+                    $size = $file->getSize();
+                    $orig = $file->getClientOriginalName();
+
+                    $width = $height = $duration = null;
+                    if (str_starts_with($mime, 'image/')) {
+                        try { [$width,$height] = getimagesize($file->getRealPath()); } catch (Throwable $e) {}
+                    }
+
+                    MessageAttachment::create([
+                        'message_id'    => $msg->id,
+                        'path'          => $path,
+                        'mime'          => $mime,
+                        'size'          => $size,
+                        'original_name' => $orig,
+                        'width'         => $width,
+                        'height'        => $height,
+                        'duration'      => $duration,
+                    ]);
+                }
+            }
+
+            $msg->load('attachments','sender:id,name');
+
+            // Don’t let broadcasting crash the request
+            try {
+                broadcast(new DirectMessageSent($msg))->toOthers();
+            } catch (Throwable $e) {
+                \Log::warning('Broadcast failed: '.$e->getMessage());
+            }
+
+            return response()->json(['ok'=>true,'message'=>$msg]);
+        } catch (Throwable $e) {
+            \Log::error('DM store failed', [
+                'msg' => $e->getMessage(),
+                'file'=> $e->getFile(),
+                'line'=> $e->getLine(),
+            ]);
+            return response()->json(['ok'=>false,'error'=>'Server error'], 500);
         }
     }
 
-    // include attachments for realtime payload
-    $msg->load('attachments');
 
-    // broadcast(new DirectMessageSent($msg))->toOthers();
-    broadcast(new DirectMessageSent($msg->load('sender','attachments')))->toOthers();
-
-    return response()->json(['ok'=>true,'message'=>$msg]);
-}
 }

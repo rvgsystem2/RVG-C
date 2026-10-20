@@ -85,7 +85,7 @@ Route::middleware(['auth','role:Super Admin'])->group(function () {
   Route::get('/admin/users/{user}/dm-access', [DmAccessController::class,'edit'])->name('admin.dm.edit');
   Route::post('/admin/users/{user}/dm-access', [DmAccessController::class,'update'])->name('admin.dm.update');
   // NEW: people directory to start a chat with anyone
-    
+
 });
 
 

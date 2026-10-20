@@ -12,3 +12,7 @@ Broadcast::channel('user.{id}', function ($user, $id) {
         ? ['id' => $user->id, 'name' => $user->name]
         : false;
 });
+
+Broadcast::channel('user.{id}', function ($user, $id) {
+    return (int) $user->id === (int) $id;   // only the logged-in user can listen on user.{id}
+});
