@@ -1,46 +1,21 @@
-{{-- @extends('component.main', ['seos' => $seos])
-@section('content')
-        <!-- Page Header Start -->
-        <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
-            <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">Cancellation & Refund Policy</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-
-                        <li class="breadcrumb-item" aria-current="page"><a href="">Cancellation & Refund Policy </a></li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <!-- Page Header End -->
-
-        <!-- Privacy Policy Start -->
-<div>
-    <div class="container-fluid my-lg-5">
-        <div class="row lg:my-5 lg:mx-5 my-3 mx-3 shadow-lg py-2 px-2">
-            <h2 class="text-center my-2">Cancellation & Refund Policy</h2>
-            <div class="col-lg-12 lg:px-5 md:px-4 px-3">
-                <h3 class="mb-4">Last updated on 05-07-2025 18:47:03</h3>
-                <p>Real Victory Groups believes in helping its customers as far as possible, and has therefore a liberal
-                    cancellation policy. Under this policy:</p>
-
-                    <ul>
-                        <li> In case of any Refunds approved by the Real Victory Groups, it’ll take 6-8 Days days for the refund to be credited to the end customer.</li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endsection --}}
-
-
-
 @extends('component.main', ['seos' => $seos])
 
 @section('content')
+
+<style>
+    .policy-content .policy-link {
+        color: #075cb5 !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+    }
+    .policy-content .policy-link:hover,
+    .policy-content .policy-link:focus {
+        color: #003c7b !important;
+        text-decoration-thickness: 2px !important;
+    }
+</style>
 
 <!-- Page Header Start -->
 <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
@@ -52,7 +27,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item">
-                    <a href="/">Home</a>
+                    <a href="/" class="text-white text-decoration-underline">Home</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Refund Policy
@@ -68,7 +43,7 @@
     <div class="container">
         <div class="row shadow-lg rounded p-lg-5 p-md-4 p-3">
 
-            <div class="col-12">
+            <div class="col-12 policy-content">
 
                 <h2 class="text-center mb-4">Refund Policy</h2>
 
@@ -250,7 +225,8 @@
                 <p>
                     Customers can request a refund by contacting our support
                     team through the contact details published on our
-                    official website.
+                    <a class="policy-link" href="https://www.realvictorygroups.com" target="_blank" rel="noopener noreferrer">official website (www.realvictorygroups.com)</a>
+                    or by calling <a class="policy-link" href="tel:+917800378002">+91 7800378002</a>.
                 </p>
 
                 <p>Refund requests should include:</p>
@@ -329,7 +305,7 @@
 
                 <p>
                     <strong>Website:</strong>
-                    <a href="https://www.realvictorygroups.com"
+                    <a class="policy-link" href="https://www.realvictorygroups.com"
                        target="_blank" rel="noopener noreferrer">
                         https://www.realvictorygroups.com
                     </a>
@@ -337,21 +313,26 @@
 
                 <p>
                     <strong>Phone:</strong>
-                    <a href="tel:+917800378002">
+                    <a class="policy-link" href="tel:+917800378002">
                         +91 7800378002
                     </a>
                 </p>
 
                 <p>
                     <strong>Address:</strong>
-                    73 Basement, Ekta Enclave Society, Lakhanpur,
-                    Khyora, Kanpur, Uttar Pradesh – 208024, India.
+                    <a class="policy-link"
+                       href="https://www.google.com/maps/search/?api=1&amp;query=73%20Basement%2C%20Ekta%20Enclave%20Society%2C%20Lakhanpur%2C%20Khyora%2C%20Kanpur%2C%20Uttar%20Pradesh%20208024%2C%20India"
+                       target="_blank" rel="noopener noreferrer">
+                        73 Basement, Ekta Enclave Society, Lakhanpur,
+                        Khyora, Kanpur, Uttar Pradesh – 208024, India.
+                    </a>
                 </p>
 
                 <p>
                     For refund-related queries, customers may contact
-                    us through our official website or the contact
-                    details mentioned above.
+                    us through our
+                    <a class="policy-link" href="https://www.realvictorygroups.com" target="_blank" rel="noopener noreferrer">official website (www.realvictorygroups.com)</a>
+                    or call <a class="policy-link" href="tel:+917800378002">+91 7800378002</a>.
                 </p>
 
             </div>
