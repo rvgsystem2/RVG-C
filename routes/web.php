@@ -99,6 +99,7 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy
 Route::get('/privacy_policy', [HomeController::class, 'privacyPolicy']);
 Route::get('/terms-and-conditions', [HomeController::class, 'term'])->name('term');
 Route::get('/cancellation-refund-policy', [HomeController::class, 'refund_policy'])->name('refund_policy');
+Route::get('/cancellation-policy', [HomeController::class, 'cancellation_policy'])->name('cancellation_policy');
 Route::get('/career', [HomeController::class, 'career'])->name('career');
 
 Route::get('/application', [HomeController::class, 'application'])->name('application');

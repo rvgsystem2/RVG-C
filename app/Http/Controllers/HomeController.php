@@ -147,6 +147,11 @@ public function blogdetail($slug)
         return view('front.refund_policy', compact('seos'));
     }
 
+    public function cancellation_policy(){
+        $seos = Seo::where('page_type', 'cancellation_policy')->first();
+        return view('front.cancellation_policy', compact('seos'));
+    }
+
     public function career(){
         $seos = Seo::where('page_type', 'career')->first();
          $jobs = Career::where('status', 'active')->orderBy('valid_through', 'desc')->get();
