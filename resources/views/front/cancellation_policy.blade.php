@@ -3,6 +3,20 @@
 
 @section('content')
 
+<style>
+    .policy-link {
+        color: #075bb5 !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px;
+        overflow-wrap: anywhere;
+        font-weight: 600;
+    }
+    .policy-link:hover, .policy-link:focus {
+        color: #003c7b !important;
+        text-decoration-thickness: 2px !important;
+    }
+</style>
+
 <!-- Page Header Start -->
 <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
     <div class="container text-center py-5">
@@ -13,7 +27,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item">
-                    <a href="/">Home</a>
+                    <a href="/" class="policy-link">Home</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Cancellation Policy
@@ -262,7 +276,9 @@
 
                 <p>
                     Customers can submit a cancellation request through
-                    the official contact channels listed on our website.
+                    the official contact channels listed on our
+                    <a href="https://www.realvictorygroups.com" class="policy-link"
+                       target="_blank" rel="noopener noreferrer">website (https://www.realvictorygroups.com)</a>.
                 </p>
 
                 <p>The request should include:</p>
@@ -395,6 +411,7 @@
                 <p>
                     <strong>Website:</strong>
                     <a href="https://www.realvictorygroups.com"
+                       class="policy-link"
                        target="_blank"
                        rel="noopener noreferrer">
                         https://www.realvictorygroups.com
@@ -403,22 +420,29 @@
 
                 <p>
                     <strong>Phone:</strong>
-                    <a href="tel:+918299012292">
+                    <a href="tel:+918299012292" class="policy-link">
                         +91 8299012292
                     </a>
                 </p>
 
                 <p>
                     <strong>Address:</strong>
-                    73 Basement, Ekta Enclave Society,
-                    Lakhanpur, Khyora, Kanpur,
-                    Uttar Pradesh – 208024, India.
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=73%20Basement%2C%20Ekta%20Enclave%20Society%2C%20Lakhanpur%2C%20Khyora%2C%20Kanpur%2C%20Uttar%20Pradesh%20208024%2C%20India"
+                       class="policy-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        73 Basement, Ekta Enclave Society,
+                        Lakhanpur, Khyora, Kanpur,
+                        Uttar Pradesh – 208024, India.
+                    </a>
                 </p>
 
                 <p>
                     For cancellation-related assistance, customers
-                    may contact us through our official website
-                    or the contact details mentioned above.
+                    may contact us through our
+                    <a href="https://www.realvictorygroups.com" class="policy-link"
+                       target="_blank" rel="noopener noreferrer">official website (https://www.realvictorygroups.com)</a>
+                    or call <a href="tel:+918299012292" class="policy-link">+91 8299012292</a>.
                 </p>
 
             </div>
