@@ -1,0 +1,5 @@
+<div class="rvg-work-grid">
+@foreach($projects as $project)
+<article class="rvg-work-card rvg-reveal" data-project-category="{{ $project->project_category_name }}"><div class="rvg-work-art {{ $loop->even ? 'second' : '' }}">@if($project->thumb_image)<img src="{{ asset('storage/'.$project->thumb_image) }}" alt="{{ $project->title ?? $project->project_category_name }}" loading="lazy">@else<div style="font-size:40px;line-height:1.15;color:white">{{ $project->title ?? $project->project_category_name }}</div>@endif</div><div class="rvg-work-info"><div><h3>{{ $project->title ?? $project->project_category_name }}</h3><p>{{ $project->project_category_name }} · {{ \Illuminate\Support\Str::limit(strip_tags($project->sort_description),100) }}</p></div>@if($project->project_url && preg_match('/^https?:\/\//i', $project->project_url))<a class="rvg-arrow-circle" href="{{ $project->project_url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ $project->title ?? $project->project_category_name }}">↗</a>@endif</div></article>
+@endforeach
+</div>

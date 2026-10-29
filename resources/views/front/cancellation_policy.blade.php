@@ -17,26 +17,7 @@
     }
 </style>
 
-<!-- Page Header Start -->
-<div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
-    <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4 animated slideInDown">
-            Cancellation Policy
-        </h1>
-
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item">
-                    <a href="/" class="policy-link">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    Cancellation Policy
-                </li>
-            </ol>
-        </nav>
-    </div>
-</div>
-<!-- Page Header End -->
+@include('front.partials.page-hero', ['eyebrow'=>'Information', 'title'=>'Cancellation Policy'])
 
 <!-- Cancellation Policy Start -->
 <div class="container-fluid my-lg-5 my-4">

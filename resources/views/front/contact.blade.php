@@ -1,27 +1,6 @@
-@extends('component.main' , ['seos' => $seos])
+@extends('component.main', ['seos'=>$seos ?? null])
+@section('page_class','rvg-premium')
 @section('content')
-    <div class="container-fluid bg-white p-0">
- <!-- Page Header -->
-<div class="container-fluid custom-color  mt-lg-5 py-md-4 py-sm-3 py-2">
-    <div class="container text-center py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown ">Contact us</h1>
-        <nav aria-label="breadcrumb" class="animated slideInDown">
-            <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page"><a href="{{route('contact')}}">contact us</a></li>
-            </ol>
-        </nav>
-    </div>
-</div>
-
-
-
-
-<!-- Contact Start -->
-@include('front.contentcomponent')
-
-
-
-    </div>
-
+@include('front.partials.page-hero',['eyebrow'=>'Let’s connect','title'=>'Every great project starts with a conversation.','intro'=>'An idea, a challenge or a whole new direction. We’d love to hear what you have in mind.'])
+<section class="rvg-section"><div class="rvg-wrap rvg-contact-grid"><div><div class="rvg-eyebrow">Real people. Ready to help.</div><h2>Tell us what’s next.</h2><p>Share a few details and our team will get in touch.</p><div class="rvg-contact-detail"><small>Call us</small><a href="tel:+918299012292">+91 82990 12292 ↗</a></div><div class="rvg-contact-detail"><small>Email us</small><a href="mailto:realvictorygroups@gmail.com">realvictorygroups@gmail.com ↗</a></div><div class="rvg-contact-detail"><small>Visit us</small><p>73 Basement, Ekta Enclave Society, Lakhanpur, Khyora, Kanpur, Uttar Pradesh 208024</p><a class="rvg-link" href="https://www.google.com/maps/search/?api=1&query=Real+Victory+Groups+Kanpur" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div></div><div class="rvg-card">@include('front.partials.contact-form')</div></div></section>
 @endsection

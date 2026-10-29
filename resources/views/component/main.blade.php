@@ -1,7 +1,5 @@
-<html lang="en">
-
-<head>
-
+<!DOCTYPE html>
+<html lang="en"><head>
     @php
         $seo = $seos ?? null;
         // dd($seos);
@@ -152,151 +150,30 @@
         <script type="application/ld+json">{!! $jsonLd !!}</script>
     @endif
 
-    <!-- Favicon -->
-    <link href="{{ asset('logo.png') }}" rel="icon">
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-        rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="{{ asset('front-asset/lib/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('front-asset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('front-asset/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-    <style>
-        .testimonial-item {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .testimonial-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .transition-scale {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .transition-scale:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .transition-scale {
-            transition: transform 0.4s ease-in-out;
-        }
-
-        .transition-scale:hover {
-            transform: scale(1.05);
-        }
-
-        .product-card:hover {
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .project-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        #portfolio-flters button {
-            transition: 0.3s;
-            border-radius: 50px;
-            padding: 6px 18px;
-        }
-
-        #portfolio-flters button.active,
-        #portfolio-flters button:hover {
-            background-color: #dc3545;
-            color: #fff;
-            border-color: #dc3545;
-        }
-
-        meta, meta::before, meta::after { display: none !important; content: none !important; }
-    </style>
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('front-asset/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="{{ asset('front-asset/css/style.css') }}" rel="stylesheet">
-
-
-    <!-- Google tag (gtag.js) -->
+@if(empty($seo?->title) && empty($seo?->meta_title))<title>Real Victory Groups — Design. Build. Grow.</title>@endif
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="icon" href="{{ asset('logo.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('front-asset/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+@vite(['resources/css/premium.css', 'resources/js/premium.js'])
+@stack('styles')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D28Z1KG941"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D28Z1KG941');
-</script>
-</head>
-
-<body>
-
-
-    @include('component.header')
-
-    @yield('content')
-
-    @include('component.footer')
-
-    @if (session('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: "{{ session('success') }}",
-                confirmButtonColor: '#3085d6'
-            });
-        </script>
-    @endif
-
-    @if (session('error'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: "{{ session('error') }}",
-                confirmButtonColor: '#d33'
-            });
-        </script>
-    @endif
-
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('front-asset/lib/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('front-asset/lib/lightbox/js/lightbox.min.js') }}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{ asset('front-asset/js/main.js') }}"></script>
-</body>
-
-</html>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-D28Z1KG941');</script>
+</head><body>
+<a class="rvg-skip" href="#main-content">Skip to content</a>
+@include('component.header')
+@if(session('success'))<div class="rvg-alert" role="status">{{ session('success') }}</div>@endif
+@if(session('error'))<div class="rvg-alert" role="alert">{{ session('error') }}</div>@endif
+@if($errors->any())<div class="rvg-alert" role="alert"><strong>Please check your details.</strong><ul>@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
+<main id="main-content" class="@yield('page_class', 'rvg-legacy')">@yield('content')</main>
+@include('component.footer')
+<button class="rvg-backtop" data-backtop aria-label="Back to top">↑</button>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+@stack('scripts')
+</body></html>

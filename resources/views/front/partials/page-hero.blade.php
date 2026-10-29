@@ -1,0 +1,1 @@
+<section class="rvg-page-hero"><div class="rvg-wrap"><div class="rvg-breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>{{ $eyebrow ?? $title }}</span></div><div class="rvg-eyebrow">{{ $eyebrow ?? 'Real Victory Groups' }}</div><h1>{{ $title }}</h1>@if(!empty($intro))<p>{{ $intro }}</p>@endif</div></section>

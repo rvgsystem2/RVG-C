@@ -1,26 +1,14 @@
 @extends('component.main', ['seos' => $seos])
 
 @section('content')
-    <!-- Page Header Start -->
-    <div class="container-fluid custom-color my-lg-5 py-md-4 py-sm-3 py-2">
-        <div class="container text-center py-5">
-            <h1 class="display-5 text-white mb-3 animated slideInDown">Privacy Policy</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">Privacy Policy</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
+    @include('front.partials.page-hero', ['eyebrow'=>'Information', 'title'=>'Privacy Policy'])
 
     <!-- Privacy Policy Start -->
     <div class="container-fluid mb-lg-5">
         <div class="container my-4 my-lg-5">
             <div class="row shadow rounded bg-white p-3 p-md-4 p-lg-5">
                 <div class="col-12 mb-4">
-                    <h2 class="fw-bold text-dark mb-3">Privacy Policy</h2>
+                    <h2 class="fw-bold text-dark mb-3">Privacy Policy</h1>
                     <p class="mb-2"><strong>Effective Date:</strong> 10 October 2024</p>
                     <p class="mb-0">
                         Real Victory Groups (“we,” “our,” or “us”) values your privacy and is committed to protecting
